@@ -1,13 +1,14 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Hello, world!</title>
+        <title>WOKO | Home</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
 
         <nav class="navbar navbar-dark bg-dark">
             <div class="container">
@@ -45,23 +46,71 @@
     <!- Insert unique code from here-on depending on web page ->
 
     <body style="background-color: #f5f9fA">
-        <div class="container">
+        <div class="container text-center">
             <div class="row">
 
+                <div class="col-12">
 
-                <div class="col-2">
+                    <h1>Collaborate and Compete</h1>
+                    <h4>Put what you know to the test. Join a competition today.</h4>
 
-                    <H3>Options</H3>
-                    <ul>
-                        <li><a href="#">Dashboard</a></li>
-                    </ul>
+                    <br>
 
-                </div>
+                    Login to begin, or register first if you haven't yet.
 
-                <div class="col-10">
+                    <br><br>
+
+                    <!- Login and Register buttons->
+                    <!- Login modal ->
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#loginModal">Login</button>
+
+                    <!- Login page ->
+                    <a class="btn btn-primary btn-lg" href="login/login.php" role="button">Login v2</a>
+
+                    <button type="button" class="btn btn-secondary btn-lg">Register</button>
 
 
-                    <h1>Hello, world!</h1>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h7><strong>Use your TP number:</strong></h7>
+                                    <br>
+                                    <small><a href="#" class="text-muted" role="button">Create an account >></a></small>
+                                    <br><br>
+                                    <form>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" id="tpNumber" aria-describedby="emailHelp" placeholder="TP number">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                                        <br>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input">
+                                                Remember me
+                                            </label>
+                                            <a href="#" class="text-right">Forgot password</a>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
                 </div>
