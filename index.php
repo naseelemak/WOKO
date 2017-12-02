@@ -67,7 +67,7 @@
                     <!- Login page ->
                     <a class="btn btn-primary btn-lg" href="login/login.php" role="button">Login v2</a>
 
-                    <button type="button" class="btn btn-secondary btn-lg">Register</button>
+                    <a class="btn btn-primary btn-lg" href="registration/registration.php" role="button">Register</a>
 
 
 
