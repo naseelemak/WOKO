@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>WOKO | Home</title>
+        <title>WOKO | Profile</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -47,6 +47,8 @@
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
+                    <h1>Edit Profile</h1>
+                    <br>
                     <form>
                         <div class="form-row">
                             <div class="form-group col-md-6">
@@ -66,7 +68,7 @@
                             <label for="inputEmail">Email</label>
                             <input type="text" class="form-control" id="inputEmail" placeholder="Email">
                         </div>
-                        
+
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputCity">City</label>
@@ -84,14 +86,7 @@
                                 <input type="text" class="form-control" id="inputZip">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox"> Check me out
-                                </label>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Sign in</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
                 <div class="col-md-3"></div>
