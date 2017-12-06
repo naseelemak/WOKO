@@ -52,7 +52,7 @@
                     <form>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="inputTP">TP Number</label>
+                                <label for="inputTP">Webspace Email</label>
                                 <input type="id" class="form-control" id="inputTP" placeholder="TP Number">
                             </div>
                             <div class="form-group col-md-6">
@@ -61,30 +61,33 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputName">Name</label>
-                            <input type="text" class="form-control" id="inputName" placeholder="Full Name">
+                            <label for="inputName">Nickname</label>
+                            <input type="text" class="form-control" id="inputName" placeholder="What you prefer to be called">
                         </div>
+                        
                         <div class="form-group">
-                            <label for="inputEmail">Email</label>
-                            <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                            <label for="courseSelect">Course of Study</label>
+                            <select class="form-control" id="courseSelect">
+                                <option>--Select--</option>
+                                <option>Foundation in IT</option>
+                                <option>BSc (Hons) in Information Technology</option>
+                                <option>BSc (Hons) in Information Technology with specialism in Information System Security</option>
+                                <option>BSc (Hons) in Information Technology with specialism in Cloud Computing</option>
+                                <option>BSc (Hons) in Software Engineering</option>
+                            </select>
                         </div>
 
-                        <div class="form-row">
+                        <div class="form-group">
+                            <label for="inputTel">Phone Number</label>
+                            <input class="form-control" type="tel" placeholder="0123456789" id="inputTel">
+                        </div>
+                        
+                        <div class="form-group">
                             <div class="form-group col-md-6">
                                 <label for="inputCity">City</label>
                                 <input type="text" class="form-control" id="inputCity">
                             </div>
-                            <div class="form-group col-md-4">
-                                <label for="inputState">State</label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>...</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-md-2">
-                                <label for="inputZip">Zip</label>
-                                <input type="text" class="form-control" id="inputZip">
-                            </div>
+                            
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
