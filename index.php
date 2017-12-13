@@ -10,15 +10,15 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
 
-        <!- Nav bar ->
+        <!-- Nav bar -->
         <?php include('constants/navbar.php'); ?>
-        <!- nav bar ends here ->
+        <!-- nav bar ends here -->
 
         <br>
 
     </head>
 
-    <!- Insert unique code from here-on depending on web page ->
+    <!-- Insert unique code from here-on depending on web page -->
 
     <body style="background-color: #f5f9fA">
         <div class="container text-center">
@@ -35,11 +35,11 @@
 
                     <br><br>
 
-                    <!- Login and Register buttons->
-                    <!- Login modal ->
+                    <!-- Login and Register buttons -->
+                    <!-- Login modal -->
                     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#loginModal">Login</button>
 
-                    <!- Login page ->
+                    <!-- Login page -->
                     <a class="btn btn-primary btn-lg" href="login/login.php" role="button">Login v2</a>
 
                     <a class="btn btn-primary btn-lg" href="registration/registration.php" role="button">Register</a>
@@ -95,7 +95,7 @@
         </div>
     </body>
 
-    <!- Unique code ends here ->
+    <!-- Unique code ends here -->
 
     <footer>    
         <!-- Optional JavaScript -->
