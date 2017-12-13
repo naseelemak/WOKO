@@ -8,10 +8,16 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        
+        <!- Nav bar ->
+        <?php include('../constants/navbar.php'); ?>
+        <!- Nav bar ends here ->
+        
         <br>
 
     </head>
 
+    <!- Unique code begins here ->
 
     <body style="background-color: #f5f9fA">
         <div class="container">
@@ -24,7 +30,9 @@
 
                     <h7><strong>Use your TP number:</strong></h7>
                     <br>
-                    <small><a href="#" class="text-muted" role="button">Create an account >></a></small>
+                    
+                    <!- Create new account ->
+                    <small><a href="/registration/registration.php" class="text-muted" role="button">Create an account >></a></small>
                     <br><br>
                     <form>
                         <div class="form-group">
@@ -53,5 +61,6 @@
 
         </div>
     </body>
-
+<!- Unique code ends here ->
+    
 </html>
