@@ -1,7 +1,12 @@
+
+<?php
+$currentPage = "Competitions";
+?>
+
 <!doctype html>
 <html lang="en">
     <head>
-        <title>WOKO | Login</title>
+        <title><?php echo "$currentPage" ?> | WOKO</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,61 +17,36 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
-        <!-- Date picker header -->
-        <!--<meta charset="utf-8">
+
+        <!-- Date range picker -->
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Bootstrap 4 DatePicker</title>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.7.0/combined/js/gijgo.min.js" type="text/javascript"></script>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.7.0/combined/css/gijgo.min.css" rel="stylesheet" type="text/css" />-->
-
-
-        <!-- Date range picker -->
-        <!-- Include Required Prerequisites -->
-        <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
-        <script type="text/javascript" src="http://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-        <!--<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />-->
-
-        <!-- Include Date Range Picker -->
-        <script type="text/javascript" src="http://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
-        <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
-
-        <!-- Nav bar -->
-        <?php include('../constants/navbar.php'); ?>
-        <!-- Nav bar ends here -->
-
-        <br>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.7.0/combined/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 
     </head>
 
-    <!-- Unique code begins here -->
+    <!-- Body starts -->
+
+    <!-- Nav bar -->
+    <?php include('../constants/navbar.php'); ?>
+    <!-- nav bar ends here -->
+
     <body style="background-color: #f5f9fA">
         <div class="container">
             <div class="row">
 
                 <!-- Sidebar -->
                 <div class="col-md-3" style="border:1px solid #cecece">
-                    <p class="text-muted"><h5>Advanced Search</h5>
+                    <p class="text-muted"><h5>Search Filters</h5>
                     <br>
 
                     <!-- Search field -->
-                    <input class="form-control form-control-sm" type="text" placeholder="Search">
-
-                    <!-- Radio buttons -->
-                    <div class="form-check form-check-inline">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="inlineRadios1" value="option1">
-                            Title
-                        </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="inlineRadios2" value="option2">
-                            Author
-                        </label>
-                    </div>
-
+                    <input class="form-control form-control-sm" type="text" placeholder="Title / Author">
 
                     <!-- Category selection -->
                     <select class="custom-select">
@@ -79,12 +59,28 @@
 
                     <br><br>
 
-                    <!-- Date picker -->
-                    <input type="text" name="daterange" value="01/01/2015 - 01/31/2015" />
-                    <!--<input name="datepicker" width="276" />-->
-                    <script type="text/javascript">
-                        $(function() {
-                            $('input[name="daterange"]').daterangepicker();
+                    <!-- Date range picker -->
+                    <!-- From http://gijgo.com/datepicker/example/daterangepicker -->
+                    <div class="container">
+                        Start Date: <input id="startDate" width="276" />
+                        End Date: <input id="endDate" width="276" />
+                    </div>
+                    <script>
+                        var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+                        $('#startDate').datepicker({
+                            uiLibrary: 'bootstrap4',
+                            iconsLibrary: 'fontawesome',
+                            minDate: today,
+                            maxDate: function () {
+                                return $('#endDate').val();
+                            }
+                        });
+                        $('#endDate').datepicker({
+                            uiLibrary: 'bootstrap4',
+                            iconsLibrary: 'fontawesome',
+                            minDate: function () {
+                                return $('#startDate').val();
+                            }
                         });
                     </script>
 
@@ -115,6 +111,52 @@
                     <div class="col-sub" style="border:1px solid #cecece">
 
                         <!-- Event list -->
+
+                        <ul>
+                            <li>
+                                <div class="card" style="span-width;">
+                                    <div class="container card-body">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <br>
+                                                <span class="align-middle text-center text-muted"><h5>DEC</h5>
+                                                    <h4>21</h4>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <h4 class="card-title">Card title</h4>
+                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card" style="span-width;">
+                                    <div class="container card-body">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <br>
+                                                <time class="event-cal">
+                                                    <span class="month">Dec</span>
+                                                    <span class="day">21</span>
+                                                </time>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <h4 class="card-title">Card title</h4>
+                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>                     
+                        </ul>
+
+
                         <ul class="event-list event-list__short">
                             <li class="event-thumb">
                                 <a href="#" class="event-thumb_link">
