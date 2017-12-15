@@ -12,7 +12,7 @@ include 'misc/header.php';
             <p class="text-muted">Search Filters</p>
 
             <!-- Search field -->
-            <input class="form-control form-control-sm" type="text" placeholder="Title / Author">
+            <input class="form-control form-control" type="text" placeholder="Title / Author">
         </div>
 
         <!-- Competition Cards -->
@@ -21,14 +21,13 @@ include 'misc/header.php';
             <div class="card">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-1 card-date">
+                        <div class="col-3 col-sm-2 card-date">
                             <p class="card-date-month"><strong>DEC</strong></p>
                             <p class="card-date-day"><strong>21</strong></p>
                         </div>
-                        <div class="col-11">
+                        <div class="col-9 col-sm-10">
                             <h4 class="card-title">Card title</h4>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
                 </div>
