@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4">
-                <h2 class="text-center"><strong>WOKO</strong></h2>
+                <a href="index.php" style="text-decoration: none;" class="text-center"><h2><strong>WOKO</strong></h2></a>
                 <hr>
                 <form>
                     <div class="form-group">
@@ -43,7 +43,7 @@
                 </form>
 
                 <!- Create new account ->
-                <small><a href="registration.php" class="text-muted" role="button">Create an account >></a></small>
+                <small><a href="registration.php" class="text-muted" role="button" style="">Create an account >></a></small>
 
             </div>
         </div>
