@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4">
-                <a href="index.php" style="text-decoration: none;" class="text-center"><h2><strong>WOKO</strong></h2></a>
+                <a href="index.php" style="text-decoration: none; color: #000000;" class="text-center"><h2><strong>WOKO</strong></h2></a>
                 <hr>
                 <form>
                     <div class="form-group">

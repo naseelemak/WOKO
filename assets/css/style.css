@@ -29,6 +29,17 @@ body {
     /* The WOKO yellow #FFC000 */
 }
 
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover 
+{
+     color:#00A0C6; 
+     text-decoration:none; 
+     cursor:pointer;  
+}
 
 .card-date > p {
     margin: 0;
