@@ -36,9 +36,30 @@ a {
 
 a:hover 
 {
-     color:#00A0C6; 
-     text-decoration:none; 
-     cursor:pointer;  
+     color: #696969; 
+     text-decoration: none; 
+     cursor: pointer;  
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/* Absolute center classes */
+.parent {
+    position: absolute; 
+    left: 50%;
+    
+}
+
+.child {
+    position: relative; 
+    left: -50%; 
+}
+/* Absolute center classes end */
+
+.float-right {
+    float: right;
 }
 
 .card-date > p {
