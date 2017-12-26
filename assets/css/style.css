@@ -1,28 +1,4 @@
-/* General sizing */
-ul.dropdown-lr {
-  width: 300px;
-}
-
-/* mobile fix */
-@media (max-width: 768px) {
-	.dropdown-lr h3 {
-		color: #eee;
-	}
-	.dropdown-lr label {
-		color: #eee;
-	}
-}
-
-.login-parent {
-  position: relative;
-}
-
-.login-child {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+/* GENERAL */
 
 body {
     background-color: #f5f5f5;
@@ -30,38 +6,46 @@ body {
 }
 
 a {
-    color: #000000;
     text-decoration: none;
 }
 
-a:hover 
-{
-     color: #696969; 
-     text-decoration: none; 
-     cursor: pointer;  
+a:hover {
+    text-decoration: none;
 }
 
 button:hover {
     cursor: pointer;
 }
 
-/* Absolute center classes */
-.parent {
-    position: absolute; 
-    left: 50%;
-    
-}
-
-.child {
-    position: relative; 
-    left: -50%; 
-}
-/* Absolute center classes end */
-
 .float-right {
     float: right;
 }
 
+.logo-before,
+.password-forgot {
+    color: #000000;
+    text-decoration: none;
+}
+
+.logo-before:hover,
+.password-forgot:hover {
+    color: #696969;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Login */
+
+.register-btn {
+    color: #2377A1;    
+}
+
+.register-btn:hover {
+    color: #3096C9;
+}
+
+/* Competition List */
 .card-date > p {
     margin: 0;
     text-align: center;

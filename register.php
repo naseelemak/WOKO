@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <a href="index.php" class="text-center">
+                <a href="index.php" class="text-center logo-before">
                     <h2><strong>WOKO</strong></h2>
                 </a>
                 <hr>
@@ -115,6 +115,5 @@
 
         </div>
     </div>
-</body>
-
-</html>
+    
+    
