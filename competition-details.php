@@ -1,6 +1,6 @@
 <?php 
 
-$currentPage = "Competitions";
+$currentPage = "APU Hackathon To Win 2017";
 
 include 'misc/header.php';
 
@@ -8,7 +8,10 @@ include 'misc/header.php';
 
 <div class="jumbotron jumbotron-fluid mb-4">
         <div class="container">
-            <h1 class="display-4">Cover picture&nbsp;&nbsp;<span class="btn btn-outline-danger">CLOSED</span><span class="btn btn-outline-success">OPEN</span></h1>
+            <h1 class="display-5">
+                <?php echo $currentPage; ?>
+                &nbsp;</h1>
+            <span class="btn btn-danger mb-1">REGISTRATION CLOSED</span>
             <p class="lead">The lecturer can choose to add a cover picture or not. Without a chosen picture, this will display a default one.</p>
         </div>
     </div>

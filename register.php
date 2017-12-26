@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>WOKO</title>
+    <title>Register | WOKO</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,14 +26,14 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    
+
                 </ul>
                 <div class="my-2 my-lg-0">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item mr-4">
                             <a class="nav-link" href="login.php">Login</a>
                         </li>
-                        
+
                     </ul>
                 </div>
             </div>
@@ -41,8 +41,7 @@
     </nav>
 
 
-    <div class="container mt-4 mb-4">
-        <br><br>
+    <div class="container mt-5 mb-4">
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
@@ -100,10 +99,8 @@
                         <label for="compTypeSelect">Preferred Type of Competition</label>
                         <select class="form-control" id="courseSelect">
                         <option>--Select--</option>
-                        <option>Pitching</option>
-                        <option>Hackathon</option>
-                        <option>Exhibition</option>
-                        <option>Other</option>
+                        <option>Individual</option>
+                        <option>Team</option>
                     </select>
                     </div>
 
@@ -125,10 +122,9 @@
                         <textarea class="form-control" id="inputIntroduction" placeholder="I excel in programming and in identifying different breeds of cats." rows="5"></textarea>
                     </div>
 
-                    <br>
-                    <div class="float-right">
+                    <div class="float-right mt-2">
                         <button type="submit" class="btn btn-primary mr-1" role="button">Submit</button>
-                        <a class="btn btn-secondary" href="login.php">&nbsp;Cancel&nbsp;</a>
+                        <a class="btn btn-secondary" href="login.php" style="padding-left: 15px; padding-right: 15px;">Cancel</a>
                     </div>
                 </form>
             </div>
@@ -138,7 +134,7 @@
         </div>
     </div>
 
-<?php 
+    <?php 
     
 include 'misc/footer.php';
     

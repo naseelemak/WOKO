@@ -1,16 +1,16 @@
 <?php 
 
-$currentPage = "Home";
+$currentPage = "Contact Us";
 
 include 'misc/header.php';
 
 ?>
 
 <div class="jumbotron jumbotron-fluid mb-4">
-        <div class="container">
-            <h1 class="display-3">Contact Us</h1>
-        </div>
+    <div class="container">
+        <h1 class="display-5"><?php echo $currentPage; ?></h1>
     </div>
+</div>
 
 <div class="container mt-3 mb-5">
     <h6 class="mb-4">Want to promote a competition to APU? Get in touch with us here.</h6>
