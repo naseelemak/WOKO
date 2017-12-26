@@ -8,7 +8,7 @@ include 'misc/header.php';
 
 <div class="container mt-3">
     <h1 class="mb-4">Competitions</h1>
-
+<hr>
     <div class="row">
         <div class="col-md-12 col-lg-3 mb-4">
             <p class="text-muted">Search Filters</p>
