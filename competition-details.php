@@ -20,7 +20,8 @@ include 'misc/header.php';
         <div class="col-md-9 mb-4">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title mb-4">QR IT Seek 2017</h4>
+                    <h4 class="card-title mb-4">QR IT Seek 2017&nbsp;&nbsp;<span class="btn btn-outline-danger">CLOSED</span><span class="btn btn-outline-success">OPEN</span></h4>
+                    
                     <h6 class="card-subtitle mb-2 text-muted">Description</h6>
                     <p class="card-text mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi etiam. Vitae nunc sed velit dignissim sodales ut eu sem integer. Faucibus interdum posuere lorem ipsum dolor. Curabitur gravida arcu ac tortor dignissim convallis aenean. Pulvinar pellentesque habitant morbi tristique senectus. Tellus in metus vulputate eu scelerisque felis imperdiet proin. Tincidunt dui ut ornare lectus sit amet est. In hendrerit gravida rutrum quisque non tellus. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut. Dui sapien eget mi proin. Purus viverra accumsan in nisl. Enim neque volutpat ac tincidunt vitae semper. Suspendisse potenti nullam ac tortor. Dolor morbi non arcu risus quis varius. Eget nullam non nisi est sit amet facilisis magna etiam. Sed velit dignissim sodales ut eu.</p>
 
@@ -43,7 +44,7 @@ include 'misc/header.php';
                     <h2 style="color: red;" class="mt-5 mb-4">Registration Deadline: 8th Dec, 2017</h2>
 
                     <h6 class="mb-2">Tags</h6>
-                    <span class="btn btn-outline-success">C++</span>&nbsp;<span class="btn btn-outline-success">Teamwork</span>&nbsp;<span class="btn btn-outline-success">Public Speaking</span>
+                    <span class="btn btn-outline-dark">C++</span>&nbsp;<span class="btn btn-outline-dark">Teamwork</span>&nbsp;<span class="btn btn-outline-dark">Public Speaking</span>
 
                 </div>
             </div>
