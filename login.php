@@ -47,7 +47,7 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4">
-                <h2 class="text-center"><strong>Log In</strong></h2>
+                <h2 class="text-center"><strong>Login</strong></h2>
                 <hr>
                 <form>
 

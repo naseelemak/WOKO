@@ -17,14 +17,36 @@
 </head>
 
 <body>
-    <div class="container mt-5 mb-5">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand mr-5" href="index.php">WOKO</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    
+                </ul>
+                <div class="my-2 my-lg-0">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item mr-4">
+                            <a class="nav-link" href="login.php">Login</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container mt-4 mb-4">
         <br><br>
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <a href="index.php" class="text-center logo-before">
-                    <h2><strong>WOKO</strong></h2>
-                </a>
+                <h2 class="text-center"><strong>Register</strong></h2>
                 <hr>
                 <form>
                     <div class="form-row">
@@ -115,5 +137,9 @@
 
         </div>
     </div>
+
+<?php 
     
+include 'misc/footer.php';
     
+?>
