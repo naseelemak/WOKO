@@ -40,7 +40,7 @@
                         </div>
                     </li>
                     <li class="nav-item mr-2">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="contact.php">Contact</a>
                     </li>
                     <li class="nav-item mr-4">
                         <a class="nav-link" href="#">About</a>
