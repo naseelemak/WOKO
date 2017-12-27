@@ -22,12 +22,28 @@ include 'misc/header.php';
             <!-- Register Button -->
             <a class="btn btn-lg homepage-btn" href="register.php" role="button">Register</a>
 
-            <br><br>
         </div>
-    </div>
-</div>
 
-<?php
+
+        <ul class="homepage-contact-area">
+            <li class="homepage-contact-item">
+                <hr class="homepage-line">
+                <div>
+                    <h3 class="homepage-contact-title">&lt; Contact Us ></h3>
+                    <p class="homepage-contact-description">Want your competition featured on the website? Have a question to ask? Send us a message.</p>
+                </div>
+            </li>
+            <li class="homepage-contact-item">
+                <hr class="homepage-line">
+                <div>
+                    <h3 class="homepage-contact-title">&lt; About Us ></h3>
+                    <p class="homepage-contact-description">What is WOKO? Does it even stand for anything? Read more about the platform over here.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <?php
 
 include 'misc/footer.php';
 
