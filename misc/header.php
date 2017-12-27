@@ -59,7 +59,7 @@
                                 <a class="dropdown-item" href="profile.php">Profile</a>
                                 <a class="dropdown-item" href="change-password.php">Change Password</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Logout</a>
+                                <a class="dropdown-item" href="index.php">Logout</a>
                             </div>
                         </li>
                     </ul>

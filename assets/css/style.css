@@ -35,16 +35,11 @@ button:hover {
 }
 
 .jumbotron {
-    background: 
-        linear-gradient(
-        rgba(0, 0, 0, 0.65),
-        rgba(0, 0, 0, 0.65)
-        ),
-        
-        url("../images/jumbotron.jpg") no-repeat;
-        background-position-x: 0%;
-        background-position-y: 0%;
-        background-size: auto auto;
+    background: linear-gradient( rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.65)),
+
+    url("../images/jumbotron.jpg") no-repeat;
+    background-size: auto auto;
     background-size: cover;
     background-position: center;
     color: white;
@@ -52,8 +47,131 @@ button:hover {
     width: 100%;
 }
 
+.homepage {
+    background-color: #2b2b2b;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 0;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+/* For drop shadows */
+
 .navbar {
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+
+/* Home */
+
+@media only screen and (max-width: 480px) {
+
+    .homepage-head {
+        padding: 40px 0;
+    }
+
+    .homepage-title {
+        font-size: 42px;
+        line-height: 1.1;
+        max-width: 336px;
+    }
+
+    .homepage-subtitle {
+        font-size: 16px;
+        max-width: 336px;
+    }
+
+    .homepage-subtitle-btn {
+        font-size: 16px;
+    }
+
+    .homepage-btn-area {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+
+
+    .homepage-head {
+        padding: 40px 0;
+    }
+
+    .homepage-title {
+        font-size: 42px;
+        line-height: 1.1;
+        max-width: 336px;
+    }
+
+    .homepage-subtitle {
+        font-size: 18px;
+    }
+
+    .homepage-subtitle-btn {
+        font-size: 18px;
+    }
+
+    .homepage-btn-area {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+.homepage-head {
+    padding: 60px 0;
+}
+
+.homepage-title {
+    margin: 0 auto .150em;
+    font-size: 38px;
+}
+
+.homepage-subtitle {
+    color: rgba(255, 255, 255, .7);
+    margin: 0 auto 56px;
+    width: 100%;
+}
+
+.homepage-subtitle-btn {
+    margin: 0 auto 56px;
+    width: 100%;
+}
+
+.homepage-btn-area {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.homepage-btn {
+    border: 3px solid #007AFF;
+    color: #fff;
+    display: inline-block;
+    padding: 4px 10px;
+    width: 220px;
+    transition: border .2s;
+}
+
+.homepage-btn:hover {
+    border: 3px solid #0069D9;
+    background: #0069D9;
+    color: #fff;
+    display: inline-block;
+    padding: 4px 10px;
+    width: 224px;
+    width: 220px;
+}
+
+.homepage-or {
+    margin: 5px;
 }
 
 
