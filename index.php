@@ -38,100 +38,123 @@ include 'misc/header.php';
             </a>
 
             <a href="about.php" class="homepage-tips-item">
-            <li>
-                <hr class="homepage-line">
-                <div>
-                    <h3 class="homepage-tips-title">User Guide</h3>
-                    <p class="homepage-tips-description">New to WOKO? As an APU student, you'll be glad to know that you can join. Here's how.</p>
-                </div>
-            </li>
+                <li>
+                    <hr class="homepage-line">
+                    <div>
+                        <h3 class="homepage-tips-title">User Guide</h3>
+                        <p class="homepage-tips-description">New to WOKO? As an APU student, you'll be glad to know that you can join. Here's how.</p>
+                    </div>
+                </li>
             </a>
-            
+
             <a href="about.php" class="homepage-tips-item">
-            <li>
-                <hr class="homepage-line">
-                <div>
-                    <h3 class="homepage-tips-title">About Us</h3>
-                    <p class="homepage-tips-description">What is WOKO? Does it even stand for anything? Read more about the platform over here.</p>
-                </div>
-            </li>
+                <li>
+                    <hr class="homepage-line">
+                    <div>
+                        <h3 class="homepage-tips-title">About Us</h3>
+                        <p class="homepage-tips-description">What is WOKO? Does it even stand for anything? Read more about the platform over here.</p>
+                    </div>
+                </li>
             </a>
         </ul>
     </div>
 </div>
-<br><br>
-<div class="container homepage-cards">
 
+<div class="container homepage-cards">
+    <h5 class="mb-4"><strong>LATEST COMPETITIONS</strong></h5>
+    <div class="row mb-4">
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+                <div class="img-container">
+                    <img class="card-img-top" src="assets/images/me.JPG" alt="Card image cap">
+                </div>
+                <div class="card-body">
+
+                    <h4 class="card-title">Jaedonothon</h4>
+                    <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+                <div class="img-container">
+                    <img class="card-img-top" src="assets/images/me.JPG" alt="Card image cap">
+                </div>
+                <div class="card-body">
+
+                    <h4 class="card-title">Jaedonothon</h4>
+                    <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+                <div class="img-container">
+                    <img class="card-img-top" src="assets/images/me.JPG" alt="Card image cap">
+                </div>
+                <div class="card-body">
+
+                    <h4 class="card-title">Jaedonothon</h4>
+                    <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <h5 class="mb-4"><strong>BASED ON YOUR INTERESTS</strong></h5>
     <div class="row">
 
         <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card" style="width: 20rem;">
-                <img class="card-img-top" src="assets/images/me.JPG" alt="Card image cap">
+            <div class="card">
+                <div class="img-container">
+                    <img class="card-img-top" src="assets/images/me.JPG" alt="Card image cap">
+                </div>
                 <div class="card-body">
+
                     <h4 class="card-title">Jaedonothon</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+                <div class="img-container">
+                    <img class="card-img-top" src="assets/images/me.JPG" alt="Card image cap">
+                </div>
+                <div class="card-body">
+
+                    <h4 class="card-title">Jaedonothon</h4>
+                    <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+                <div class="img-container">
+                    <img class="card-img-top" src="assets/images/me.JPG" alt="Card image cap">
+                </div>
+                <div class="card-body">
+
+                    <h4 class="card-title">Jaedonothon</h4>
+                    <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card" style="width: 20rem;">
-                <img class="card-img-top" src="assets/images/me.JPG" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">Jaedonothon</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card" style="width: 20rem;">
-                <img class="card-img-top" src="assets/images/me.JPG" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">Jaedonothon</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card" style="width: 20rem;">
-                <img class="card-img-top" src="assets/images/me.JPG" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">Jaedonothon</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card" style="width: 20rem;">
-                <img class="card-img-top" src="assets/images/me.JPG" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">Jaedonothon</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card" style="width: 20rem;">
-                <img class="card-img-top" src="assets/images/me.JPG" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">Jaedonothon</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
     </div>
-    <br><br>
-
+    
 </div>
 
 
