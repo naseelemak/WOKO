@@ -1,7 +1,8 @@
 /* GENERAL */
 
-html, body {
-    height:100%;
+html,
+body {
+    height: 100%;
 }
 
 body {
@@ -361,7 +362,6 @@ button:hover {
 
 
 
-
 /* LOGIN */
 
 .register-btn {
@@ -438,12 +438,133 @@ button:hover {
 }
 
 
-/* LECTURER DASHBOARD */
+/*--------------------
+    LECTURER PAGES 
+----------------------*/
 
-/* .sidebar {
-    background-color: #2b2b2b;
+/* General */
+
+#sidebar a,
+#sidebar a:hover,
+#sidebar a:focus {
+    color: inherit;
+    text-decoration: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.dashboard-navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #343a40;
     color: #fff;
-    min-height: 100%;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
-} */
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
 
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 15px;
+    background: #212529;
+}
+
+#sidebar .sidebar-header h3 {
+    margin-top: 5px;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+}
+
+#sidebar ul li a {
+    padding: 12px 10px 12px 20px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#sidebar ul li a i {
+    float: right;
+    margin-top: 5.2px;
+    padding-right: 12px;
+}
+
+
+#sidebarCollapse {
+    margin-top: -3px;
+    cursor: pointer;
+}
+
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #3f464d;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: calc(100% - 250px);
+    min-height: 100vh;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#content.active {
+    width: 100%;
+}
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #content {
+        width: 100%;
+    }
+    #content.active {
+        width: calc(100% - 250px);
+    }
+}

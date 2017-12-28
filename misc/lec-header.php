@@ -29,13 +29,48 @@
     <script type="text/javascript" src="assets/js/daterangepicker.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/daterangepicker.css" />
 
-    <!-- Sidebar -->
-    <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="assets/css/sidebar.css">
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-    
+
 </head>
 
 <body>
 
+    <?php include 'sidebar.php'; ?>
+
+    <!-- Page Content Holder -->
+    <div id="content">
+
+        <!-- header -->
+        <nav class="navbar dashboard-navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <div class="navbar-brand">
+                    <div id="sidebarCollapse" class="btn">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </div>
+                    <?php echo $currentPage ?>
+
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+
+                    </ul>
+                    <div class="my-2 my-lg-0 mr-5">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Username
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="profile.php">Profile</a>
+                                    <a class="dropdown-item" href="change-password.php">Change Password</a>
+                                    <div class="dropdown-divider"></div>
+                                    <button type="logout" class="dropdown-item" role="button">Logout</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
