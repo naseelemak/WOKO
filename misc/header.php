@@ -20,6 +20,15 @@
     <!-- Own CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!-- Date Range Picker -->
+    <!-- Include Required Prerequisites -->
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/moment.min.js"></script>
+
+    <!-- Include Date Range Picker -->
+    <script type="text/javascript" src="assets/js/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/daterangepicker.css" />
+
 </head>
 
 <body>

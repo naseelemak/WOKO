@@ -355,6 +355,10 @@ button:hover {
     text-overflow: ellipsis;
 }
 
+.sticky-top {
+    top: 1em;
+}
+
 
 /* COMPETITION DETAILS */
 

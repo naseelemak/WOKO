@@ -8,7 +8,9 @@ include 'misc/header.php';
 
 <div class="jumbotron jumbotron-fluid mb-4">
     <div class="container">
-        <h1 class="display-5"><?php echo $currentPage; ?></h1>
+        <h1 class="display-5">
+            <?php echo $currentPage; ?>
+        </h1>
     </div>
 </div>
 
@@ -16,13 +18,25 @@ include 'misc/header.php';
 <div class="container mt-3">
     <div class="row">
         <div class="col-md-12 col-lg-3 mb-4">
-            <p class="text-muted">Search Filters</p>
+            <div class="sticky-top">
+                <p class="text-muted">Search Filters</p>
 
-            <!-- Search field -->
-            <input class="form-control mb-3" type="text" placeholder="Keywords">
+                <!-- Search field -->
+                <input class="form-control mb-2" type="text" placeholder="Keywords" id="inputKeywords">
 
-            <a href="#" class="btn btn-primary" style="width: 100%">Search</a>
+                <!-- Date Range Picker -->
+                <input class="form-control mb-3" type="text" name="daterange" />
 
+                <script type="text/javascript">
+                    $(function() {
+                        $('input[name="daterange"]').daterangepicker();
+                    });
+
+                </script>
+
+                <button class="btn btn-primary" style="width: 100%">Search</button>
+
+            </div>
         </div>
 
         <!-- Competition Cards -->
