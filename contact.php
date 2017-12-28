@@ -28,7 +28,7 @@ include 'misc/header.php';
             <label for="contactCategorySelect">Category</label>
             <select class="form-control" id="contactCategorySelect">
         <option>--Select--</option>
-        <option>Competition Promotion</option>
+        <option>Competition Invite</option>
         <option>General Query</option>
         <option>Other</option>
     </select>

@@ -47,69 +47,65 @@ button:hover {
     width: 100%;
 }
 
-ul {
-    list-style: none;
-}
-
 /* https://codepen.io/siiron/pen/jfBhy/ */
 
 /* Begin required CSS. */
-.line-clamp
-{
-	display            : block;
-	display            : -webkit-box;
-	-webkit-box-orient : vertical;
-	position           : relative;
 
-	line-height        : 1.5;
-	overflow           : hidden;
-	text-overflow      : ellipsis;
-	padding            : 0 !important;
+.line-clamp {
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    position: relative;
+
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 !important;
 }
-.line-clamp:after
-{
-	content    : '...';
-	text-align : right;
-	bottom     : 0;
-	right      : 0;
-	width      : 25%;
-	display    : block;
-	position   : absolute;
-	height     : calc(1em * 1.5);
-	background : linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 75%);
+
+.line-clamp:after {
+    content: '...';
+    text-align: right;
+    bottom: 0;
+    right: 0;
+    width: 25%;
+    display: block;
+    position: absolute;
+    height: calc(1em * 1.5);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 75%);
 }
-@supports (-webkit-line-clamp: 1)
-{
-	.line-clamp:after
-	{
-		display : none !important;
-	}
+
+@supports (-webkit-line-clamp: 1) {
+    .line-clamp:after {
+        display: none !important;
+    }
 }
-.line-clamp-1
-{
-	-webkit-line-clamp : 1;
-	height             : calc(1em * 1.5 * 1);
+
+.line-clamp-1 {
+    -webkit-line-clamp: 1;
+    height: calc(1em * 1.5 * 1);
 }
-.line-clamp-2
-{
-	-webkit-line-clamp : 2;
-	height             : calc(1em * 1.5 * 2);
+
+.line-clamp-2 {
+    -webkit-line-clamp: 2;
+    height: calc(1em * 1.5 * 2);
 }
-.line-clamp-3
-{
-	-webkit-line-clamp : 3;
-	height             : calc(1em * 1.5 * 3);
+
+.line-clamp-3 {
+    -webkit-line-clamp: 3;
+    height: calc(1em * 1.5 * 3);
 }
-.line-clamp-4
-{
-	-webkit-line-clamp : 4;
-	height             : calc(1em * 1.5 * 4);
+
+.line-clamp-4 {
+    -webkit-line-clamp: 4;
+    height: calc(1em * 1.5 * 4);
 }
-.line-clamp-5
-{
-	-webkit-line-clamp : 5;
-	height             : calc(1em * 1.5 * 5);
+
+.line-clamp-5 {
+    -webkit-line-clamp: 5;
+    height: calc(1em * 1.5 * 5);
 }
+
 /* End required CSS. */
 
 /* For drop shadows */
@@ -121,13 +117,17 @@ ul {
 
 
 
-/* Home */
+/* HOME */
 
 .homepage {
     display: flex;
     padding: 0;
     text-align: center;
     line-height: 1.35;
+}
+
+.homepage ul {
+    list-style: none;
 }
 
 @media only screen and (max-width: 480px) {
@@ -315,7 +315,7 @@ ul {
 
 
 
-/* Login */
+/* LOGIN */
 
 .register-btn {
     color: #2377A1;
@@ -326,7 +326,7 @@ ul {
 }
 
 
-/* Competition List */
+/* COMPETITION LIST */
 
 .card-link {
     color: #424242;
@@ -356,4 +356,21 @@ ul {
 }
 
 
-/* Competition Details */
+/* COMPETITION DETAILS */
+
+.competition-poster:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.competition-deadline {
+    color: #e53935;
+}
+
+.tag-title {
+    font-size: 0.85em;
+}
+
+.competition-details-line {
+    margin: 25px 0;
+}
