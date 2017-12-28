@@ -374,3 +374,13 @@ button:hover {
 .competition-details-line {
     margin: 25px 0;
 }
+
+
+/* USER GUIDES */
+
+.guide-steps {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}

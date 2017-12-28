@@ -37,7 +37,7 @@ include 'misc/header.php';
                 </li>
             </a>
 
-            <a href="about.php" class="homepage-tips-item">
+            <a href="guide-student.php" class="homepage-tips-item">
                 <li>
                     <hr class="homepage-line">
                     <div>

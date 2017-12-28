@@ -8,22 +8,41 @@ include 'misc/header.php';
 
 <div class="jumbotron jumbotron-fluid mb-4">
     <div class="container">
-        <h1 class="display-5"><?php echo $currentPage; ?></h1>
+        <h1 class="display-5">
+            <?php echo $currentPage; ?>
+        </h1>
     </div>
 </div>
 
 <div class="container mt-3">
 
+    <h4>Getting your competition featured on WOKO:</h4>
+    <hr>
+    <div class="row text-center">
+        <div class="col-lg-4 col-md-6 mb-2">
+            <img src="http://placehold.it/300x300/f6a5c0/ffffff?text=1" class="guide-steps">
+            <h4>Step 1</h4>
+            <p class="text-muted">Go to the 'Contact' page.</p>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-2">
+            <img src="http://placehold.it/300x300/f48eb1/ffffff?text=2" class="guide-steps">
+            <h4>Step 2</h4>
+            <p class="text-muted">Enter your personal or organisation details and select the cartegory "Competition Invite".</p>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-2">
+            <img src="http://placehold.it/300x300/f178a1/ffffff?text=3" class="guide-steps">
+            <h4>Step 3</h4>
+            <p class="text-muted">Enter a message describing the competition with a link to its official details if there is one.</p>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-2">
+            <img src="http://placehold.it/300x300/ef6191/ffffff?text=4" class="guide-steps">
+            <h4>Step 4</h4>
+            <p class="text-muted">Click submit and wait for our response.</p>
+        </div>
+    </div>
 
-    <p class="text-justify">WOKO aims to promote lecturer-student collaboration on competitions by connecting lecturers to students and students to lecturers. </p>
 
-    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi etiam. Vitae nunc sed velit dignissim sodales ut eu sem integer. Faucibus interdum posuere lorem ipsum dolor. Curabitur gravida arcu ac tortor dignissim convallis aenean. Pulvinar pellentesque habitant morbi tristique senectus. Tellus in metus vulputate eu scelerisque felis imperdiet proin. Tincidunt dui ut ornare lectus sit amet est. In hendrerit gravida rutrum quisque non tellus. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut. Dui sapien eget mi proin. Purus viverra accumsan in nisl. Enim neque volutpat ac tincidunt vitae semper. Suspendisse potenti nullam ac tortor. Dolor morbi non arcu risus quis varius. Eget nullam non nisi est sit amet facilisis magna etiam. Sed velit dignissim sodales ut eu.</p>
-
-</div>
-
-
-
-<?php
+    <?php
 
 include 'misc/footer.php';
 
