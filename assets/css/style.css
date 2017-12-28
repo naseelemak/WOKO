@@ -1,5 +1,9 @@
 /* GENERAL */
 
+html, body {
+    height:100%;
+}
+
 body {
     background-color: #f5f5f5;
     /* The WOKO yellow #FFC000 */
@@ -35,6 +39,12 @@ button:hover {
 }
 
 .jumbotron {
+    background: -webkit-gradient( linear,
+    left top, left bottom,
+    from(rgba(0, 0, 0, 0.65)),
+    to(rgba(0, 0, 0, 0.65))),
+
+    url("../images/jumbotron.jpg") no-repeat;
     background: linear-gradient( rgba(0, 0, 0, 0.65),
     rgba(0, 0, 0, 0.65)),
 
@@ -72,6 +82,7 @@ button:hover {
     display: block;
     position: absolute;
     height: calc(1em * 1.5);
+    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(75%, rgba(255, 255, 255, 1)));
     background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 75%);
 }
 
@@ -111,6 +122,7 @@ button:hover {
 /* For drop shadows */
 
 .navbar {
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
 }
 
@@ -120,6 +132,8 @@ button:hover {
 /* HOME */
 
 .homepage {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 0;
     text-align: center;
@@ -153,12 +167,22 @@ button:hover {
     }
 
     .homepage-btn-area {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
     }
 
     .homepage-tips-area {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
     }
 
@@ -187,12 +211,22 @@ button:hover {
     }
 
     .homepage-btn-area {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
     }
 
     .homepage-tips-area {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
     }
 
@@ -223,8 +257,14 @@ button:hover {
 }
 
 .homepage-btn-area {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
@@ -234,6 +274,7 @@ button:hover {
     display: inline-block;
     padding: 4px 10px;
     width: 220px;
+    -webkit-transition: border .2s;
     transition: border .2s;
 }
 
@@ -270,12 +311,18 @@ button:hover {
     text-align: center;
     margin: 100px auto 0;
     padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     max-width: 950px;
 }
 
 .homepage-tips-item {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 33.3333%;
     flex: 0 1 33.3333%;
     margin: 0 48px 25px;
     position: relative;
@@ -364,7 +411,8 @@ button:hover {
 
 .competition-poster:hover {
     cursor: pointer;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .competition-deadline {
@@ -388,3 +436,14 @@ button:hover {
     border-radius: 50%;
     margin-bottom: 15px;
 }
+
+
+/* LECTURER DASHBOARD */
+
+/* .sidebar {
+    background-color: #2b2b2b;
+    color: #fff;
+    min-height: 100%;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+} */
+

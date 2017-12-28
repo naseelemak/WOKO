@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <!-- Normalize CSS -->
     <link rel="stylesheet" href="assets/css/normalize.css">
 
@@ -16,6 +16,7 @@
     <!-- Own CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 
 </head>
 
@@ -30,14 +31,14 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    
+
                 </ul>
                 <div class="my-2 my-lg-0">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item mr-4">
                             <a class="nav-link" href="register.php">Register</a>
                         </li>
-                        
+
                     </ul>
                 </div>
             </div>
@@ -86,7 +87,7 @@
         </div>
     </div>
 
-<?php 
+    <?php 
     
 include 'misc/footer.php';
     

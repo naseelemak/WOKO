@@ -15,6 +15,8 @@
 
     <!-- Own CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 
 
 </head>
