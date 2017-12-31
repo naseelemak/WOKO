@@ -63,8 +63,8 @@
                                     Username
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="profile.php">Profile</a>
-                                    <a class="dropdown-item" href="change-password.php">Change Password</a>
+                                    <a class="dropdown-item" href="lec-profile.php">Profile</a>
+                                    <a class="dropdown-item" href="lec-change-password.php">Change Password</a>
                                     <div class="dropdown-divider"></div>
                                     <button type="logout" class="dropdown-item" role="button">Logout</button>
                                 </div>

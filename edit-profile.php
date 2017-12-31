@@ -18,7 +18,7 @@ include 'misc/header.php';
 
     <div class="row">
         <div class="col-md-6 mb-4">
-            <h4 class="mb-4">Personal Information</h4>
+            <h4 class="mb-4">Personal Details</h4>
 
             <form>
                 <!-- TP Number -->

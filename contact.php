@@ -35,7 +35,7 @@ include 'misc/header.php';
         </div>
         <div class="form-group">
             <label for="contactMessageInput">Your Message</label>
-            <textarea class="form-control" id="contactMessageInput" rows="7" placeholder="We're organising a hackathon in February and would like to invite the students of APU to participate in it. You can read more about the event here – https://www.hackyhacky2018.com. We look forward to your involvement!"></textarea>
+            <textarea class="form-control" id="contactMessageInput" rows="7" placeholder="E.g. We're organising a hackathon in February and would like to invite the students of APU to participate in it. You can read more about the event here – https://www.hackyhacky2018.com. We look forward to your involvement!"></textarea>
         </div>
 
         <br>
