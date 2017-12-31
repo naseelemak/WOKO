@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <!-- Normalize CSS -->
     <link rel="stylesheet" href="assets/css/normalize.css">
 
@@ -15,7 +15,7 @@
 
     <!-- Own CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    
+
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 
 
@@ -24,7 +24,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand mr-5" href="index.php">WOKO</a>
+            <a class="navbar-brand mr-5" href="student/index.php">WOKO</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -78,7 +78,7 @@
                     <div class="form-group">
                         <label for="courseSelect">Course of Study</label>
                         <select class="form-control" id="courseSelect">
-                        <option>--Select--</option>
+                        <option selected disabled>--Select--</option>
                         <option>Foundation in IT</option>
                         <option>BSc (Hons) in Information Technology</option>
                         <option>BSc (Hons) in Information Technology with specialism in Information System Security</option>
@@ -103,7 +103,7 @@
                     <div class="form-group">
                         <label for="compTypeSelect">Preferred Type of Competition</label>
                         <select class="form-control" id="courseSelect">
-                        <option>--Select--</option>
+                        <options selected disabled>--Select--</option>
                         <option>Individual</option>
                         <option>Team</option>
                     </select>
@@ -138,9 +138,27 @@
 
         </div>
     </div>
+    <!-- JavaScript -->
 
-    <?php 
-    
-include 'misc/footer.php';
-    
-?>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#sidebarCollapse').on('click', function() {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+            });
+        });
+
+    </script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

@@ -40,6 +40,13 @@ include 'misc/header.php';
                         <li>3rd Prize: RM500</li>
                     </ul>
 
+                    <h6 class="card-subtitle mb-2 text-muted">Time</h6>
+                    <ul>
+                        <li>Day 1: 0900 - 1700</li>
+                        <li>Day 2: 0900 - 1700</li>
+                        <li>Day 3: 0900 - 1300</li>
+                    </ul>
+
                     <h6 class="card-subtitle mt-4">Registration Deadline: <span class="competition-deadline">&nbsp;8th Dec, 2017</span></h6>
 
                     <hr class="competition-details-line">
@@ -87,14 +94,14 @@ include 'misc/header.php';
             </div>
 
             <div class="card competition-poster" data-toggle="modal" data-target="#posterModal">
-                <img class="card-img" src="assets/images/e-genting.jpg" alt="E-Genting Hackathon">
+                <img class="card-img" src="../assets/images/e-genting.jpg" alt="E-Genting Hackathon">
             </div>
 
             <!-- Modal -->
             <div class="modal fade" id="posterModal" tabindex="-1" role="dialog" aria-labelledby="posterModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        <img class="card-img-top" src="assets/images/e-genting.jpg" alt="E-Genting Hackathon">
+                        <img class="card-img-top" src="../assets/images/e-genting.jpg" alt="E-Genting Hackathon">
                     </div>
                 </div>
             </div>

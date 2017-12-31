@@ -107,6 +107,6 @@ include 'misc/header.php';
 
     <?php
 
-include 'misc/footer.php';
+include 'footer.php';
 
 ?>

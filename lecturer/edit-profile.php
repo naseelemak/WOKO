@@ -2,7 +2,7 @@
 
 $currentPage = "Edit Profile";
 
-include 'misc/lec-header.php';
+include 'misc/header.php';
 
 ?>
 
@@ -42,7 +42,7 @@ include 'misc/lec-header.php';
 
             <div class="float-right mb-4">
                 <button type="submit" class="btn btn-primary mr-1" role="button">Submit</button>
-                <a class="btn btn-secondary" href="lec-profile.php" style="padding-left: 15px; padding-right: 15px;">Cancel</a>
+                <a class="btn btn-secondary" href="profile.php" style="padding-left: 15px; padding-right: 15px;">Cancel</a>
             </div>
         </div>
         <div class="col-md-6"></div>
@@ -53,6 +53,6 @@ include 'misc/lec-header.php';
 
 <?php
 
-include 'misc/lec-footer.php';
+include 'misc/footer.php';
 
 ?>

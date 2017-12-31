@@ -563,11 +563,16 @@ ul ul a {
     }
 }
 
+@media (max-width: 991px) {
+    .header-margin {
+       margin-left:18px; 
+    }
+}
+
 
 /* Lecturer Profile */
 
-.lec-profile {
-}
+
 
 
 
