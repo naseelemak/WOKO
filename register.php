@@ -1,3 +1,13 @@
+<?php 
+
+require 'config.php';
+
+if(isset($_SESSION['user'])) {
+    echo "<script>window.location.href='index.php'</script>";
+    die;
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -103,7 +113,7 @@
                     <div class="form-group">
                         <label for="compTypeSelect">Preferred Type of Competition</label>
                         <select class="form-control" id="courseSelect">
-                        <options selected disabled>--Select--</option>
+                        <option selected disabled>--Select--</option>
                         <option>Individual</option>
                         <option>Team</option>
                     </select>

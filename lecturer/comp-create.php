@@ -1,6 +1,6 @@
 <?php 
 
-$currentPage = "Create New";
+$currentPage = "Create Post";
 
 include 'misc/header.php';
 
@@ -22,7 +22,7 @@ include 'misc/header.php';
         <div class="form-group">
             <label for="inputDate">Competition Date(s)</label>
             <i class="fa fa-question-circle text-muted" data-toggle="tooltip" data-placement="auto" title="For one day events, select the same date on both sides" aria-hidden="true"></i>
-            <input class="form-control mb-3" type="text" id="inputDate" name="daterange" />
+            <input class="form-control mb-3" type="text" id="inputDate" name="daterange">
 
             <script type="text/javascript">
                 $(function() {
@@ -35,19 +35,19 @@ include 'misc/header.php';
         <!-- Details Text Editor (Description, Prizes) -->
         <label for="wmwysiwyg-placeholder">Competition Details</label>
         <div id="wmwysiwyg-placeholder" class="mb-3">
-            <h6 class="card-subtitle mb-2 text-muted">Description</h6>
+            <h6 class="mb-2 text-muted">Description</h6>
             <p class="card-text mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi etiam. Vitae nunc sed velit dignissim sodales ut eu sem integer. Faucibus interdum posuere lorem ipsum dolor. Curabitur gravida arcu ac tortor dignissim convallis aenean. Pulvinar pellentesque habitant morbi tristique senectus. Tellus in metus vulputate eu scelerisque felis imperdiet proin. Tincidunt dui ut ornare lectus sit amet est. In hendrerit gravida rutrum quisque non tellus. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut. Dui sapien eget mi proin. Purus viverra accumsan in nisl. Enim neque volutpat ac tincidunt vitae semper. Suspendisse potenti nullam ac tortor. Dolor morbi non arcu risus quis varius. Eget nullam non nisi est sit amet facilisis magna etiam. Sed velit dignissim sodales ut eu.</p>
 
 
 
-            <h6 class="card-subtitle mb-2 text-muted">Prizes</h6>
+            <h6 class="mb-2 text-muted">Prizes</h6>
             <ul>
                 <li>1st Prize: RM3000</li>
                 <li>2nd Prize: RM1500</li>
                 <li>3rd Prize: RM500</li>
             </ul>
 
-            <h6 class="card-subtitle mb-2 text-muted">Time</h6>
+            <h6 class="mb-2 text-muted">Time</h6>
             <ul>
                 <li>Day 1: 0900 - 1700</li>
                 <li>Day 2: 0900 - 1700</li>
@@ -142,9 +142,16 @@ include 'misc/header.php';
             <label for="inputTitle">Competition URL (Optional)</label>
             <input type="url" class="form-control mb-3" id="inputTitle" placeholder="As per APU registration">
         </div>
+        
+        <!-- Tags -->
+        <div class="form-group">
+            <label for="inputTitle">Tags</label>
+            <input type="text" class="form-control mb-3" id="inputTags" placeholder="E.g. Java, C++, Exhibition">
+        </div>
 
         <div class="float-right mt-2 mb-4">
-            <button type="submit" class="btn btn-primary mr-1" role="button">Create</button>
+            <a href="comp-preview.php" class="btn btn-primary mr-1" target="_blank">Preview</a>
+            <button type="submit" class="btn btn-primary mr-1" role="button">Publish</button>
             <a class="btn btn-secondary" href="comp.php" style="padding-left: 15px; padding-right: 15px;">Cancel</a>
         </div>
     </form>

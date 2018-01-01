@@ -22,16 +22,7 @@ include 'misc/header.php';
             <div class="card">
                 <div class="card-body">
                     <h6 class="card-subtitle mb-2 text-muted">Description</h6>
-                    <p class="card-text mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi etiam. Vitae nunc sed velit dignissim sodales ut eu sem integer. Faucibus interdum posuere lorem ipsum dolor. Curabitur gravida arcu ac tortor dignissim convallis aenean. Pulvinar pellentesque habitant morbi tristique senectus. Tellus in metus vulputate eu scelerisque felis imperdiet proin. Tincidunt dui ut ornare lectus sit amet est. In hendrerit gravida rutrum quisque non tellus. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut. Dui sapien eget mi proin. Purus viverra accumsan in nisl. Enim neque volutpat ac tincidunt vitae semper. Suspendisse potenti nullam ac tortor. Dolor morbi non arcu risus quis varius. Eget nullam non nisi est sit amet facilisis magna etiam. Sed velit dignissim sodales ut eu.</p>
-
-
-                    <h6 class="card-subtitle mb-2 text-muted">Details</h6>
-                    <ul>
-                        <li>Competition Date: 25 Dec, 2017</li>
-                        <li>Venue: Mid Valley</li>
-                        <li>Registration Fee: FREE</li>
-                        <li>Participant: 4 per team</li>
-                    </ul>
+                    <p class="card-text mb-4 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi etiam. Vitae nunc sed velit dignissim sodales ut eu sem integer. Faucibus interdum posuere lorem ipsum dolor. Curabitur gravida arcu ac tortor dignissim convallis aenean. Pulvinar pellentesque habitant morbi tristique senectus. Tellus in metus vulputate eu scelerisque felis imperdiet proin. Tincidunt dui ut ornare lectus sit amet est. In hendrerit gravida rutrum quisque non tellus. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut. Dui sapien eget mi proin. Purus viverra accumsan in nisl. Enim neque volutpat ac tincidunt vitae semper. Suspendisse potenti nullam ac tortor. Dolor morbi non arcu risus quis varius. Eget nullam non nisi est sit amet facilisis magna etiam. Sed velit dignissim sodales ut eu.</p>
 
                     <h6 class="card-subtitle mb-2 text-muted">Prizes</h6>
                     <ul>
@@ -45,6 +36,14 @@ include 'misc/header.php';
                         <li>Day 1: 0900 - 1700</li>
                         <li>Day 2: 0900 - 1700</li>
                         <li>Day 3: 0900 - 1300</li>
+                    </ul>
+
+                    <h6 class="card-subtitle mb-2 text-muted">Details</h6>
+                    <ul>
+                        <li>Competition Date: 25 Dec, 2017</li>
+                        <li>Participant: 4 per team</li>
+                        <li>Venue: Mid Valley</li>
+                        <li>Registration Fee: FREE</li>
                     </ul>
 
                     <h6 class="card-subtitle mt-4">Registration Deadline: <span class="competition-deadline">&nbsp;8th Dec, 2017</span></h6>
@@ -105,14 +104,11 @@ include 'misc/header.php';
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
+</div>
 
-
-
-    <?php
+<?php
 
 include 'misc/footer.php';
 

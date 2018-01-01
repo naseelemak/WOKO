@@ -1,22 +1,16 @@
 <?php 
 
-$currentPage = "E-Genting Programming Competition 2017";
+$currentPage = "competition name";
 
 include 'misc/header.php';
 
 ?>
 
-<div class="jumbotron jumbotron-fluid mb-4">
-    <div class="container">
-        <h1 class="display-5">
-            <?php echo $currentPage; ?> &nbsp;
-        </h1>
-        <span class="btn btn-danger mb-1">REGISTRATION CLOSED</span>
-    </div>
-</div>
 
 <div class="container">
-
+    <div class="mb-3">
+        <a class="btn btn-danger" href="edit-profile.php" style="padding-left: 30px; padding-right: 30px;">Edit Details</a>&nbsp;&nbsp;
+    </div>
     <div class="row">
         <div class="col-md-9 mb-4">
             <div class="card">
@@ -38,6 +32,13 @@ include 'misc/header.php';
                         <li>1st Prize: RM3000</li>
                         <li>2nd Prize: RM1500</li>
                         <li>3rd Prize: RM500</li>
+                    </ul>
+
+                    <h6 class="card-subtitle mb-2 text-muted">Time</h6>
+                    <ul>
+                        <li>Day 1: 0900 - 1700</li>
+                        <li>Day 2: 0900 - 1700</li>
+                        <li>Day 3: 0900 - 1300</li>
                     </ul>
 
                     <h6 class="card-subtitle mt-4">Registration Deadline: <span class="competition-deadline">&nbsp;8th Dec, 2017</span></h6>
@@ -87,14 +88,14 @@ include 'misc/header.php';
             </div>
 
             <div class="card competition-poster" data-toggle="modal" data-target="#posterModal">
-                <img class="card-img" src="assets/images/e-genting.jpg" alt="E-Genting Hackathon">
+                <img class="card-img" src="../assets/images/e-genting.jpg" alt="E-Genting Hackathon">
             </div>
 
             <!-- Modal -->
             <div class="modal fade" id="posterModal" tabindex="-1" role="dialog" aria-labelledby="posterModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        <img class="card-img-top" src="assets/images/e-genting.jpg" alt="E-Genting Hackathon">
+                        <img class="card-img-top" src="../assets/images/e-genting.jpg" alt="E-Genting Hackathon">
                     </div>
                 </div>
             </div>
@@ -102,11 +103,11 @@ include 'misc/header.php';
 
         </div>
     </div>
+</div>
 
 
+<?php
 
-    <?php
-
-include 'footer.php';
+include 'misc/footer.php';
 
 ?>
