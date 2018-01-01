@@ -1,19 +1,14 @@
 <?php 
 
-$currentPage = "Profile";
+$currentPage = "student TP";
 
 include 'misc/header.php';
 
 ?>
 
-<div class="jumbotron jumbotron-fluid mb-4">
-    <div class="container">
-        <h1 class="display-5">Jaedon Tan Yung-Ming</h1>
-    </div>
-</div>
 
-<div class="container mt-3">
-
+<div class="container mt-2">
+    
     <div class="row">
         <div class="col-md-6 mb-4">
             <h4 class="mb-4">Personal Details</h4>
@@ -76,15 +71,8 @@ include 'misc/header.php';
         </div>
     </div>
 
-
-    <div class="float-right mb-4">
-        <a class="btn btn-primary" href="edit-profile.php" style="padding-left: 30px; padding-right: 30px;">Edit Profile</a>&nbsp;&nbsp;
-    </div>
-
-
+    
 </div>
-
-
 
 <?php
 

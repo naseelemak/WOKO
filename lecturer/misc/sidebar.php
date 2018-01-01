@@ -16,7 +16,7 @@
                 </ul>
             </li>
             <li>
-                <a href="students.php">Students</a>
+                <a href="stud.php">Students</a>
             </li>
 
                 <hr class="d-lg-none d-xl-none">

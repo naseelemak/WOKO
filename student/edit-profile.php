@@ -72,16 +72,10 @@ include 'misc/header.php';
                         <option>Team</option>
                     </select>
                 </div>
-
-                <!-- Skills -->
+                
+                <!-- Interests (Tags) -->
                 <div class="form-group">
-                    <label for="inputSkills">Skills (Might combine with Interests)</label>
-                    <input type="text" class="form-control" placeholder="Java, PHP, Public Speaking" id="inputSkills">
-                </div>
-
-                <!-- Interests -->
-                <div class="form-group">
-                    <label for="inputInterests">Interests (Might combine with Skills)</label>
+                    <label for="inputInterests">Interests</label>
                     <input type="text" class="form-control" placeholder="Java, PHP, Public Speaking" id="inputInterests">
                 </div>
 

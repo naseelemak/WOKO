@@ -1,13 +1,3 @@
-<?php 
-
-require 'config.php';
-
-if(isset($_SESSION['user'])) {
-    echo "<script>window.location.href='index.php'</script>";
-    die;
-}
-?>
-
 <!doctype html>
 <html lang="en">
 
@@ -67,7 +57,7 @@ if(isset($_SESSION['user'])) {
 
                         <!-- TP Number -->
                         <div class="form-group col-md-6">
-                            <label for="inputTP">TP Number (Used at login)</label>
+                            <label for="inputTP">TP Number</label>
                             <input type="id" class="form-control" id="inputTP" placeholder="TPxxxxxx">
                         </div>
 
@@ -119,15 +109,9 @@ if(isset($_SESSION['user'])) {
                     </select>
                     </div>
 
-                    <!-- Skills -->
+                    <!-- Interests (Tags) -->
                     <div class="form-group">
-                        <label for="inputSkills">Skills (Might combine with Interests)</label>
-                        <input type="text" class="form-control" placeholder="Java, PHP, Public Speaking" id="inputSkills">
-                    </div>
-
-                    <!-- Interests -->
-                    <div class="form-group">
-                        <label for="inputInterests">Interests (Might combine with Skills)</label>
+                        <label for="inputInterests">Interests</label>
                         <input type="text" class="form-control" placeholder="Java, PHP, Public Speaking" id="inputInterests">
                     </div>
 

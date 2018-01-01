@@ -8,8 +8,11 @@ include 'misc/header.php';
 
 
 <div class="container mt-4">
+    <div class="mb-4">
+        <a class="btn btn-primary" href="comp-create.php" style="padding: auto 30px; margin-left: 10px;">Create New</a>&nbsp;&nbsp;
+    </div>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 mb-4">
             <table id="example" class="display table" cellspacing="0" width="100%">
                 <thead>
                     <tr>
@@ -27,8 +30,8 @@ include 'misc/header.php';
                         <td>2011/04/25</td>
                         <td>2011/04/25</td>
                         <td class="text-right">
-                            <a href="#"><i class="action-btn fa fa-eye"></i></a>
-                            <a href="#"><i class="action-btn fa fa-edit"></i></a>
+                            <a href="comp-details.php"><i class="action-btn fa fa-eye"></i></a>
+                            <a href="comp-edit.php"><i class="action-btn fa fa-edit"></i></a>
                             <a href="#"><i class="action-btn fa fa-times mr-2"></i></a>
                         </td>
                     </tr>
