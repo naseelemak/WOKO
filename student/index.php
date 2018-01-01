@@ -64,46 +64,144 @@ include 'misc/header.php';
     <h5 class="mb-4"><strong>LATEST COMPETITIONS</strong></h5>
     <div class="row mb-4">
 
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-                <div class="img-container">
-                    <img class="card-img-top" src="../assets/images/me.JPG" alt="Card image cap">
-                </div>
-                <div class="card-body">
+        <div class="col-lg-6 mb-4">
+            <a href="comp-details.php">
+                <div class="card ">
+                    <div class="img-container">
+                        <img class="card-img-top" src="../assets/images/e-genting.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body card-link">
 
-                    <h4 class="card-title">Jaedonothon</h4>
-                    <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <div class="row">
+                            <div class="col-3 col-sm-2 card-date">
+                                <p class="card-date-month"><strong>DEC</strong></p>
+                                <p class="card-date-day"><strong>21</strong></p>
+                            </div>
+                            <div class="col-9 col-sm-10">
+                                <h4 class="card-title line-clamp line-clamp-1">E-Genting Hackathon 2017</h4>
+                                <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                            <div class="col-12">
+                                <hr>
+                                <div class="comp-card-footer">
+                                    <div class="text-muted ml-3">
+                                        <i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;Lecturer
+
+                                        <i class="fa fa-map-marker ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Location
+
+                                        <i class="fa fa-user ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Organiser
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
-        
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-                <div class="img-container">
-                    <img class="card-img-top" src="../assets/images/me.JPG" alt="Card image cap">
-                </div>
-                <div class="card-body">
 
-                    <h4 class="card-title">Jaedonothon</h4>
-                    <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="col-lg-6 mb-4">
+            <a href="comp-details.php">
+                <div class="card ">
+                    <div class="img-container">
+                        <img class="card-img-top" src="../assets/images/e-genting.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body card-link">
+
+                        <div class="row">
+                            <div class="col-3 col-sm-2 card-date">
+                                <p class="card-date-month"><strong>DEC</strong></p>
+                                <p class="card-date-day"><strong>21</strong></p>
+                            </div>
+                            <div class="col-9 col-sm-10">
+                                <h4 class="card-title line-clamp line-clamp-1">E-Genting Hackathon 2017</h4>
+                                <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                            <div class="col-12">
+                                <hr>
+                                <div class="comp-card-footer">
+                                    <div class="text-muted ml-3">
+                                        <i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;Lecturer
+
+                                        <i class="fa fa-map-marker ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Location
+
+                                        <i class="fa fa-user ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Organiser
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
-        
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-                <div class="img-container">
-                    <img class="card-img-top" src="../assets/images/me.JPG" alt="Card image cap">
-                </div>
-                <div class="card-body">
 
-                    <h4 class="card-title">Jaedonothon</h4>
-                    <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="col-lg-6 mb-4">
+            <a href="comp-details.php">
+                <div class="card ">
+                    <div class="img-container">
+                        <img class="card-img-top" src="../assets/images/e-genting.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body card-link">
+
+                        <div class="row">
+                            <div class="col-3 col-sm-2 card-date">
+                                <p class="card-date-month"><strong>DEC</strong></p>
+                                <p class="card-date-day"><strong>21</strong></p>
+                            </div>
+                            <div class="col-9 col-sm-10">
+                                <h4 class="card-title line-clamp line-clamp-1">E-Genting Hackathon 2017</h4>
+                                <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                            <div class="col-12">
+                                <hr>
+                                <div class="comp-card-footer">
+                                    <div class="text-muted ml-3">
+                                        <i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;Lecturer
+
+                                        <i class="fa fa-map-marker ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Location
+
+                                        <i class="fa fa-user ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Organiser
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </a>
+        </div>
+
+        <div class="col-lg-6 mb-4">
+            <a href="comp-details.php">
+                <div class="card ">
+                    <div class="img-container">
+                        <img class="card-img-top" src="../assets/images/e-genting.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body card-link">
+
+                        <div class="row">
+                            <div class="col-3 col-sm-2 card-date">
+                                <p class="card-date-month"><strong>DEC</strong></p>
+                                <p class="card-date-day"><strong>21</strong></p>
+                            </div>
+                            <div class="col-9 col-sm-10">
+                                <h4 class="card-title line-clamp line-clamp-1">E-Genting Hackathon 2017</h4>
+                                <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                            <div class="col-12">
+                                <hr>
+                                <div class="comp-card-footer">
+                                    <div class="text-muted ml-3">
+                                        <i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;Lecturer
+
+                                        <i class="fa fa-map-marker ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Location
+
+                                        <i class="fa fa-user ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Organiser
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
         </div>
 
     </div>
@@ -111,50 +209,148 @@ include 'misc/header.php';
     <h5 class="mb-4"><strong>BASED ON YOUR INTERESTS</strong></h5>
     <div class="row">
 
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-                <div class="img-container">
-                    <img class="card-img-top" src="../assets/images/me.JPG" alt="Card image cap">
-                </div>
-                <div class="card-body">
+        <div class="col-lg-6 mb-4">
+            <a href="comp-details.php">
+                <div class="card ">
+                    <div class="img-container">
+                        <img class="card-img-top" src="../assets/images/me.JPG" alt="Card image cap">
+                    </div>
+                    <div class="card-body card-link">
 
-                    <h4 class="card-title">Jaedonothon</h4>
-                    <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-                <div class="img-container">
-                    <img class="card-img-top" src="../assets/images/me.JPG" alt="Card image cap">
-                </div>
-                <div class="card-body">
+                        <div class="row">
+                            <div class="col-3 col-sm-2 card-date">
+                                <p class="card-date-month"><strong>DEC</strong></p>
+                                <p class="card-date-day"><strong>21</strong></p>
+                            </div>
+                            <div class="col-9 col-sm-10">
+                                <h4 class="card-title line-clamp line-clamp-1">Jaedonothon 2018</h4>
+                                <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                            <div class="col-12">
+                                <hr>
+                                <div class="comp-card-footer">
+                                    <div class="text-muted ml-3">
+                                        <i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;Lecturer
 
-                    <h4 class="card-title">Jaedonothon</h4>
-                    <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-                <div class="img-container">
-                    <img class="card-img-top" src="../assets/images/me.JPG" alt="Card image cap">
-                </div>
-                <div class="card-body">
+                                        <i class="fa fa-map-marker ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Location
 
-                    <h4 class="card-title">Jaedonothon</h4>
-                    <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        <i class="fa fa-user ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Organiser
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
 
+
+        <div class="col-lg-6 mb-4">
+            <a href="comp-details.php">
+                <div class="card ">
+                    <div class="img-container">
+                        <img class="card-img-top" src="../assets/images/me.JPG" alt="Card image cap">
+                    </div>
+                    <div class="card-body card-link">
+
+                        <div class="row">
+                            <div class="col-3 col-sm-2 card-date">
+                                <p class="card-date-month"><strong>DEC</strong></p>
+                                <p class="card-date-day"><strong>21</strong></p>
+                            </div>
+                            <div class="col-9 col-sm-10">
+                                <h4 class="card-title line-clamp line-clamp-1">Jaedonothon 2018</h4>
+                                <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                            <div class="col-12">
+                                <hr>
+                                <div class="comp-card-footer">
+                                    <div class="text-muted ml-3">
+                                        <i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;Lecturer
+
+                                        <i class="fa fa-map-marker ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Location
+
+                                        <i class="fa fa-user ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Organiser
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-lg-6 mb-4">
+            <a href="comp-details.php">
+                <div class="card ">
+                    <div class="img-container">
+                        <img class="card-img-top" src="../assets/images/me.JPG" alt="Card image cap">
+                    </div>
+                    <div class="card-body card-link">
+
+                        <div class="row">
+                            <div class="col-3 col-sm-2 card-date">
+                                <p class="card-date-month"><strong>DEC</strong></p>
+                                <p class="card-date-day"><strong>21</strong></p>
+                            </div>
+                            <div class="col-9 col-sm-10">
+                                <h4 class="card-title line-clamp line-clamp-1">Jaedonothon 2018</h4>
+                                <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                            <div class="col-12">
+                                <hr>
+                                <div class="comp-card-footer">
+                                    <div class="text-muted ml-3">
+                                        <i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;Lecturer
+
+                                        <i class="fa fa-map-marker ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Location
+
+                                        <i class="fa fa-user ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Organiser
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-lg-6 mb-4">
+            <a href="comp-details.php">
+                <div class="card ">
+                    <div class="img-container">
+                        <img class="card-img-top" src="../assets/images/me.JPG" alt="Card image cap">
+                    </div>
+                    <div class="card-body card-link">
+
+                        <div class="row">
+                            <div class="col-3 col-sm-2 card-date">
+                                <p class="card-date-month"><strong>DEC</strong></p>
+                                <p class="card-date-day"><strong>21</strong></p>
+                            </div>
+                            <div class="col-9 col-sm-10">
+                                <h4 class="card-title line-clamp line-clamp-1">Jaedonothon 2018</h4>
+                                <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                            <div class="col-12">
+                                <hr>
+                                <div class="comp-card-footer">
+                                    <div class="text-muted ml-3">
+                                        <i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;Lecturer
+
+                                        <i class="fa fa-map-marker ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Location
+
+                                        <i class="fa fa-user ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Organiser
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
     </div>
-    
+
 </div>
 
 

@@ -76,8 +76,8 @@ include 'misc/header.php';
 
         <!-- Type of Competition -->
         <div class="form-group">
-            <label for="compTypeSelect">Type of Competition</label>
-            <select class="form-control mb-3" id="compType">
+            <label for="compType">Type of Competition</label>
+            <select class="form-control mb-3" id="compType" onChange="changetextbox();">
                         <option selected disabled>--Select--</option>
                         <option>Individual</option>
                         <option>Team</option>
@@ -86,8 +86,20 @@ include 'misc/header.php';
 
         <!-- Participants -->
         <div class="form-group">
-            <label for="inputTitle">Participants</label>
-            <input type="number" class="form-control mb-3" id="inputTitle" placeholder="Number of people per team">
+            <label for="inputParticipants">Participants (Use a dash to represent ranges: E.g. 2-4)</label>
+            <input type="text" class="form-control mb-3" id="inputParticipants" placeholder="Number of people per team" pattern="(^[0-9]+[-]*[0-9]+$)">
+
+            <script type="text/javascript">
+                function changetextbox() {
+                    if (document.getElementById("compType").value === "Individual") {
+                        document.getElementById("inputParticipants").disabled = 'true';
+                        document.getElementById("inputParticipants").value = "";
+                    } else {
+                        document.getElementById("inputParticipants").disabled = '';
+                    }
+                }
+
+            </script>
         </div>
 
         <!-- Venue -->
@@ -99,7 +111,7 @@ include 'misc/header.php';
         <!-- Registration Fee -->
         <div class="form-group">
             <label for="inputTitle">Registration Fee (MYR)</label>
-            <input type="number" class="form-control mb-3" id="inputTitle" placeholder="Per individual / team">
+            <input type="number" class="form-control mb-3" min="0" id="inputTitle" placeholder="Per individual / team">
         </div>
 
         <!-- Registration Deadline-->
@@ -124,7 +136,7 @@ include 'misc/header.php';
             <label for="exampleFormControlFile1">Poster</label>
             <input type="file" class="form-control-file" id="exampleFormControlFile1">
         </div>
-        
+
         <!-- URL -->
         <div class="form-group">
             <label for="inputTitle">Competition URL (Optional)</label>

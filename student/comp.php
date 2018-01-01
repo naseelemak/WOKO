@@ -43,7 +43,7 @@ include 'misc/header.php';
         <div class="col-md-12 col-lg-9 mb-2">
             <p class="text-muted">23 Competitions Found</p>
 
-            <a href="competition-details.php">
+            <a href="comp-details.php">
                 <div class="card mb-3">
                     <div class="card-body card-link">
                         <div class="row">
@@ -70,7 +70,7 @@ include 'misc/header.php';
                 </div>
             </a>
 
-            <a href="competition-details.php">
+            <a href="comp-details.php">
                 <div class="card mb-3">
                     <div class="card-body card-link">
                         <div class="row">
@@ -97,7 +97,7 @@ include 'misc/header.php';
                 </div>
             </a>
 
-            <a href="competition-details.php">
+            <a href="comp-details.php">
                 <div class="card mb-3">
                     <div class="card-body card-link">
                         <div class="row">
@@ -124,7 +124,7 @@ include 'misc/header.php';
                 </div>
             </a>
 
-            <a href="competition-details.php">
+            <a href="comp-details.php">
                 <div class="card mb-3">
                     <div class="card-body card-link">
                         <div class="row">
@@ -151,7 +151,7 @@ include 'misc/header.php';
                 </div>
             </a>
 
-            <a href="competition-details.php">
+            <a href="comp-details.php">
                 <div class="card mb-3">
                     <div class="card-body card-link">
                         <div class="row">
@@ -178,7 +178,7 @@ include 'misc/header.php';
                 </div>
             </a>
 
-            <a href="competition-details.php">
+            <a href="comp-details.php">
                 <div class="card mb-3">
                     <div class="card-body card-link">
                         <div class="row">
@@ -205,7 +205,7 @@ include 'misc/header.php';
                 </div>
             </a>
 
-            <a href="competition-details.php">
+            <a href="comp-details.php">
                 <div class="card mb-3">
                     <div class="card-body card-link">
                         <div class="row">
