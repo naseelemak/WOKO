@@ -22,6 +22,10 @@ button:hover {
     cursor: pointer;
 }
 
+.btnPointer:hover {
+    cursor: pointer;
+}
+
 .float-right {
     float: right;
 }
