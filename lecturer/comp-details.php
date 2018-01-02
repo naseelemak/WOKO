@@ -9,7 +9,7 @@ include 'misc/header.php';
 
 <div class="container">
     <div class="mb-3">
-        <a class="btn btn-danger" href="edit-profile.php" style="padding-left: 30px; padding-right: 30px;">Edit Details</a>&nbsp;&nbsp;
+        <a class="btn btn-danger" href="comp-edit.php" style="padding-left: 30px; padding-right: 30px;">Edit Details</a>&nbsp;&nbsp;
     </div>
     <div class="row">
         <div class="col-md-9 mb-4">
