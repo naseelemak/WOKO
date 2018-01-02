@@ -1,7 +1,4 @@
-<?php
-
-include 'student/index.php';
-
+<?php 
+  header('Location: student/index.php');
+  exit;
 ?>
-
-
