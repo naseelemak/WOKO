@@ -87,7 +87,7 @@ include 'misc/header.php';
         <!-- Participants -->
         <div class="form-group">
             <label for="inputParticipants">Participants (Use a dash to represent ranges: E.g. 2-4)</label>
-            <input type="text" class="form-control mb-3" id="inputParticipants" placeholder="Number of people per team" pattern="(^[0-9]+[-]*[0-9]+$)">
+            <input type="text" class="form-control mb-3" id="inputParticipants" placeholder="Number of people per team" pattern="(^[0-9]+[-]*[0-9]+$)" disabled>
 
             <script type="text/javascript">
                 function changetextbox() {
@@ -105,7 +105,7 @@ include 'misc/header.php';
         <!-- Venue -->
         <div class="form-group">
             <label for="inputTitle">Venue</label>
-            <input type="url" class="form-control mb-3" id="inputTitle" placeholder="E.g. Mid Valley">
+            <input type="text" class="form-control mb-3" id="inputTitle" placeholder="E.g. Mid Valley">
         </div>
 
         <!-- Registration Fee -->
