@@ -1,6 +1,6 @@
 <?php 
 
-$currentPage = "student TP";
+$currentPage = "Student Details";
 
 include 'misc/header.php';
 
@@ -8,70 +8,45 @@ include 'misc/header.php';
 
 
 <div class="container mt-2">
-    
-    <div class="row">
-        <div class="col-md-6 mb-4">
-            <h4 class="mb-4">Personal Details</h4>
+    <div class="card mb-4">
+        <div class="card-body">
 
-            <form>
-                <!-- TP Number -->
-                <div class="form-group">
-                    <label for="inputTP">TP Number</label>
-                    <input type="id" class="form-control" id="inputTP" value="TP034699" disabled>
-                </div>
+            <h4 class="card-title">TP034699 | Freddy Boy</h4>
+            <h5 class="card-subtitle mb-4 text-muted">BSc (Hons) in Software Engineering</h6>
 
+                <h6 class="card-subtitle mb-2 text-muted">Contact Details</h6>
 
-                <!-- Name -->
-                <div class="form-group">
-                    <label for="inputName">Name</label>
-                    <input type="text" class="form-control" id="inputName" value="Freddy Boy" disabled>
-                </div>
+                <i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;tp034699@mail.apu.edu.my
 
-                <!-- Course of Study -->
-                <div class="form-group">
-                    <label for="courseSelect">Course of Study</label>
-                    <input type="text" class="form-control" id="course" value="BSc (Hons) in Software Engineering" disabled>
-                </div>
+                <br>
 
-                <!-- Email -->
-                <div class="form-group">
-                    <label for="inputEmail">Email</label>
-                    <input type="email" class="form-control" id="inputEmail" value="me@jaedon.my" disabled>
-                </div>
+                <i class="fa fa-phone-square mb-5" aria-hidden="true"></i>&nbsp;&nbsp;+60123456789
 
-                <!-- Phone Number -->
-                <div class="form-group">
-                    <label for="inputTel">Phone Number</label>
-                    <input class="form-control" type="tel" value="0123456789" id="inputTel" disabled>
-                </div>
-            </form>
-        </div>
-        <div class="col-md-6">
-            <h4 class="mb-4">Additional Information</h4>
+                <br>
 
-            <form>
-                <!-- Preferred Type of Competition -->
-                <div class="form-group">
-                    <label for="compTypeSelect">Preferred Type of Competition</label>
-                    <input type="text" class="form-control" value="Individual" id="inputType" disabled>
-                </div>
-                
-                <!-- Interests (Tags) -->
-                <div class="form-group">
-                    <label for="inputInterests">Interests</label>
-                    <input type="text" class="form-control" value="Java, PHP, Public Speaking" id="inputInterests" disabled>
-                </div>
+                <h6 class="card-subtitle mb-2 text-muted">Additional Information</h6>
 
-                <!-- Self-Introduction -->
-                <div class="form-group">
-                    <label for="inputIntroduction">Self-Introduction (Optional)</label>
-                    <textarea class="form-control" id="inputIntroduction" rows="5" disabled>I excel in programming and in identifying different breeds of cats.</textarea>
-                </div>
-            </form>
+                <form>
+                    <!-- Preferred Type of Competition -->
+                    <div class="form-group">
+                        <label for="compTypeSelect">Preferred Type of Competition</label>
+                        <input type="text" class="form-control" value="Individual" id="inputType" disabled>
+                    </div>
+
+                    <!-- Interests (Tags) -->
+                    <div class="form-group">
+                        <label for="inputInterests">Interests</label>
+                        <input type="text" class="form-control" value="Java, PHP, Public Speaking" id="inputInterests" disabled>
+                    </div>
+
+                    <!-- Self-Introduction -->
+                    <div class="form-group">
+                        <label for="inputIntroduction">Self-Introduction (Optional)</label>
+                        <textarea class="form-control" id="inputIntroduction" rows="5" disabled>I excel in programming and in identifying different breeds of cats.</textarea>
+                    </div>
+                </form>
         </div>
     </div>
-
-    
 </div>
 
 <?php

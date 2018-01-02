@@ -87,12 +87,6 @@
                     </select>
                     </div>
 
-                    <!-- Email -->
-                    <div class="form-group">
-                        <label for="inputEmail">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Preferred email address">
-                    </div>
-
                     <!-- Phone Number -->
                     <div class="form-group">
                         <label for="inputTel">Phone Number</label>
