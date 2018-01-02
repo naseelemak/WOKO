@@ -12,7 +12,7 @@ include 'misc/header.php';
         <div class="card-body">
 
             <h4 class="card-title">TP034699 | Freddy Boy</h4>
-            <h5 class="card-subtitle mb-4 text-muted">BSc (Hons) in Software Engineering</h6>
+            <h5 class="card-subtitle mb-4 text-muted">BSc (Hons) in Software Engineering</h5>
 
                 <h6 class="card-subtitle mb-2 text-muted">Contact Details</h6>
 
@@ -41,7 +41,7 @@ include 'misc/header.php';
 
                     <!-- Self-Introduction -->
                     <div class="form-group">
-                        <label for="inputIntroduction">Self-Introduction (Optional)</label>
+                        <label for="inputIntroduction">Self-Introduction</label>
                         <textarea class="form-control" id="inputIntroduction" rows="5" disabled>I excel in programming and in identifying different breeds of cats.</textarea>
                     </div>
                 </form>
