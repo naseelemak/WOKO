@@ -7,47 +7,52 @@ include 'misc/header.php';
 ?>
 
 
-<div class="container mt-4">
-    <div class="mb-4">
-        <a class="btn btn-primary" href="comp-create.php" style="padding: auto 30px; margin-left: 10px;">Create New</a>&nbsp;&nbsp;
-    </div>
-    <div class="row">
-        <div class="col-md-12 mb-4">
-            <table id="example" class="display table" cellspacing="0" width="100%">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Competition</th>
-                        <th>Registration Deadline</th>
-                        <th>Competition Date</th>
-                        <th class="disabled-sorting text-right">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>EXACT Hackathon</td>
-                        <td>2011/04/25</td>
-                        <td>2011/04/25</td>
-                        <td class="text-right">
-                            <a href="comp-details.php"><i class="action-btn fa fa-eye"></i></a>
-                            <a href="comp-edit.php"><i class="action-btn fa fa-edit"></i></a>
-                            <a href="#"><i class="action-btn fa fa-times mr-2"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Binary IT Challenge Binary IT Challenge Binary IT Challenge</td>
-                        <td>2011/04/25</td>
-                        <td>2011/07/25</td>
-                        <td class="text-right">
-                            <a href="comp-details.php"><i class="action-btn fa fa-eye"></i></a>
-                            <a href="comp-edit.php"><i class="action-btn fa fa-edit"></i></a>
-                            <a href="#"><i class="action-btn fa fa-times mr-2"></i></a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+<div class="container">
+
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="mb-4">
+                <a class="btn btn-primary" href="comp-create.php" style="padding: auto 30px; margin-left: 10px;">Create New</a>&nbsp;&nbsp;
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-4">
+                    <table id="example" class="display table" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Competition</th>
+                                <th>Registration Deadline</th>
+                                <th>Competition Date</th>
+                                <th class="disabled-sorting text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>EXACT Hackathon</td>
+                                <td>2011/04/25</td>
+                                <td>2011/04/25</td>
+                                <td class="text-right">
+                                    <a href="comp-details.php"><i class="action-btn fa fa-eye"></i></a>
+                                    <a href="comp-edit.php"><i class="action-btn fa fa-edit"></i></a>
+                                    <a href="#"><i class="action-btn fa fa-times mr-2"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Binary IT Challenge Binary IT Challenge Binary IT Challenge</td>
+                                <td>2011/04/25</td>
+                                <td>2011/07/25</td>
+                                <td class="text-right">
+                                    <a href="comp-details.php"><i class="action-btn fa fa-eye"></i></a>
+                                    <a href="comp-edit.php"><i class="action-btn fa fa-edit"></i></a>
+                                    <a href="#"><i class="action-btn fa fa-times mr-2"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -16,12 +16,12 @@ include 'misc/header.php';
 
         <div class="homepage-btn-area">
             <!-- Login Button -->
-            <a class="btn btn-primary btn-lg homepage-btn" href="login.php" role="button">Login</a>
+            <a class="btn btn-primary btn-lg homepage-btn" href="../login.php" role="button">Login</a>
 
             <span class="homepage-or">or</span>
 
             <!-- Register Button -->
-            <a class="btn btn-lg homepage-btn" href="register.php" role="button">Register</a>
+            <a class="btn btn-lg homepage-btn" href="../register.php" role="button">Register</a>
 
         </div>
 
