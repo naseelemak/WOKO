@@ -1,5 +1,7 @@
 <?php 
 
+require '../config.php';
+
 $currentPage = "Create Post";
 
 include 'misc/header.php';

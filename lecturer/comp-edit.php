@@ -1,5 +1,7 @@
 <?php 
 
+require '../config.php';
+
 $currentPage = "Edit Post";
 
 include 'misc/header.php';

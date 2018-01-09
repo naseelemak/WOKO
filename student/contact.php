@@ -1,5 +1,7 @@
 <?php 
 
+require '../config.php';
+
 $currentPage = "Contact Us";
 
 include 'misc/header.php';

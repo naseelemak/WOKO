@@ -1,5 +1,7 @@
 <?php 
 
+require '../config.php';
+
 $currentPage = "Profile";
 
 include 'misc/header.php';

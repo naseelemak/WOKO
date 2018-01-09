@@ -1,5 +1,7 @@
 <?php 
 
+require '../config.php';
+
 $currentPage = "About WOKO";
 
 include 'misc/header.php';

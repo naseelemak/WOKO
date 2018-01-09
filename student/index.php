@@ -1,5 +1,7 @@
 <?php 
 
+require '../config.php';
+
 $currentPage = "Home";
 
 include 'misc/header.php';
@@ -11,21 +13,27 @@ include 'misc/header.php';
     <div class="container homepage-head">
         <h1 class="homepage-title">Collaborate and Compete</h1>
         <h5 class="homepage-subtitle">Put what you know to the test. Join a competition today.</h5>
+        
+        <?php 
+        
+            if(!isset($_SESSION['user']))
+            {
+                echo '<h6 class="homepage-subtitle-btn">Login to begin, or register first if you haven\'t.</h6>';
+                
+                echo '<div class="homepage-btn-area">
+                    <!-- Login Button -->
+                    <a class="btn btn-primary btn-lg homepage-btn" href="../login.php" role="button">Login</a>
 
-        <h6 class="homepage-subtitle-btn">Login to begin, or register first if you haven't.</h6>
+                    <span class="homepage-or">or</span>
 
-        <div class="homepage-btn-area">
-            <!-- Login Button -->
-            <a class="btn btn-primary btn-lg homepage-btn" href="../login.php" role="button">Login</a>
+                    <!-- Register Button -->
+                    <a class="btn btn-lg homepage-btn" href="../register.php" role="button">Register</a>
 
-            <span class="homepage-or">or</span>
-
-            <!-- Register Button -->
-            <a class="btn btn-lg homepage-btn" href="../register.php" role="button">Register</a>
-
-        </div>
-
-
+                    </div>';
+            }
+        
+        ?>
+        
         <ul class="homepage-tips-area">
             <a href="contact.php" class="homepage-tips-item">
                 <li>

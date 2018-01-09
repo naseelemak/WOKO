@@ -1,5 +1,7 @@
 <?php 
 
+require '../config.php';
+
 $currentPage = "competition name";
 
 include 'misc/header.php';

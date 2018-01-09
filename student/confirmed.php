@@ -1,5 +1,7 @@
 <?php 
 
+require '../config.php';
+
 $currentPage = "Account Verified";
 
 include 'misc/header.php';

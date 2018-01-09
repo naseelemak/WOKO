@@ -1,5 +1,7 @@
 <?php 
 
+require '../config.php';
+
 $currentPage = "Organiser Guide";
 
 include 'misc/header.php';

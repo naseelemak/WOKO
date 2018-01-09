@@ -1,7 +1,12 @@
 <?php 
 
+require '../config.php';
+
+require '../config.php';
+
 $currentPage = "E-Genting Programming Competition 2017";
 
+include 'misc/restrict-comp.php';
 include 'misc/header.php';
 
 ?>

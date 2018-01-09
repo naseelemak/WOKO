@@ -1,5 +1,7 @@
 <?php 
 
+require '../config.php';
+
 $currentPage = "Student Guide";
 
 include 'misc/header.php';

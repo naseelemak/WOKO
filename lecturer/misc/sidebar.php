@@ -24,7 +24,7 @@
                 <li class="d-lg-none d-xl-none">
                     <a href="#">Profile</a>
                     <a href="#">Change Password</a>
-                    <a href="#">Logout</a>
+                    <a href="../logout.php" class="dropdown-item">Logout</a>
                 </li>
         </ul>
     </nav>

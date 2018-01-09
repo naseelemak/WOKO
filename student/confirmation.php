@@ -1,5 +1,7 @@
 <?php 
 
+require '../config.php';
+
 $currentPage = "Email Verification";
 
 include 'misc/header.php';

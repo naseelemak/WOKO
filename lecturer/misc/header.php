@@ -77,7 +77,7 @@
                                     <a class="dropdown-item" href="profile.php">Profile</a>
                                     <a class="dropdown-item" href="change-password.php">Change Password</a>
                                     <div class="dropdown-divider"></div>
-                                    <button type="logout" class="dropdown-item" role="button">Logout</button>
+                                    <a href="../logout.php" class="dropdown-item">Logout</a>
                                 </div>
                             </li>
                         </ul>
