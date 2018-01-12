@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row px-2">
             <div class="col-md-12">
-                <form id="compCreateForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                <form id="compCreateForm" method="post" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]);?>">
                     <!-- Title -->
                     <div class="form-group">
                         <label for="compTitle">Title</label>
@@ -29,7 +29,7 @@
 
                         <script type="text/javascript">
                             $(function() {
-                                $('input[name="daterange"]').daterangepicker();
+                                $('input[name="compDate"]').daterangepicker();
                             });
 
                         </script>
@@ -168,88 +168,101 @@
     include '../footer.php';
 ?>
 
+        <?php
 
-<?php
 // Create Post
-    if(isset($_POST['compCreateSubmit'])) {
+    if(isset($_POST['compCreateSubmit'])) 
+    {
         
-		$title = $_POST['postTitle'];
-		$content = $_POST['postContent'];
-        $author = $_SESSION['user'];
-		
-        if (!empty($_POST['postTitle']) && !empty($_POST['postContent']))
+        if (!empty($_POST['compTitle']) && !empty($_POST['compDates']) && !empty($_POST['compDetails']) && !empty($_POST['compType']) && !empty($_POST['compFee']) && !empty($_POST['compDeadline']) && !empty($_POST['compPoster']) && !empty($_POST['compTags']))
         {
-            if (empty($_FILES['postImage']['name']))
+            if (empty($_FILES['compPoster']['name']))
             {
                 echo "<script>alert('Please choose an image file to upload!');";
                 echo "window.location.href = 'add-post.php';</script>";
+                return false;
             }
-            else {
+            
+            $title = test_input($_POST['compTitle']);
+            $dates = test_input($_POST['compDates']);
+            $details = test_input($_POST['compDetails']);
+            $type = test_input($_POST['compType']);
+            
+            if ($_POST['compType'] == "Individual")
+            {
+                $type = 0;
+            }
+            else
+            {
+                $type = 1;
                 
-                // Check connection
-                if (!$conn)
+                if (empty($_POST['compParticipants']))
                 {
-                    die("Connection failed: " . mysqli_connect_error());
+                     echo "<script>alert('Please specify the number of participants in a team.');";
+                    echo "document.getElementById('compParticipants').focus();</script>";
+                    return false;
                 }
                 
-                $stmt = $conn->prepare('SELECT title FROM posts WHERE title = ?');
-                $stmt->bind_param('s', $title);
+            }
+            
+            $venue = test_input($_POST['compVenue']);
+            $fee = test_input($_POST['compFee']);
+            $deadline = test_input($_POST['compDeadline']);
+            $url = test_input($_POST['compURL']);
+            $tags = test_input($_POST['compTags']);
+            
+            // Check connection
+            if (!$conn)
+            {
+                die("Connection failed: " . mysqli_connect_error());
+            }
 
+            $target_dir = "../images/comp/";
+            $filename = basename($_FILES["compPoster"]["name"]);
+            $extension = pathinfo($filename,PATHINFO_EXTENSION);
+
+            $newfilename = $target_dir . $id . "." . $extension;
+
+            // Allow certain file formats
+            if($extension != "jpg" && $extension != "png" && $extension != "jpeg")
+            {
+                echo "<script>alert('Sorry, only JPG, JPEG, & PNG files are allowed!');";
+                echo "window.location.href = 'comp-create.php';</script>";
+            }
+
+            // Check file size
+            if ($_FILES["compPoster"]["size"] > 500000)
+            {
+                echo "<script>alert('The picture exceeds the size limit.');";
+                echo "window.location.href = 'comp-create.php';</script>";
+            }
+
+            if (move_uploaded_file($_FILES["postImage"]["tmp_name"], $newfilename))
+            {
+                // Inserts details into the Posts table
+                $stmt = $conn->prepare('INSERT INTO `posts`(`title`, `dates`, `details`, `type`, `participants`, `venue`, `fee`, `deadline`, `poster`, `url`, `tags`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+
+                $stmt->bind_param('sssiisissss', $title, $dates, $details, $type, $participants, $venue, $fee, $deadline, $newfilename, $url, $tags);
+
+                // execute query
                 $stmt->execute();
-                
-                $result = $stmt->get_result();
-                
-                if ($result->num_rows > 0)
-                {
-                    echo "<script>alert('Post title already exists! Please enter another title.');";
-                    echo "document.getElementById('postTitle').focus();</script>";
-                }
-                else
-                { 
-                    $target_dir = "images/";
-                    $filename = basename($_FILES["postImage"]["name"]);
-                    $extension = pathinfo($filename,PATHINFO_EXTENSION);
 
-                    $newfilename = $target_dir . $title . "." . $extension;
-
-                    // Allow certain file formats
-                    if($extension != "jpg" && $extension != "png" && $extension != "jpeg")
-                    {
-                        echo "<script>alert('Sorry, only JPG, JPEG, & PNG files are allowed!');";
-                        echo "window.location.href = 'add-post.php';</script>";
-                    }
-
-                    // Check file size
-                    if ($_FILES["postImage"]["size"] > 500000)
-                    {
-                        echo "<script>alert('Sorry, your picture too big');";
-                        echo "window.location.href = 'add-post.php';</script>";
-                    }
-
-                    if (move_uploaded_file($_FILES["postImage"]["tmp_name"], $newfilename))
-                    {
-                        $stmt = $conn->prepare('INSERT INTO posts (title, content, image_link, author) VALUES (?, ?, ?, ?)');
-                        $stmt->bind_param('ssss', $title, $content, $newfilename, $author);
-
-                        $stmt->execute();
-
-                        echo "<script>alert('Post added successfully!');";
-                        echo "window.location.replace('index.php');</script>";
-                    } 
-                    else
-                    {
-                        echo "<script>alert('Sorry, there was an error uploading your picture!');";
-                        echo "window.location.href = 'add-post.php';</script>";
-                    } 
-                }
-            }
+                echo "<script>alert('Post created successfully!'); window.location.replace('comp.php');</script>";
+            } 
+            else
+            {
+                echo "<script>alert('Sorry, there was an error uploading your picture!');";
+                echo "window.location.href = 'add-post.php';</script>";
+            } 
+            
+            
+            
         }
         else
         {
-            echo "<script>alert('Please fill in all the information!');";
-            echo "window.location.href = 'add-post.php';</script>";
+            echo "<script>alert('Please fill in all the information!');</script>";
         }
+        
 	}	
 
 ?>
-

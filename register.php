@@ -164,9 +164,6 @@ if(isset($_SESSION['user'])) {
 
     <?php
 
-    // Define error variables and set to empty values
-    $usernameErr = $passwordErr = $cpasswordErr = $nameErr = $courseErr = $phoneErr = "";
-
     // Login
 	if(isset($_POST['regSubmit'])) 
     {        
