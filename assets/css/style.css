@@ -30,6 +30,10 @@ button:hover {
     float: right;
 }
 
+.error {
+    color: #FF0000;
+}
+
 .logo-before,
 .password-forgot {
     color: #000000;
@@ -487,7 +491,7 @@ button:hover {
 }
 
 #sidebar .sidebar-header {
-    padding: 15px;
+    padding: 12.3px 15px;
     background: #212529;
 }
 
@@ -593,8 +597,10 @@ table.dataTable thead .disabled-sorting.sorting_desc_disabled:before {
     margin-left: 15px;
 }
 
+.td-actions {
+    min-width: 100px;
+}
 
-/* Lecturer - Student Details */
-
-
-
+.table-action {
+    padding: 0 6px;
+}

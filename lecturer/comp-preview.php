@@ -1,57 +1,9 @@
-<!doctype html>
-<html lang="en">
+<?php
+    $currentPage = 'competition name (Preview)';
 
-<head>
-    <title>
-        <?php echo $currentPage; ?> | WOKO</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <?php 
-
-$currentPage = "competition name (Preview)";
-
-    ?>
-
-    <!-- Normalize CSS -->
-    <link rel="stylesheet" href="../assets/css/normalize.css">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../assets/css/bootstrap.css">
-
-    <!-- Icon imports -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-    <!-- Own CSS -->
-    <link rel="stylesheet" href="../assets/css/style.css">
-
-    <!-- Date Range Picker -->
-    <!-- Include Required Prerequisites -->
-    <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../assets/js/moment.min.js"></script>
-
-    <!-- Include Date Range Picker -->
-    <script type="text/javascript" src="../assets/js/daterangepicker.js"></script>
-    <link rel="stylesheet" type="text/css" href="../assets/css/daterangepicker.css" />
-
-    <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-
-
-    <!-- DataTable -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.16/cr-1.4.1/fc-3.2.4/fh-3.1.3/r-2.2.1/rg-1.0.2/rr-1.2.3/sc-1.4.3/sl-1.2.4/datatables.min.css" />
-
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.16/cr-1.4.1/fc-3.2.4/fh-3.1.3/r-2.2.1/rg-1.0.2/rr-1.2.3/sc-1.4.3/sl-1.2.4/datatables.min.js"></script>
-
-
-    <!-- Visual Editor (WMWYSIWYGEditor) -->
-    <link href="../assets/css/wmwysiwygeditor.css" rel="stylesheet">
-    <script src="../assets/js/wmwysiwygeditor.min.js"></script>
-
-</head>
-
-<body>
+    require '../config.php';
+    include '../header.php';
+?>
 
     <div class="jumbotron jumbotron-fluid mb-4">
         <div class="container">
@@ -159,8 +111,7 @@ $currentPage = "competition name (Preview)";
     </div>
 
 
-    <?php
-
-include 'misc/footer.php';
-
+<?php
+    include 'misc/sub-footer.php';
+    include '../footer.php';
 ?>

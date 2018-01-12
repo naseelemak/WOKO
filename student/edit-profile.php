@@ -1,11 +1,11 @@
 <?php 
+    $currentPage = 'Edit Profile';
 
-require '../config.php';
+    require '../config.php';
 
-$currentPage = "Edit Profile";
-
-include 'misc/header.php';
-
+    include '../header.php';
+    
+    include 'misc/navbar.php';
 ?>
 
 <div class="jumbotron jumbotron-fluid mb-4">
@@ -95,19 +95,10 @@ include 'misc/header.php';
         <button type="submit" class="btn btn-primary mr-1" role="button">Submit</button>
         <a class="btn btn-secondary" href="profile.php" style="padding-left: 15px; padding-right: 15px;">Cancel</a>
     </div>
-
-
 </div>
-
-<script>
-    $(document).ready(function() {
-        $('[data-toggle="tooltip"]').tooltip();
-    });
-
-</script>
 
 <?php
 
-include 'misc/footer.php';
+include '../footer.php';
 
 ?>

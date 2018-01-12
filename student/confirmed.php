@@ -1,11 +1,11 @@
 <?php 
+    $currentPage = 'Account Verified';
 
-require '../config.php';
+    require '../config.php';
 
-$currentPage = "Account Verified";
-
-include 'misc/header.php';
-
+    include '../header.php';
+    
+    include 'misc/navbar.php';
 ?>
 
 <div class="container mt-3">
@@ -29,6 +29,6 @@ include 'misc/header.php';
 
 <?php
 
-include 'misc/footer.php';
+include '../footer.php';
 
 ?>

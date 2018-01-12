@@ -1,14 +1,11 @@
 <?php 
+    $currentPage = 'E-Genting Programming Competition 2017';
 
-require '../config.php';
+    require '../config.php';
 
-require '../config.php';
-
-$currentPage = "E-Genting Programming Competition 2017";
-
-include 'misc/restrict-comp.php';
-include 'misc/header.php';
-
+    include '../header.php';
+    
+    include 'misc/navbar.php';
 ?>
 
 <div class="jumbotron jumbotron-fluid mb-4">
@@ -114,7 +111,5 @@ include 'misc/header.php';
 </div>
 
 <?php
-
-include 'misc/footer.php';
-
+    include '../footer.php';
 ?>

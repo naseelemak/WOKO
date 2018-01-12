@@ -1,11 +1,11 @@
 <?php 
+    $currentPage = 'Change Password';
 
-require '../config.php';
+    require '../config.php';
 
-$currentPage = "Change Password";
-
-include 'misc/header.php';
-
+    include '../header.php';
+    
+    include 'misc/navbar.php';
 ?>
 
 <div class="jumbotron jumbotron-fluid mb-4">
@@ -16,7 +16,7 @@ include 'misc/header.php';
     </div>
 </div>
 
-<div class="container mt-3 mb-1">
+<div class="container mt-5 mb-1">
     <div class="row">
         <div class="col-md-6">
             <form>
@@ -27,7 +27,7 @@ include 'misc/header.php';
 
                 <!-- New Password -->
                 <label for="inputPassword">New Password</label>
-                <input type="password" class="form-control mb-2" id="inputPassword" placeholder="Password">
+                <input type="password" class="form-control mb-4" id="inputPassword" placeholder="Password">
 
                 <!-- New Password Confirmation -->
                 <label for="inputPassword">Confirm Password</label>
@@ -48,7 +48,5 @@ include 'misc/header.php';
 
 
 <?php
-
-include 'misc/footer.php';
-
+    include '../footer.php';
 ?>

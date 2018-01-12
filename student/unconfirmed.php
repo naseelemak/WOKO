@@ -1,11 +1,11 @@
 <?php 
+    $currentPage = 'Verify Account';
 
-require '../config.php';
+    require '../config.php';
 
-$currentPage = "Verify Account";
-
-include 'misc/header.php';
-
+    include '../header.php';
+    
+    include 'misc/navbar.php';
 ?>
 
 <div class="container mt-3">
@@ -32,7 +32,5 @@ include 'misc/header.php';
 
 
 <?php
-
-include 'misc/footer.php';
-
+    include '../footer.php';
 ?>

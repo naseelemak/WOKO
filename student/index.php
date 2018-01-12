@@ -1,11 +1,11 @@
 <?php 
+    $currentPage = 'Home';
 
-require '../config.php';
+    require '../config.php';
 
-$currentPage = "Home";
-
-include 'misc/header.php';
-
+    include '../header.php';
+    
+    include 'misc/navbar.php';
 ?>
 
 
@@ -363,7 +363,5 @@ include 'misc/header.php';
 
 
 <?php
-
-include 'misc/footer.php';
-
+    include '../footer.php';
 ?>

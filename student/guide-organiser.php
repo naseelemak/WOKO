@@ -1,11 +1,11 @@
 <?php 
+    $currentPage = 'Organiser Guide';
 
-require '../config.php';
+    require '../config.php';
 
-$currentPage = "Organiser Guide";
-
-include 'misc/header.php';
-
+    include '../header.php';
+    
+    include 'misc/navbar.php';
 ?>
 
 <div class="jumbotron jumbotron-fluid mb-4">
@@ -18,8 +18,9 @@ include 'misc/header.php';
 
 <div class="container mt-3">
 
-    <h4>Getting your competition featured on WOKO:</h4>
+    <h4 class="mb-4">Getting your competition featured on WOKO:</h4>
     <hr>
+    <br>
     <div class="row text-center">
         <div class="col-lg-4 col-md-6 mb-2">
             <img src="http://placehold.it/300x300/f6a5c0/ffffff?text=1" class="guide-steps">
@@ -29,7 +30,7 @@ include 'misc/header.php';
         <div class="col-lg-4 col-md-6 mb-2">
             <img src="http://placehold.it/300x300/f48eb1/ffffff?text=2" class="guide-steps">
             <h4>Step 2</h4>
-            <p class="text-muted">Enter your personal or organisation details and select the cartegory "Competition Invite".</p>
+            <p class="text-muted">Enter your personal or organisation details and select the category "Competition Invite".</p>
         </div>
         <div class="col-lg-4 col-md-6 mb-2">
             <img src="http://placehold.it/300x300/f178a1/ffffff?text=3" class="guide-steps">
@@ -43,9 +44,6 @@ include 'misc/header.php';
         </div>
     </div>
 
-
-    <?php
-
-include 'misc/footer.php';
-
+<?php
+    include '../footer.php';
 ?>

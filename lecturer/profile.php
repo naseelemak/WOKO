@@ -1,18 +1,18 @@
-<?php 
+<?php
+    $currentPage = "Profile";
 
-require '../config.php';
+    require '../config.php';
 
-$currentPage = "Profile";
+    include '../header.php';
 
-include 'misc/header.php';
-
+    include 'misc/sidebar.php';
+    include 'misc/navbar.php';
 ?>
 
 
-<div class="container lec-profile">
-
-    <div class="row">
-        <div class="col-md-6 ml-4">
+<div class="container">
+    <div class="row px-2">
+        <div class="col-md-6">
             <h4 class="mb-4">Personal Details</h4>
 
             <form>
@@ -43,7 +43,7 @@ include 'misc/header.php';
             </form>
 
             <div class="float-right mb-4">
-                <a class="btn btn-primary" href="edit-profile.php" style="padding-left: 30px; padding-right: 30px;">Edit Profile</a>&nbsp;&nbsp;
+                <a class="btn btn-primary" href="edit-profile.php" style="padding-left: 30px; padding-right: 30px;">Edit Profile</a>
             </div>
         </div>
         <div class="col-md-6"></div>
@@ -52,7 +52,6 @@ include 'misc/header.php';
 
 
 <?php
-
-include 'misc/footer.php';
-
+    include 'misc/sub-footer.php';
+    include '../footer.php';
 ?>

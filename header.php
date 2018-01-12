@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>
+        <?php echo $currentPage; ?> | WOKO</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+
+    <!-- Icon imports -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- Own CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/js/moment.min.js"></script>
+
+    <!-- Date Range Picker -->
+    <script type="text/javascript" src="../assets/js/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="../assets/css/daterangepicker.css" />
+
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- BootstrapTable -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+    
+    <!-- Visual Editor (WMWYSIWYGEditor) -->
+    <link href="../assets/css/wmwysiwygeditor.css" rel="stylesheet">
+    <script src="../assets/js/wmwysiwygeditor.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
+
+</head>
+
+<body>

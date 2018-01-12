@@ -1,11 +1,11 @@
 <?php 
+    $currentPage = 'Student Guide';
 
-require '../config.php';
+    require '../config.php';
 
-$currentPage = "Student Guide";
-
-include 'misc/header.php';
-
+    include '../header.php';
+    
+    include 'misc/navbar.php';
 ?>
 
 <div class="jumbotron jumbotron-fluid mb-4">
@@ -18,8 +18,9 @@ include 'misc/header.php';
 
 <div class="container mt-3">
 
-    <h4>Getting started with WOKO:</h4>
+    <h4 class="mb-4">Getting started with WOKO:</h4>
     <hr>
+    <br>
     <div class="row text-center">
         <div class="col-lg-4 col-md-6 mb-2">
             <img src="http://placehold.it/300x300/f6a5c0/ffffff?text=1" class="guide-steps">
@@ -54,8 +55,6 @@ include 'misc/header.php';
     </div>
 
 
-    <?php
-
-include 'misc/footer.php';
-
+<?php
+    include '../footer.php';
 ?>

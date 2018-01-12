@@ -1,5 +1,6 @@
 <div class="wrapper">
-    <!-- Sidebar Holder -->
+
+    <!-- Sidebar -->
     <nav id="sidebar">
         <div class="sidebar-header">
             <a href="comp.php">
@@ -19,12 +20,12 @@
                 <a href="stud.php">Students</a>
             </li>
 
-                <hr class="d-lg-none d-xl-none">
+            <hr class="d-lg-none d-xl-none">
 
-                <li class="d-lg-none d-xl-none">
-                    <a href="#">Profile</a>
-                    <a href="#">Change Password</a>
-                    <a href="../logout.php" class="dropdown-item">Logout</a>
-                </li>
+            <li class="d-lg-none d-xl-none">
+                <a href="profile.php">Profile</a>
+                <a href="change-password.php">Change Password</a>
+                <a href="../logout.php" class="dropdown-item">Logout</a>
+            </li>
         </ul>
     </nav>

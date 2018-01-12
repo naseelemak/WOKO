@@ -1,11 +1,11 @@
 <?php 
+    $currentPage = 'Email Verification';
 
-require '../config.php';
+    require '../config.php';
 
-$currentPage = "Email Verification";
-
-include 'misc/header.php';
-
+    include '../header.php';
+    
+    include 'misc/navbar.php';
 ?>
 
 <div class="container mt-3">
@@ -33,6 +33,6 @@ include 'misc/header.php';
 
 <?php
 
-include 'misc/footer.php';
+include '../footer.php';
 
 ?>

@@ -1,11 +1,11 @@
 <?php 
+    $currentPage = 'Competitions';
 
-require '../config.php';
+    require '../config.php';
 
-$currentPage = "Competitions";
-
-include 'misc/header.php';
-
+    include '../header.php';
+    
+    include 'misc/navbar.php';
 ?>
 
 <div class="jumbotron jumbotron-fluid mb-4">
@@ -233,16 +233,11 @@ include 'misc/header.php';
                     </div>
                 </div>
             </a>
-
-
         </div>
-
     </div>
 </div>
 
 
 <?php
-
-include 'misc/footer.php';
-
+    include '../footer.php';
 ?>

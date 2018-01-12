@@ -1,17 +1,18 @@
-<?php 
+<?php
 
-require '../config.php';
+    $currentPage = 'Change Password';
 
-$currentPage = "Competitions";
+    require '../config.php';
 
-include 'misc/header.php';
+    include '../header.php';
 
+    include 'misc/sidebar.php';
+    include 'misc/navbar.php';
 ?>
 
-
 <div class="container">
-    <div class="row">
-        <div class="col-md-6 ml-4">
+    <div class="row px-2">
+        <div class="col-md-6">
             
             <h4 class="mb-4">Change Password</h4>
             <form>
@@ -40,9 +41,7 @@ include 'misc/header.php';
 
 </div>
 
-
 <?php
-
-include 'misc/footer.php';
-
+    include 'misc/sub-footer.php';
+    include '../footer.php';
 ?>
