@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row px-2">
             <div class="col-md-12">
-                <form id="compCreateForm" method="post" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]);?>">
+                <form id="compCreateForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                     <!-- Title -->
                     <div class="form-group">
                         <label for="compTitle">Title</label>
@@ -34,10 +34,17 @@
 
                         </script>
                     </div>
+                    
+                    <!-- Short Description -->
+                    <div class="form-group">
+                        <label for="compDesc">Short Description</label>
+                        <i class="fa fa-question-circle text-muted" data-toggle="tooltip" data-placement="auto" title="To be displayed in competition cards. Maximum 250 characters." aria-hidden="true"></i>
+                        <textarea rows="3" maxlength="250" type="text" name="compDesc" id="compDesc" class="form-control mb-3" placeholder="250 Characters Max" ></textarea>
+                    </div>
 
                     <!-- Details Text Editor (Description, Prizes) -->
-                    <label for="compTextEditor">Competition Details</label>
-                    <div id="compTextEditor" name="compTextEditor" class="mb-3">
+                    <label for="compDetails">Competition Details</label>
+                    <div id="compDetails" name="compDetails" class="mb-3">
                         <h6 class="mb-2 text-muted">Description</h6>
                         <p class="card-text mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi etiam. Vitae nunc sed velit dignissim sodales ut eu sem integer. Faucibus interdum posuere lorem ipsum dolor. Curabitur gravida arcu ac tortor dignissim convallis aenean. Pulvinar pellentesque habitant morbi tristique senectus. Tellus in metus vulputate eu scelerisque felis imperdiet proin. Tincidunt dui ut ornare lectus sit amet est. In hendrerit gravida rutrum quisque non tellus. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut. Dui sapien eget mi proin. Purus viverra accumsan in nisl. Enim neque volutpat ac tincidunt vitae semper. Suspendisse potenti nullam ac tortor. Dolor morbi non arcu risus quis varius. Eget nullam non nisi est sit amet facilisis magna etiam. Sed velit dignissim sodales ut eu.</p>
 
@@ -57,10 +64,10 @@
                             <li>Day 3: 0900 - 1300</li>
                         </ul>
                     </div>
-
+                    
                     <script type="text/javascript">
                         $(document).ready(function() {
-                            $('#compTextEditor').wmwysiwyg({
+                            $('#compDetails').wmwysiwyg({
                                 toolbar_btn_size: 'sm',
                                 toolbar_btn_class: 'btn-primary',
                                 height: 350,
@@ -90,7 +97,7 @@
                     <!-- Participants -->
                     <div class="form-group">
                         <label for="compParticipants">Participants (Use a dash to represent ranges: E.g. 2-4)</label>
-                        <input type="text" class="form-control mb-3" name="compParticipants" id="compParticipants" placeholder="Number of people per team" pattern="(^[0-9]+[-]*[0-9]+$)" disabled>
+                        <input type="text" class="form-control mb-3" name="compParticipants" id="compParticipants" placeholder="Number of people per team" disabled>
 
                         <script type="text/javascript">
                             function changetextbox() {
@@ -168,13 +175,13 @@
     include '../footer.php';
 ?>
 
-        <?php
+<?php
 
-// Create Post
+    // Create Post
     if(isset($_POST['compCreateSubmit'])) 
     {
         
-        if (!empty($_POST['compTitle']) && !empty($_POST['compDates']) && !empty($_POST['compDetails']) && !empty($_POST['compType']) && !empty($_POST['compFee']) && !empty($_POST['compDeadline']) && !empty($_POST['compPoster']) && !empty($_POST['compTags']))
+        if (!empty($_POST['compTitle']) && !empty($_POST['compDates']) && !empty($_POST['compDesc']) && !empty($_POST['compDetails']) && !empty($_POST['compType']) && !empty($_POST['compFee']) && !empty($_POST['compDeadline']) && !empty($_POST['compTags']))
         {
             if (empty($_FILES['compPoster']['name']))
             {
@@ -184,8 +191,8 @@
             }
             
             $title = test_input($_POST['compTitle']);
-            $dates = test_input($_POST['compDates']);
-            $details = test_input($_POST['compDetails']);
+            $dates = test_input($_POST['compDates']); 
+            $desc = test_input($_POST['compDesc']); 
             $type = test_input($_POST['compType']);
             
             if ($_POST['compType'] == "Individual")
@@ -198,7 +205,7 @@
                 
                 if (empty($_POST['compParticipants']))
                 {
-                     echo "<script>alert('Please specify the number of participants in a team.');";
+                    echo "<script>alert('Please specify the number of participants in a team.');";
                     echo "document.getElementById('compParticipants').focus();</script>";
                     return false;
                 }
@@ -240,9 +247,9 @@
             if (move_uploaded_file($_FILES["postImage"]["tmp_name"], $newfilename))
             {
                 // Inserts details into the Posts table
-                $stmt = $conn->prepare('INSERT INTO `posts`(`title`, `dates`, `details`, `type`, `participants`, `venue`, `fee`, `deadline`, `poster`, `url`, `tags`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+                $stmt = $conn->prepare('INSERT INTO `posts`(`title`, `dates`, `short_desc`, `details`, `type`, `participants`, `venue`, `fee`, `deadline`, `poster`, `url`, `tags`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 
-                $stmt->bind_param('sssiisissss', $title, $dates, $details, $type, $participants, $venue, $fee, $deadline, $newfilename, $url, $tags);
+                $stmt->bind_param('ssssiisissss', $title, $dates, $desc, $details, $type, $participants, $venue, $fee, $deadline, $newfilename, $url, $tags);
 
                 // execute query
                 $stmt->execute();

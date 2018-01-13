@@ -35,6 +35,13 @@
                         </script>
                     </div>
 
+                    <!-- Short Description -->
+                    <div class="form-group">
+                        <label for="compDesc">Short Description</label>
+                        <i class="fa fa-question-circle text-muted" data-toggle="tooltip" data-placement="auto" title="To be displayed in competition cards. Maximum 250 characters." aria-hidden="true"></i>
+                        <textarea rows="3" maxlength="250" type="text" name="compDesc" id="compDesc" class="form-control mb-3" placeholder="250 Characters Max" ></textarea>
+                    </div>
+                    
                     <!-- Details Text Editor (Description, Prizes) -->
                     <label for="wmwysiwyg-placeholder">Competition Details</label>
                     <div id="wmwysiwyg-placeholder" class="mb-3">
