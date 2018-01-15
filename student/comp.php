@@ -28,7 +28,7 @@
 
                 <!-- Date Range Picker -->
                 <input class="form-control mb-3" type="text" name="daterange" />
-
+                
                 <script type="text/javascript">
                     $(function() {
                         $('input[name="daterange"]').daterangepicker();
