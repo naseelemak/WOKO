@@ -18,7 +18,7 @@
                     <!-- Details Text Editor (Description, Prizes) -->
                     <label for="summernote">Competition Details</label>
                     
-                    <textarea id="summernote" name="compDetails">
+                    <textarea id="summernote" name="compDetails" style="padding: 100px;">
                         <h6 class="mb-2 text-muted">Description</h6>
                         <p class="card-text mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi etiam. Vitae nunc sed velit dignissim sodales ut eu sem integer. Faucibus interdum posuere lorem ipsum dolor. Curabitur gravida arcu ac tortor dignissim convallis aenean. Pulvinar pellentesque habitant morbi tristique senectus. Tellus in metus vulputate eu scelerisque felis imperdiet proin. Tincidunt dui ut ornare lectus sit amet est. In hendrerit gravida rutrum quisque non tellus. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut. Dui sapien eget mi proin. Purus viverra accumsan in nisl. Enim neque volutpat ac tincidunt vitae semper. Suspendisse potenti nullam ac tortor. Dolor morbi non arcu risus quis varius. Eget nullam non nisi est sit amet facilisis magna etiam. Sed velit dignissim sodales ut eu.</p>
                         <h6 class="mb-2 text-muted">Prizes</h6>
@@ -37,6 +37,36 @@
                     </textarea>
                     
 
+                    <!-- Type of Competition -->
+                    <div class="form-group">
+                        <label for="compType">Type of Competition</label>
+                        <select class="form-control mb-3" name="compType" id="compType" onChange="changetextbox();">
+                        <option selected disabled>--Select--</option>
+                        <option>Individual</option>
+                        <option>Team</option>
+                    </select>
+                    </div>
+
+                    <!-- Participants -->
+                    <div class="form-group">
+                        <label for="compParticipants">Participants (Use a dash to represent ranges: E.g. 2-4)</label>
+                        <input type="text" class="form-control mb-3" name="compParticipants" id="compParticipants" placeholder="Number of people per team" disabled>
+
+                        <script type="text/javascript">
+                            function changetextbox() {
+                                if (document.getElementById("compType").value === "Individual") {
+                                    document.getElementById("compParticipants").disabled = 'true';
+                                    document.getElementById("compParticipants").value = "";
+                                } else {
+                                    document.getElementById("compParticipants").disabled = '';
+                                    document.getElementById("compParticipants").required = '';
+                                }
+                            }
+
+                        </script>
+                    </div>
+
+                    
                     <div class="float-right mt-2 mb-4">
                         <button type="submit" name="testSubmit" class="btn btn-primary mr-1" role="button">Publish</button>
                     </div>

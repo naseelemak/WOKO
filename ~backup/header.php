@@ -19,16 +19,14 @@
 
     <!-- Own CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
-    
+
 </head>
 
 <body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="../assets/js/moment.min.js"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js"></script>
-    
+
     <!-- Date Range Picker -->
     <script type="text/javascript" src="../assets/js/daterangepicker.js"></script>
     <link rel="stylesheet" type="text/css" href="../assets/css/daterangepicker.css" />
@@ -38,8 +36,10 @@
 
     <!-- BootstrapTable -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
     
-    <!-- Visual Editor (WMWYSIWYGEditor) -->
+    <!-- Visual Editor (summernote) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">

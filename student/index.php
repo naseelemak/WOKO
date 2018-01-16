@@ -74,7 +74,8 @@
 
         <?php
             
-                $stmt = $conn->prepare('SELECT * FROM posts');
+                // If number of available entries available are lower than 4, then use that number
+                $stmt = $conn->prepare('SELECT * FROM `posts` ORDER BY `id` DESC LIMIT 4');
 
                 // execute query
                 $stmt->execute();
@@ -82,12 +83,8 @@
                 // Get the result
                 $result = $stmt->get_result();
 
-                // If number of available entries available are lower than 4, then use that number
-                $entries = 0;
                 while ($row = $result->fetch_assoc())
                 {                    
-                    $entries++;
-
                     echo'<div class="col-lg-6 mb-4">';
                         echo'<a href="comp-details.php?id='.$row['id'].'">';
                             echo'<div class="card">';
@@ -121,11 +118,6 @@
                             echo'</div>';
                         echo'</a>';
                     echo'</div>';
-                    
-                    if ($entries > 3)
-                    {
-                        break;
-                    }
                 }
         
                 

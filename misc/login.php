@@ -1,6 +1,9 @@
 <?php 
 
-    require 'config.php';
+    $currentPage = 'Login';
+
+    require '../config.php';
+    include '../header.php';
 
     if(isset($_SESSION['user'])) {
         if ($_SESSION['role'] == 'student')
@@ -15,30 +18,6 @@
         }
     }
 ?>
-
-<!doctype html>
-<html lang="en">
-
-<head>
-    <title>Login | WOKO</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Normalize CSS -->
-    <link rel="stylesheet" href="assets/css/normalize.css">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-
-    <!-- Own CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-
-</head>
-
-<body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
@@ -104,9 +83,13 @@
             <div class="col-md-4"></div>
         </div>
     </div>
-</body>
 
-</html>
+<?php
+
+    include '../footer.php';
+
+?>
+
 <?php
 	
     // Login
@@ -160,7 +143,7 @@
             // If result found is an unconfirmed user
             if ($row["status"] != 1)
             {
-                echo "<script>window.location.replace('student/unconfirmed.php');</script>";
+                echo "<script>window.location.replace('../student/unconfirmed.php');</script>";
                 return false;
             }
             
@@ -176,11 +159,11 @@
 
             if ($_SESSION['role'] == 'student')
             {
-                echo "window.location.replace('student/index.php');</script>";
+                echo "window.location.replace('../student/index.php');</script>";
             }
             else
             {
-                echo "window.location.replace('lecturer/comp.php');</script>";
+                echo "window.location.replace('../lecturer/comp.php');</script>";
             }
         }
         else
@@ -190,7 +173,9 @@
         }
 	}	
  
-    function test_input($data) {
+    // Cleans input
+    function test_input($data) 
+    {
         $data = trim($data);
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
