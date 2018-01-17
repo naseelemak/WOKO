@@ -1,12 +1,11 @@
 <?php
-
     $currentPage = 'competition name';
 
     require '../config.php';
+    require '../restrict/restrict-login.php';
 
     include '../header.php';
 
-    include 'misc/sidebar.php';
     include 'misc/navbar.php';
 ?>
 

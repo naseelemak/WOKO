@@ -22,12 +22,12 @@
                 
                 echo '<div class="homepage-btn-area">
                     <!-- Login Button -->
-                    <a class="btn btn-primary btn-lg homepage-btn" href="../login.php" role="button">Login</a>
+                    <a class="btn btn-primary btn-lg homepage-btn" href="../misc/login.php" role="button">Login</a>
 
                     <span class="homepage-or">or</span>
 
                     <!-- Register Button -->
-                    <a class="btn btn-lg homepage-btn" href="../register.php" role="button">Register</a>
+                    <a class="btn btn-lg homepage-btn" href="../misc/register.php" role="button">Register</a>
 
                     </div>';
             }
@@ -108,8 +108,6 @@
                                                     echo'<i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;'.$row['lecturer'];
 
                                                     echo'<i class="fa fa-map-marker ml-3" aria-hidden="true"></i>&nbsp;&nbsp;'.$row['venue'];
-
-                                                    echo'<i class="fa fa-user ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Organiser';
                                                 echo'</div>';
                                             echo'</div>';
                                         echo'</div>';

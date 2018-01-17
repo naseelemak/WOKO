@@ -5,23 +5,24 @@
     require '../config.php';
     include '../header.php';
 
-    if(isset($_SESSION['user'])) {
-        if ($_SESSION['role'] == 'student')
-        {
-            echo "<script>window.location.href='student/index.php'</script>";
-            die;
-        }
-        else
-        {
-            echo "<script>window.location.href='lecturer/comp.php'</script>";
-            die;
+    if(isset($_SESSION['user'])) 
+    {
+            if ($_SESSION['role'] == 'student')
+            {
+                echo "<script>window.location.href='../student/index.php'</script>";
+                die;
+            }
+            else
+            {
+                echo "<script>window.location.href='../lecturer/comp.php'</script>";
+                die;
         }
     }
 ?>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand mr-5" href="student/index.php">WOKO</a>
+            <a class="navbar-brand mr-5" href="../student/index.php">WOKO</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

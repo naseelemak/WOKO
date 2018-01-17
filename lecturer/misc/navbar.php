@@ -20,7 +20,20 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Username
+                                    <?php
+                                        
+                                    echo '<li class="nav-item dropdown">';
+                                        echo '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hi, ' .
+                                            $_SESSION["user"] . '&nbsp;</a>';
+                                        echo '<div class="dropdown-menu" aria-labelledby="navbarDropdown">';
+                                            echo '<a class="dropdown-item" href="profile.php">Profile</a>';
+                                            echo '<a class="dropdown-item" href="change-password.php">Change Password</a>';
+                                            echo '<div class="dropdown-divider"></div>';
+                                            echo '<a href="../logout.php" class="dropdown-item">Logout</a>';
+                                        echo '</div>';
+                                    echo '</li>';
+                                    
+                                    ?>
                                 </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="profile.php">Profile</a>

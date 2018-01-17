@@ -1,22 +1,23 @@
 <?php
 
-$currentPage = 'Register';
+    $currentPage = 'Register';
 
-require '../config.php';
-include '../header.php';
+    require '../config.php';
+    include '../header.php';
 
-if(isset($_SESSION['user'])) {
-    if ($_SESSION['role'] == 'student')
+    if(isset($_SESSION['user'])) 
     {
-        echo "<script>window.location.href='student/index.php'</script>";
-        die;
+            if ($_SESSION['role'] == 'student')
+            {
+                echo "<script>window.location.href='../student/index.php'</script>";
+                die;
+            }
+            else
+            {
+                echo "<script>window.location.href='../lecturer/comp.php'</script>";
+                die;
+        }
     }
-    else
-    {
-        echo "<script>window.location.href='lecturer/comp.php'</script>";
-        die;
-    }
-}
 
 ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
