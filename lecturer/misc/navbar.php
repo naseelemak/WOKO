@@ -16,16 +16,15 @@
                 <ul class="navbar-nav mr-auto">
 
                 </ul>
-                <div class="my-2 my-lg-0 mr-5">
+                <div class="my-2 my-lg-0 ">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <?php
                                         
                                     echo '<li class="nav-item dropdown">';
                                         echo '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hi, ' .
                                             $_SESSION["user"] . '&nbsp;</a>';
-                                        echo '<div class="dropdown-menu" aria-labelledby="navbarDropdown">';
+                                        echo '<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">';
                                             echo '<a class="dropdown-item" href="profile.php">Profile</a>';
                                             echo '<a class="dropdown-item" href="change-password.php">Change Password</a>';
                                             echo '<div class="dropdown-divider"></div>';

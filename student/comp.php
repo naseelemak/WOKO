@@ -5,7 +5,6 @@
 
     include '../header.php';    
     include 'misc/navbar.php';
-
     include '../date-calc.php';
 ?>
 
@@ -48,7 +47,6 @@
 
             <?php
             
-                // If number of available entries available are lower than 4, then use that number
                 $stmt = $conn->prepare('SELECT * FROM `posts` ORDER BY `id` DESC LIMIT 10');
 
                 // execute query
@@ -57,8 +55,16 @@
                 // Get the result
                 $result = $stmt->get_result();
 
+            if ($result->num_rows == 0)
+            {
+                echo '<p class="text-muted">There are no available competitions at the moment. There will be more real soon so be sure to check this page regularly!</p>';
+            }
+            else
+            {
                 while ($row = $result->fetch_assoc())
                 {      
+                    list($month, $day, $year) = explode('/', $row['dates']);
+                    
                     echo'<a href="comp-details.php">';
                         echo'<div class="card mb-3">';
                             echo'<div class="card-body card-link">';
@@ -66,7 +72,7 @@
                                     echo'<div class="col-3 col-sm-2 card-date">';
                                         echo'<p class="card-date-month">';
                                         echo'<strong>'. calcMonth($month) .'</strong></p>';
-                                        echo'<p class="card-date-day"><strong>21</strong></p>';
+                                        echo'<p class="card-date-day"><strong>'. $day .'</strong></p>';
                                     echo'</div>';
                                     echo'<div class="col-9 col-sm-10">';
                                         echo'<h4 class="card-title">'.$row['title'].'</h4>';
@@ -85,7 +91,9 @@
                         echo'</div>';
                     echo'</a>';
                 }
-            ?>
+            }
+                
+?>
             
 <?php
     include '../footer.php';

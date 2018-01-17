@@ -4,8 +4,8 @@
     require '../config.php';
 
     include '../header.php';
-    
     include 'misc/navbar.php';
+    include '../date-calc.php';
 ?>
 
 
@@ -74,7 +74,6 @@
 
         <?php
             
-                // If number of available entries available are lower than 4, then use that number
                 $stmt = $conn->prepare('SELECT * FROM `posts` ORDER BY `id` DESC LIMIT 4');
 
                 // execute query
@@ -83,42 +82,49 @@
                 // Get the result
                 $result = $stmt->get_result();
 
-                while ($row = $result->fetch_assoc())
-                {                    
-                    echo'<div class="col-lg-6 mb-4">';
-                        echo'<a href="comp-details.php?id='.$row['id'].'">';
-                            echo'<div class="card">';
-                                echo'<div class="img-container">';
-                                    echo'<img class="card-img-top" src="'.$row['poster'].'" alt="Card image cap">';
-                                echo'</div>';
-                                echo'<div class="card-body card-link">';
-                                    echo'<div class="row">';
-                                        echo'<div class="col-3 col-sm-2 card-date">';
-                                            echo'<p class="card-date-month"><strong>DEC</strong></p>';
-                                            echo'<p class="card-date-day"><strong>21</strong></p>';
-                                        echo'</div>';
-                                        echo'<div class="col-9 col-sm-10">';
-                                            echo'<h4 class="card-title line-clamp line-clamp-1">'.$row['title'].'</h4>';
-                                            echo'<p class="card-text line-clamp line-clamp-2">'.$row['short_desc'].'</p>'; 
-                                        echo'</div>';
-                                        echo'<div class="col-12">';
-                                            echo'<hr>';
-                                            echo'<div class="comp-card-footer">';
-                                                echo'<div class="text-muted ml-3">';
-                                                    echo'<i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;'.$row['lecturer'];
+                if ($result->num_rows == 0)
+                {
+                    echo '<p class="text-muted ml-3">There are no available competitions at the moment. There will be more real soon so be sure to check this page regularly!</p>';
+                }
+                else
+                {
+                    while ($row = $result->fetch_assoc())
+                    {                    
+                        list($month, $day, $year) = explode('/', $row['dates']);
+                        
+                        echo'<div class="col-lg-6 mb-4">';
+                            echo'<a href="comp-details.php?id='.$row['id'].'">';
+                                echo'<div class="card">';
+                                    echo'<div class="img-container">';
+                                        echo'<img class="card-img-top" src="'.$row['poster'].'" alt="Card image cap">';
+                                    echo'</div>';
+                                    echo'<div class="card-body card-link">';
+                                        echo'<div class="row">';
+                                            echo'<div class="col-3 col-sm-2 card-date">';
+                                                echo'<p class="card-date-month"><strong>'. calcMonth($month) .'</strong></p>';
+                                                echo'<p class="card-date-day"><strong>'. $day .'</strong></p>';
+                                            echo'</div>';
+                                            echo'<div class="col-9 col-sm-10">';
+                                                echo'<h4 class="card-title line-clamp line-clamp-1">'.$row['title'].'</h4>';
+                                                echo'<p class="card-text line-clamp line-clamp-2">'.$row['short_desc'].'</p>'; 
+                                            echo'</div>';
+                                            echo'<div class="col-12">';
+                                                echo'<hr>';
+                                                echo'<div class="comp-card-footer">';
+                                                    echo'<div class="text-muted ml-3">';
+                                                        echo'<i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;'.$row['lecturer'];
 
-                                                    echo'<i class="fa fa-map-marker ml-3" aria-hidden="true"></i>&nbsp;&nbsp;'.$row['venue'];
+                                                        echo'<i class="fa fa-map-marker ml-3" aria-hidden="true"></i>&nbsp;&nbsp;'.$row['venue'];
+                                                    echo'</div>';
                                                 echo'</div>';
                                             echo'</div>';
                                         echo'</div>';
                                     echo'</div>';
                                 echo'</div>';
-                            echo'</div>';
-                        echo'</a>';
-                    echo'</div>';
+                            echo'</a>';
+                        echo'</div>';
+                    }
                 }
-        
-                
         ?>
         
     </div>

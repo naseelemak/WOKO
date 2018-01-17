@@ -23,7 +23,7 @@
                     <!-- Date Range Picker -->
                     <div class="form-group">
                         <label for="compDates">Competition Date(s)</label>
-                        <i class="fa fa-question-circle text-muted" data-toggle="tooltip" data-placement="auto" title="For one day events, select the same date on both sides" aria-hidden="true"></i>
+                        <i class="fa fa-question-circle text-muted" data-toggle="tooltip" data-placement="auto" title="For one day events, select the same date twice" aria-hidden="true"></i>
                         <input class="form-control mb-3" name="compDates" id="compDates" type="text" required>
                     </div>
 
@@ -182,24 +182,14 @@
 
     <script type="text/javascript">
         $().ready(function() {
-            $.validator.addMethod('regID', function(value) {
-                return /[Tt]{1}[Pp]{1}[0-9]{6}\b/.test(value);
-            }, 'Please enter a valid TP number.');
-
-            $.validator.addMethod('regName', function(value) {
-                return /^[a-zA-Z\-]+$/.test(value);
-            }, 'Please enter only letters and hyphens.');
+            $.validator.addMethod('compParticipants', function(value) {
+                return /^[0-9]+$|^[0-9]+-[0-9]+$/.test(value);
+            }, 'Please follow the specified format (e.g. 2-4).');
             
-            $.validator.addMethod('regPhone', function(value) {
-                return /^[0-9]{10,12}$/.test(value);
-            }, 'Please enter a valid phone number.');
-
             // Validate signup form on keyup and submit
             $("#compCreateForm").validate({
                 rules: {
-                    regID: "required regID",
-                    regName: "required regName",
-                    regPhone: "required regPhone",
+                    compParticipants: "required compParticipants",
                 },
             });
         });

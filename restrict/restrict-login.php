@@ -1,11 +1,22 @@
-<?php 
+<!doctype html>
+<html lang="en">
 
-    $currentPage = 'Access Denied';
+<head>
+    <title>Access Denied | WOKO</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    include '../header.php';
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="../assets/css/normalize.css">
 
-?>
-
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    
+    <!-- Own CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+</head>
 
 <?php
 
