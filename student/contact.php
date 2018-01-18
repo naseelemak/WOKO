@@ -1,7 +1,7 @@
 <?php 
     $currentPage = 'Contact Us';
 
-    require '../config.php';
+    
     require '../restrict/restrict.php';
 
     include '../header.php';

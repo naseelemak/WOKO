@@ -1,7 +1,7 @@
 <?php
     $currentPage = "Students";
 
-    require '../config.php';
+    
     require '../restrict/restrict.php';
 
     include '../header.php';

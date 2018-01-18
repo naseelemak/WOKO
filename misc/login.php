@@ -2,7 +2,7 @@
 
     $currentPage = 'Login';
 
-    require '../config.php';
+    
     include '../header.php';
 
     if(isset($_SESSION['user'])) 

@@ -2,7 +2,7 @@
 
     $currentPage = 'Create Post';
 
-    require '../config.php';
+    
     require '../restrict/restrict.php';
 
     include '../header.php';

@@ -1,7 +1,7 @@
 <?php
     $currentPage = 'competition name (Preview)';
 
-    require '../config.php';
+    
     require '../restrict/restrict.php';
 
     include '../header.php';

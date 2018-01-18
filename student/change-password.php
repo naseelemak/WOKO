@@ -1,7 +1,7 @@
 <?php 
     $currentPage = 'Change Password';
 
-    require '../config.php';
+    
     require '../restrict/restrict.php';
 
     include '../header.php';

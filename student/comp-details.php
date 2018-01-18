@@ -1,5 +1,5 @@
 <?php 
-    require '../config.php';
+    
     require '../restrict/restrict.php';
 
     $stmt = $conn->prepare('SELECT * FROM `posts` WHERE `id` = ?');

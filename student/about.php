@@ -1,7 +1,7 @@
 <?php 
     $currentPage = 'About WOKO';
 
-    require '../config.php';
+    
     require '../restrict/restrict.php';
 
     include '../header.php';

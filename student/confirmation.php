@@ -1,7 +1,7 @@
 <?php 
     $currentPage = 'Email Verification';
 
-    require '../config.php';
+    
     require '../restrict/restrict.php';
 
     include '../header.php';

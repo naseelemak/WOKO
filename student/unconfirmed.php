@@ -1,7 +1,7 @@
 <?php 
     $currentPage = 'Verify Account';
 
-    require '../config.php';
+    
     require '../restrict/restrict.php';
 
     include '../header.php';
