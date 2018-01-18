@@ -2,8 +2,7 @@
     $currentPage = 'Edit Profile';
 
     require '../config.php';
-    require '../restrict/restrict-stu.php';
-    require '../restrict/restrict-login.php';
+    require '../restrict/restrict.php';
 
     include '../header.php';
     

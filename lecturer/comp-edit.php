@@ -2,7 +2,7 @@
     $currentPage = 'Edit Post';
     
     require '../config.php';
-    require '../restrict/restrict-lec.php';
+    require '../restrict/restrict.php';
 
     include '../header.php';
     include 'misc/sidebar.php';

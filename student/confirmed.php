@@ -2,7 +2,7 @@
     $currentPage = 'Account Verified';
 
     require '../config.php';
-    require '../restrict/restrict-stu.php';
+    require '../restrict/restrict.php';
 
     include '../header.php';
     

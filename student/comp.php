@@ -2,7 +2,7 @@
     $currentPage = 'Competitions';
 
     require '../config.php';
-    require '../restrict/restrict-stu.php';
+    require '../restrict/restrict.php';
 
     include '../header.php';    
     include 'misc/navbar.php';
@@ -66,7 +66,7 @@
                 {      
                     list($month, $day, $year) = explode('/', $row['dates']);
                     
-                    echo'<a href="comp-details.php">';
+                    echo'<a href="comp-details.php?id='.$row['id'].'">';
                         echo'<div class="card mb-3">';
                             echo'<div class="card-body card-link">';
                                 echo'<div class="row">';

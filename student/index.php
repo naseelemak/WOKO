@@ -2,7 +2,7 @@
     $currentPage = 'Home';
 
     require '../config.php';
-    require '../restrict/restrict-stu.php';
+    require '../restrict/restrict.php';
 
     include '../header.php';
     include 'misc/navbar.php';
