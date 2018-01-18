@@ -21,7 +21,7 @@
 <?php
 
 // If role is not student or if user is not logged in, redirect back to previous page
-if (!isset($_SESSION['user']) || $_SESSION['role'] != 'student')
+if (!isset($_SESSION['user']))
 {
     echo '<div class="container mt-3">';
         echo '<div class="row mt-5">';
@@ -29,13 +29,13 @@ if (!isset($_SESSION['user']) || $_SESSION['role'] != 'student')
             echo '<div class="col-md-8">';
                 echo '<div class="card" style="width: 100%;">';
                     echo '<div class="card-body">';
-                        echo '<h4 class="card-title">Hold Up!</h4>';
-                        echo '<h6 class="card-subtitle mb-2 text-muted">You do not have permission to view this page.</h6>';
-                        echo '<p class="card-text">Please <a href="../misc/login.php">login</a> first to your student account. If you have not registered, click <a href="../misc/register.php">here</a> to do so.</p>';
+                        echo '<h4 class="card-title">Hello guest!</h4>';
+                        echo '<h6 class="card-subtitle mb-2 text-muted">You do not have permission to view this page</h6>';
+                        echo '<p class="card-text">To view this page, please <a href="../misc/login.php">login</a> to a student account or <a href="../misc/register.php">register</a> if you haven\'t yet.</p>';
 
                         echo '<p>Just looking around? Click <a href="../student/index.php">here</a> to return home.</p>';
                     
-                        echo '<p>Redirecting to previous page in <span id="countdown">10</span> seconds.</p>';
+                        echo '<p>Redirecting to previous <a href="javascript:history.back()">page</a> in <span id="countdown">7</span> seconds...</p>';
     
                     echo '</div>';
                 echo '</div>';
@@ -48,7 +48,7 @@ if (!isset($_SESSION['user']) || $_SESSION['role'] != 'student')
         <script type="text/javascript">
 
         (function countdown () {
-            var timeLeft = 10,
+            var timeLeft = 7,
                 cinterval;
 
             var timeDec = function (){

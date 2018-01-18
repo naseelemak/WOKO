@@ -2,6 +2,8 @@
     $currentPage = 'competition name (Preview)';
 
     require '../config.php';
+    require '../restrict/restrict-lec.php';
+
     include '../header.php';
 ?>
 

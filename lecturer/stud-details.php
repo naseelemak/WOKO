@@ -2,9 +2,9 @@
     $currentPage = "Student Details";
 
     require '../config.php';
+    require '../restrict/restrict-lec.php';
 
     include '../header.php';
-
     include 'misc/sidebar.php';
     include 'misc/navbar.php';
 ?>

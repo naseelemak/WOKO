@@ -2,6 +2,7 @@
     $currentPage = 'Student Guide';
 
     require '../config.php';
+    require '../restrict/restrict-stu.php';
 
     include '../header.php';
     

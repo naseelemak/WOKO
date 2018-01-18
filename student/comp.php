@@ -2,6 +2,7 @@
     $currentPage = 'Competitions';
 
     require '../config.php';
+    require '../restrict/restrict-stu.php';
 
     include '../header.php';    
     include 'misc/navbar.php';
@@ -71,8 +72,8 @@
                                 echo'<div class="row">';
                                     echo'<div class="col-3 col-sm-2 card-date">';
                                         echo'<p class="card-date-month">';
-                                        echo'<strong>'. calcMonth($month) .'</strong></p>';
-                                        echo'<p class="card-date-day"><strong>'. $day .'</strong></p>';
+                                        echo'<strong>'. calcMonth($month).'</strong></p>';
+                                        echo'<p class="card-date-day"><strong>'.$day.'</strong></p>';
                                     echo'</div>';
                                     echo'<div class="col-9 col-sm-10">';
                                         echo'<h4 class="card-title">'.$row['title'].'</h4>';

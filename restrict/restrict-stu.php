@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <title>Access Denied | WOKO</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,8 +20,10 @@
 <?php
 
 // If role is not student or if user is not logged in, redirect back to previous page
-if (!isset($_SESSION['user']) || $_SESSION['role'] != 'lecturer')
+if (isset($_SESSION['user']) && $_SESSION['role'] != 'student')
 {
+    $currentPage = 'Access Denied';
+    
     echo '<div class="container mt-3">';
         echo '<div class="row mt-5">';
             echo '<div class="col-md-2"></div>';
@@ -31,9 +32,9 @@ if (!isset($_SESSION['user']) || $_SESSION['role'] != 'lecturer')
                     echo '<div class="card-body">';
                         echo '<h4 class="card-title">Hold Up!</h4>';
                         echo '<h6 class="card-subtitle mb-2 text-muted">You do not have permission to view this page.</h6>';
-                        echo '<p class="card-text">Please <a href="../logout.php">logout</a> and sign in to a lecturer account first.</p>';
+                        echo '<p class="card-text">Please <a href="../logout.php">logout</a> and sign in to a student account first.</p>';
 
-                        echo '<p>Just looking around? Click <a href="../student/index.php">here</a> to return home.</p>';
+                        echo '<p>Just looking around? Click <a href="../lecturer/comp.php">here</a> to return home.</p>';
                     
                         echo '<p>Redirecting to previous <a href="javascript:history.back()">page</a> in <span id="countdown">7</span> seconds...</p>';
     

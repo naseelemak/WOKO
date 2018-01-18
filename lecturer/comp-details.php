@@ -2,10 +2,9 @@
     $currentPage = 'competition name';
 
     require '../config.php';
-    require '../restrict/restrict-login.php';
+    require '../restrict/restrict-lec.php';
 
     include '../header.php';
-
     include 'misc/navbar.php';
 ?>
 

@@ -160,7 +160,7 @@
 
             if ($_SESSION['role'] == 'student')
             {
-                echo "window.location.replace('../student/index.php');</script>";
+                echo "window.history.go(-2);</script>";
             }
             else
             {

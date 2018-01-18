@@ -2,6 +2,7 @@
     $currentPage = 'Email Verification';
 
     require '../config.php';
+    require '../restrict/restrict-stu.php';
 
     include '../header.php';
     

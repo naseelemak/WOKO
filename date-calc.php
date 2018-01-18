@@ -1,47 +1,51 @@
 <?php
 
+    function echoMonth()
+    {
+        echo "JAN";
+    }
+        
     function calcMonth($month) 
     {
         switch ($month) 
         {
             case "01":
-                echo "JAN";
+                return "Jan";
                 break;
             case "02":
-                echo "FEB";
+                return "FEB";
                 break;
             case "03":
-                echo "MAR";
+                return "MAR";
                 break;
             case "04":
-                echo "APR";
+                return "APR";
                 break;
             case "05":
-                echo "MAY";
+                return "MAY";
                 break;
             case "06":
-                echo "JUN";
+                return "JUN";
                 break;
             case "07":
-                echo "JUL";
+                return "JUL";
                 break;
             case "08":
-                echo "AUG";
+                return "AUG";
                 break;
             case "09":
-                echo "SEP";
+                return "SEP";
                 break;
             case "10":
-                echo "OCT";
+                return "OCT";
                 break;
             case "11":
-                echo "NOV";
+                return "NOV";
                 break;
             case "12":
-                echo "DEC";
+                return "DEC";
                 break;
             default:
-                echo "###";
         }
     } 
 
