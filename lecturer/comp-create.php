@@ -2,7 +2,6 @@
 
     $currentPage = 'Create Post';
 
-    
     require '../restrict/restrict.php';
 
     include '../header.php';
@@ -17,6 +16,7 @@
                     <!-- Title -->
                     <div class="form-group">
                         <label for="compTitle">Title</label>
+                        <i class="fa fa-question-circle text-muted" data-toggle="tooltip" data-placement="auto" title="Title cannot be changed once event is created" aria-hidden="true"></i>
                         <input type="text" name="compTitle" id="compTitle" class="form-control mb-3" required>
                     </div>
 
@@ -75,13 +75,13 @@
                     <!-- Venue -->
                     <div class="form-group">
                         <label for="compVenue">Venue</label>
-                        <input type="text" name="compVenue" id="compVenue" class="form-control mb-3" id="inputTitle" placeholder="E.g. Mid Valley" required>
+                        <input type="text" name="compVenue" id="compVenue" class="form-control mb-3" placeholder="E.g. Mid Valley" required>
                     </div>
 
                     <!-- Registration Fee -->
                     <div class="form-group">
                         <label for="compFee">Registration Fee (MYR)</label>
-                        <input type="number" name="compFee" id="compFee" class="form-control mb-3" min="0" id="inputTitle" placeholder="Per individual / team" required>
+                        <input type="number" name="compFee" id="compFee" class="form-control mb-3" min="0" placeholder="Per individual / team" required>
                     </div>
 
                     <!-- Registration Deadline-->
@@ -127,7 +127,12 @@
     <!-- Competition Dates Date Range Picker -->
     <script type="text/javascript">
         $(function() {
-            $('input[name="compDates"]').daterangepicker();
+            $('input[name="compDates"]').daterangepicker({
+                "locale": {
+                        "format": "DD/MM/YYYY",
+                    },                
+            });
+            
         });
 
     </script>
@@ -173,6 +178,9 @@
     <script type="text/javascript">
         $(function() {
             $('input[name="compDeadline"]').daterangepicker({
+                     "locale": {
+                        "format": "DD/MM/YYYY",
+                    },
                     singleDatePicker: true,
                     showDropdowns: true
                 },

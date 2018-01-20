@@ -1,12 +1,22 @@
 <?php
     $currentPage = "Competitions";
 
-    
-    require '../restrict/restrict.php';
+    require '../config.php';
+//    require '../restrict/restrict.php';
 
     include '../header.php';
     include 'misc/sidebar.php';
     include 'misc/navbar.php';
+
+    $stmt = $conn->prepare('SELECT * FROM `posts` WHERE `lecturer` = ? ORDER BY `id` DESC');
+
+    $stmt->bind_param('s', $_SESSION['user']);
+
+    // execute query
+    $stmt->execute();
+
+    // Get the result
+    $result = $stmt->get_result();
 ?>
 
 <div class="container">
@@ -21,23 +31,43 @@
                             <th data-field="comp">Competition</th>
                             <th data-field="reg-deadline">Registration Deadline</th>
                             <th data-field="comp-date">Competition Date</th>
-                            <th data-field="actions" class="td-actions text-center" data-events="operateEvents" data-formatter="operateFormatter">Actions</th>
+                            <th data-field="actions" class="td-actions text-center">Actions</th>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>EXACT Hackathon</td>
-                                <td>11/01/2018</td>
-                                <td>21/01/2018</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Binary Competition</td>
-                                <td>11/01/2018</td>
-                                <td>21/01/2018</td>
-                                <td></td>
-                            </tr>
+                            <?php
+                            
+                                while ($row = $result->fetch_assoc())
+                                {
+                                    list($date1, $date2) = explode(' - ', $row['dates']);
+                                    list($day, $month, $year) = explode('/', $date1);
+                                    list($day2,$month2, $year2) = explode('/', $date2);
+                                    
+                                    echo '<tr>';
+                                        echo '<td>'. $row['id'] .'</td>';
+                                        echo '<td>'. $row['title'] .'</td>';
+                                        echo '<td>'. $row['deadline'] .'</td>';
+                                    
+                                        if ($month == $month2 && $day == $day2 && $year == $year2)
+                                        {
+                                            echo '<td>'. $date1 .'</td>';
+                                        }
+                                        else
+                                        {
+                                            echo '<td>'. $row['dates'] .'</td>';
+                                        }
+                                        echo '<td><a rel="tooltip" title="View" class="table-action" href="comp-details.php?id='.$row['id'].'">
+                                        <i class="fa fa-eye"></i>
+                                        </a>
+                                        <a rel="tooltip" title="Edit" class="table-action" href="comp-edit.php?id='.$row['id'].'">
+                                        <i class="fa fa-edit text-warning"></i>
+                                        </a>
+                                        <a rel="tooltip" title="Delete" class="table-action" href="comp-delete.php?id='.$row['id'].'" onclick="return checkDelete()">
+                                        <i class="fa fa-close text-danger"></i>
+                                        </a></td>';
+                                    echo '</tr>';
+                                }
+                            
+                            ?>
 
                         </tbody>
                     </table>
@@ -52,23 +82,16 @@
     include '../footer.php';
 ?>
 
+<!-- Delete confirmation -->
+<script language="JavaScript" type="text/javascript">
+function checkDelete(){
+    return confirm('Are you sure you want to delete this post? Once deleted, it cannot be recovered.');
+}
+</script>
+
 <script type="text/javascript">
     //bootstrapTable
     var $table = $('#bootstrap-table');
-
-    function operateFormatter(value, row, index) {
-        return [
-            '<a rel="tooltip" title="View" class="table-action" href="comp-details.php">',
-            '<i class="fa fa-eye"></i>',
-            '</a>',
-            '<a rel="tooltip" title="Edit" class="table-action" href="comp-details.php">',
-            '<i class="fa fa-edit text-warning"></i>',
-            '</a>',
-            '<a rel="tooltip" title="Delete" class="table-action" href="comp-details.php">',
-            '<i class="fa fa-close text-danger"></i>',
-            '</a>'
-        ].join('');
-    }
 
     $().ready(function() {
 

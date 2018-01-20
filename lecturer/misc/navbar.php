@@ -20,6 +20,7 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown">
                                     <?php
+//                                    $_SESSION["user"] = "TYM";
                                         
                                     echo '<li class="nav-item dropdown">';
                                         echo '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hi, ' .

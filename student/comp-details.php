@@ -25,9 +25,9 @@
     include '../date-calc.php';
 
     list($date1, $date2) = explode(' - ', $row['dates']);
-    list($month, $day, $year) = explode('/', $date1);
-    list($month2, $day2, $year2) = explode('/', $date2);
-    list($dmonth, $dday, $dyear) = explode('/', $row['deadline']);
+    list($day, $month, $year) = explode('/', $date1);
+    list($day2,$month2, $year2) = explode('/', $date2);
+    list($dday, $dmonth, $dyear) = explode('/', $row['deadline']);
 ?>
 
 
@@ -140,10 +140,17 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 mb-4">
-                <a style="width:100%;" class="btn btn-primary mb-2" href="'. $row['url'] .' " target="_blank">Competition URL</a>
+            <div class="col-md-3 mb-4">';
 
-                <!-- Button trigger modal -->
+                if(strcasecmp($row['url'], '') == 0){
+                    echo '<button style="width:100%;" class="btn btn-secondary competition-url-disabled mb-2" disabled>Competition URL</button>';
+                }
+                else
+                {
+                    echo '<a style="width:100%;" class="btn btn-primary mb-2" href="'. $row['url'] .' " target="_blank">Competition URL</a>';
+                }
+
+                echo '<!-- Button trigger modal -->
                 <button type="button" class="btn btn-success mb-4" style="width: 100%" data-toggle="modal" data-target="#lecturerModal">Contact Lecturer</button>
 
                 <!-- Modal -->

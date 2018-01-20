@@ -16,7 +16,7 @@
         
         <?php 
         
-            if(!isset($_SESSION['user']))`
+            if(!isset($_SESSION['user']))
             {
                 echo '<h6 class="homepage-subtitle-btn">Login to begin, or register first if you haven\'t.</h6>';
                 

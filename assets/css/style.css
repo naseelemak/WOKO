@@ -435,6 +435,9 @@ button:hover {
     margin: 25px 0;
 }
 
+.competition-url-disabled:hover {
+    cursor: auto;
+}
 
 /* USER GUIDES */
 

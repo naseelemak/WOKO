@@ -1,7 +1,7 @@
 <?php 
 
     $currentPage = 'Login';
-
+    require '../config.php';
     
     include '../header.php';
 

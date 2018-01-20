@@ -10,7 +10,7 @@
         switch ($month) 
         {
             case "01":
-                return "Jan";
+                return "JAN";
                 break;
             case "02":
                 return "FEB";
