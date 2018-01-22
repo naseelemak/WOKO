@@ -120,13 +120,9 @@
                                             echo'<hr>';
                                             echo'<div class="comp-card-footer">';
                                                 echo'<div class="text-muted">';
-                                                    $tags = explode(',', $row['tags']);
-                            
-                                                    foreach($tags as $tag)
-                                                    {
-                                                        echo '<span class="btn btn-sm btn-tags mr-1">'. $tag .'</span>';
+                                                    echo'<i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;'.$row['lecturer'];
 
-                                                    }
+                                                    echo'<i class="fa fa-map-marker ml-3" aria-hidden="true"></i>&nbsp;&nbsp;'.$row['venue'];
                                                 echo'</div>';
                                             echo'</div>';
                                         echo'</div>';

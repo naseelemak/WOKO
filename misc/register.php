@@ -23,7 +23,7 @@
 ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand mr-5" href="student/index.php">WOKO</a>
+            <a class="navbar-brand mr-5" href="../student/index.php">WOKO</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -76,18 +76,29 @@
                         <label for="regName">Name</label>
                         <input type="text" name="regName" class="form-control" id="regName" placeholder="As per APU registration" required>
                     </div>
-
+                    
                     <!-- Course of Study -->
                     <div class="form-group">
                         <label for="regCourse">Course of Study</label>
                         <select class="form-control" type="text" name="regCourse" id="regCourse" required>
                         <option selected disabled>--Select--</option>
-                        <option>Foundation in IT</option>
-                        <option>BSc (Hons) in Information Technology</option>
-                        <option>BSc (Hons) in Information Technology with specialism in Information System Security</option>
-                        <option>BSc (Hons) in Information Technology with specialism in Cloud Computing</option>
-                        <option>BSc (Hons) in Software Engineering</option>
-                    </select>
+                        <?php
+                            
+                            $stmt = $conn->prepare('SELECT * FROM `courses` ORDER BY `course` DESC');
+
+                            // execute query
+                            $stmt->execute();
+
+                            // Get the result
+                            $result = $stmt->get_result();
+
+                            while ($row = $result->fetch_assoc())
+                            {      
+                                echo '<option>'. $row['course'] .'</option>';
+                            }
+
+                        ?>
+                        </select>
                     </div>
 
                     <!-- Phone Number -->
@@ -128,7 +139,7 @@
         </div>
     </div>
 
-     <!-- Javascript Validation -->
+    <!-- Javascript Validation -->
     <script type="text/javascript">
         $().ready(function() {
             $.validator.addMethod('regID', function(value) {
@@ -155,7 +166,7 @@
 
     </script>
 
-    <?php 
+<?php 
 
 include '../footer.php';
 
@@ -167,95 +178,138 @@ include '../footer.php';
     // Login
 	if(isset($_POST['regSubmit'])) 
     {        
-        if (!empty($_POST['regID']) && !empty($_POST['regPass']) && !empty($_POST['regCPass']) && !empty($_POST['regName']) && !empty($_POST['regCourse']) && !empty($_POST['regPhone']) && !empty($_POST['regCompType']) && !empty($_POST['regInterests']))
-        {            
+        // -- Preliminary validation  
+        if (empty($_POST['tp']))
+        {
+            echo "<script>alert('Please enter a TP number.');";
+            echo "document.getElementById('compDates').focus();</script>";
+            return false;
+        }    
+
+        if (empty($_POST['name']))
+        {
+            echo "<script>alert('Please enter a name.');";
+            echo "document.getElementById('compDesc').focus();</script>";
+            return false;
+        }
+
+        if (empty($_POST['course']))
+        {
+            echo "<script>alert('Please specify your course of study.');";
+            echo "document.getElementById('compDetails').focus();</script>";
+            return false;
+        }
+
+        if (empty($_POST['email']))
+        {
+            echo "<script>alert('Please enter an email address.');";
+            echo "document.getElementById('compType').focus();</script>";
+            return false;
+        }
+
+        if (empty($_POST['phone']))
+        {
+            echo "<script>alert('Please enter a phone number.');";
+            echo "document.getElementById('compFee').focus();</script>";
+            return false;
+        }
+
+        if (empty($_POST['compType']))
+        {
+            echo "<script>alert('Please specify your preferred competition type.');";
+            echo "document.getElementById('compDeadline').focus();</script>";
+            return false;
+        }
+
+        if (empty($_POST['interests']))
+        {
+            echo "<script>alert('Please specify your interests.');";
+            echo "document.getElementById('compTitle').focus();</script>";
+            return false;
+        }
+        // -- Preliminary validation ends
         
-            $username = test_input($_POST['regID']);
-            if (!preg_match("/[Tt]{1}[Pp]{1}[0-9]{6}\b/", $username)) 
+        $username = test_input($_POST['regID']);
+        if (!preg_match("/[Tt]{1}[Pp]{1}[0-9]{6}\b/", $username)) 
+        {
+            echo "<script>alert('Please enter your student ID in the required format. (E.g. TP034567)');";
+            echo "document.getElementById('regID').focus();</script>";
+            return false;
+        }
+
+        $username = strtoupper($username);
+        $password = test_input($_POST['regPass']);
+        $cpassword = test_input($_POST['regCPass']);
+        $name = test_input($_POST['regName']);
+        $course = test_input($_POST['regCourse']);
+
+        $phone = test_input($_POST['regPhone']);
+        if (!preg_match("/^[0-9]{10,12}$/", $phone)) 
+        {
+            echo "<script>alert('Please only enter numbers in the phone number field 10 to 12 digits long. (E.g. 0123456789)');";
+            echo "document.getElementById('regPhone').focus();</script>";
+            return false;
+        }
+
+        $intro = test_input($_POST['regIntro']);
+        $email = test_input($_POST['regID'] . "@mail.apu.edu.my");
+
+        if ($_POST['regCompType'] == "Individual")
+        {
+            $compType = 0;
+        }
+        else
+        {
+            $compType = 1;
+        }
+
+        $interests = $_POST['regInterests'];
+        $intro = $_POST['regIntro'];
+
+
+        // Checks first if user already exists
+        $stmt = $conn->prepare('SELECT `username` FROM `students` WHERE `username` = ?');
+
+        $stmt->bind_param('s', $username);
+
+        // execute query
+        $stmt->execute();
+
+        // Get the result
+        $result = $stmt->get_result();
+
+        // If user already exists in database
+        if ($result->num_rows > 0)
+        {                
+            echo "<script>alert('Username already exists! Please enter an another username.');";
+            echo "document.getElementById('regID').focus();</script>";
+            return false;
+        }
+
+        if ($password == $cpassword)
+        {                
+            // Check connection
+            if (!$conn)
             {
-                echo "<script>alert('Please enter your student ID in the required format. (E.g. TP034567)');";
-                echo "document.getElementById('regID').focus();</script>";
-                return false;
-            }
-            
-            $username = strtoupper($username);
-            $password = test_input($_POST['regPass']);
-            $cpassword = test_input($_POST['regCPass']);
-            $name = test_input($_POST['regName']);
-            $course = test_input($_POST['regCourse']);
-            
-            $phone = test_input($_POST['regPhone']);
-            if (!preg_match("/^[0-9]{10,12}$/", $phone)) 
-            {
-                echo "<script>alert('Please only enter numbers in the phone number field 10 to 12 digits long. (E.g. 0123456789)');";
-                echo "document.getElementById('regPhone').focus();</script>";
-                return false;
-            }
-            
-            $intro = test_input($_POST['regIntro']);
-            $email = test_input($_POST['regID'] . "@mail.apu.edu.my");
-
-            if ($_POST['regCompType'] == "Individual")
-            {
-                $compType = 0;
-            }
-            else
-            {
-                $compType = 1;
+                die("Connection failed: " . mysqli_connect_error());
             }
 
-            $interests = $_POST['regInterests'];
-            $intro = $_POST['regIntro'];
+            // Inserts details into the Student table
+            $stmt = $conn->prepare('INSERT INTO `students`(`username`, `password`, `name`, `course_of_study`, `phone_no`, `preferred_comp_type`, `interests`, `self_intro`, `email`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
 
-
-            // Checks first if user already exists
-            $stmt = $conn->prepare('SELECT `username` FROM `students` WHERE `username` = ?');
-
-            $stmt->bind_param('s', $username);
+            $stmt->bind_param('sssssisss', $username, $password, $name, $course, $phone, $compType, $interests, $intro, $email);
 
             // execute query
             $stmt->execute();
 
-            // Get the result
-            $result = $stmt->get_result();
-
-            // If user already exists in database
-            if ($result->num_rows > 0)
-            {                
-                echo "<script>alert('Username already exists! Please enter an another username.');";
-                echo "document.getElementById('regID').focus();</script>";
-                return false;
-            }
-
-            if ($password == $cpassword)
-            {                
-                // Check connection
-                if (!$conn)
-                {
-                    die("Connection failed: " . mysqli_connect_error());
-                }
-
-                // Inserts details into the Student table
-                $stmt = $conn->prepare('INSERT INTO `students`(`username`, `password`, `name`, `course_of_study`, `phone_no`, `preferred_comp_type`, `interests`, `self_intro`, `email`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
-
-                $stmt->bind_param('sssssisss', $username, $password, $name, $course, $phone, $compType, $interests, $intro, $email);
-
-                // execute query
-                $stmt->execute();
-
-                echo "<script>alert('Registration successful!'); window.location.replace('../student/confirmation.php');</script>";
-            }
-            else 
-            {
-                echo "<script>alert('Passwords do not match. Please try again.');";
-                echo "document.getElementById('regCPass').val(''); document.getElementById('regCPass').focus();</script>";
-            }
-
+            echo "<script>alert('Registration successful!'); window.location.replace('../student/confirmation.php');</script>";
         }
-        else
+        else 
         {
-            echo "<script>alert('Please fill in all empty fields.');</script>";
+            echo "<script>alert('Passwords do not match. Please try again.');";
+            echo "document.getElementById('regCPass').val(''); document.getElementById('regCPass').focus();</script>";
         }
+
 	}	
 
 

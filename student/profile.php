@@ -33,7 +33,7 @@
                 <!-- TP Number -->
                 <div class="form-group">
                     <label for="tp">TP Number</label>
-                    <input type="id" class="form-control" name="tp" id="tp" value="<?php echo $row['username']; ?>" disabled>
+                    <input type="text" class="form-control" name="tp" id="tp" value="<?php echo $row['username']; ?>" disabled>
                 </div>
 
 
@@ -47,12 +47,6 @@
                 <div class="form-group">
                     <label for="course">Course of Study</label>
                     <input type="text" class="form-control" name="course" id="course" value="<?php echo $row['course_of_study']; ?>" disabled>
-                </div>
-
-                <!-- Email -->
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" id="email" value="<?php echo $row['email']; ?>" disabled>
                 </div>
 
                 <!-- Phone Number -->
@@ -81,14 +75,21 @@
                 
                 <!-- Interests (Tags) -->
                 <div class="form-group">
-                    <label for="inputInterests">Interests</label>
+                    <label for="interests">Interests</label>
                     <input type="text" class="form-control" id="interests" name="interests" value="<?php echo $row['interests']; ?>" disabled>
                 </div>
 
                 <!-- Self-Introduction -->
                 <div class="form-group">
-                    <label for="inputIntroduction">Self-Introduction (Optional)</label>
-                    <textarea class="form-control" id="inputIntroduction" rows="5" disabled><?php echo $row['self_intro']; ?></textarea>
+                    <label for="selfIntro">Self-Introduction (Optional)</label>
+                    <textarea class="form-control" id="selfIntro" name="selfIntro" rows="5" disabled><?php if(strcasecmp($row['self_intro'], '') == 0)
+                    {
+                        echo '--No self-introduction--';
+                    }
+                    else
+                    {
+                        echo $row['self_intro'];
+                    } ?></textarea>
                 </div>
             </form>
         </div>

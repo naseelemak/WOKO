@@ -157,7 +157,7 @@
     } 
     else
     {
-        // Inserts details into the Posts table
+        // Updates details in the Posts table
         $stmt = $conn->prepare('UPDATE `posts` SET `dates`= ?,`short_desc`= ?,`details`= ?,`type`= ?,`participants`= ?,`venue`= ?,`fee`= ?,`deadline`= ?,`url`= ?,`tags`= ? WHERE `id` = ?');
 
         $stmt->bind_param('sssissdsssi', $dates, $desc, $details, $type, $participants, $venue, $fee, $deadline, $url, $tags, $id);
