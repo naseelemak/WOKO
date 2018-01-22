@@ -7,6 +7,14 @@
     include '../header.php';
     include 'misc/sidebar.php';
     include 'misc/navbar.php';
+
+    $stmt = $conn->prepare('SELECT * FROM `students`');
+
+    // execute query
+    $stmt->execute();
+
+    // Get the result
+    $result = $stmt->get_result();
 ?>
 
 
@@ -21,22 +29,40 @@
                             <th data-field="course">Course of Study</th>
                             <th data-field="interests">Interests</th>
                             <th data-field="comp-type"> Preferred Competition Type</th>
-                            <th data-field="actions" class="td-actions text-center" data-events="operateEvents" data-formatter="operateFormatter">Action</th>
+                            <th data-field="actions" class="td-actions text-center">Action</th>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>TP033931</td>
-                                <td>BSc (Hons) in Software Engineering</td>
-                                <td>Java, Public Speaking, C++</td>
-                                <td>Team</td>
-                                <td></td>
-                            </tr>
+                            <?php
+                            
+                                while ($row = $result->fetch_assoc())
+                                {
+                                    $compType = $row['preferred_comp_type'];
+                                    
+                                    echo '<tr>';
+                                        echo '<td>'. $row['username'] .'</td>';
+                                        echo '<td>'. $row['course_of_study'] .'</td>';
+                                        echo '<td>'. $row['interests'] .'</td>';
+                                       
+                                        if ($compType == 0)
+                                        {
+                                            echo '<td>Individual</td>';
+                                        }
+                                        else
+                                        {
+                                            echo '<td>Team</td>';
+                                        }
+                                        
+                                        echo '<td><a rel="tooltip" title="View" class="table-action" href="stud-details.php?id='.$row['username'].'"><i class="fa fa-eye"></i></a></td>';
+                                    echo '</tr>';
+                                }
+                            
+                            ?>
                             <tr>
                                 <td>TP035405</td>
                                 <td>BSc (Hons) in Business Information Systems</td>
                                 <td>Machine Learning, Big Data, Marketing</td>
                                 <td>Individual</td>
-                                <td></td>
+                                <td><a rel="tooltip" title="View" class="table-action" href="comp-details.php"><i class="fa fa-eye"></i></a></td>
                             </tr>
 
                         </tbody>
@@ -55,15 +81,6 @@
 <script type="text/javascript">
     //bootstrapTable
     var $table = $('#bootstrap-table');
-
-    function operateFormatter(value, row, index) {
-        return [
-            '<a rel="tooltip" title="View" class="table-action" href="comp-details.php">',
-            '<i class="fa fa-eye"></i>',
-            '</a>',
-        ].join('');
-    }
-
     $().ready(function() {
 
         $table.bootstrapTable({

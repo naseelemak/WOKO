@@ -1,5 +1,5 @@
 <?php
-
+    require '../config.php';
     require '../restrict/restrict.php';
         
     $stmt = $conn->prepare('SELECT * FROM `posts` WHERE `id` = ?');
@@ -128,16 +128,13 @@
                     <!-- Tags -->
                     <div class="form-group">
                         <label for="compTags">Tags</label>
-                        <input type="text" name="compTags" id="compTags" class="form-control mb-3" value="<?php echo $row['tags']; ?>" placeholder="E.g. Java, C++, Exhibition" required>
+                        <input type="text" name="compTags" id="compTags" class="form-control mb-3" value="<?php echo $row['tags']; ?>" placeholder="Separate each tag with a comma (e.g. Java, C++, Exhibition)" required>
                     </div>
 
-                    <div class="float-left mt-2 mb-4">
-                        <a href="comp-delete.php?id=<?php echo $row['id'] ?>" class="btn btn-danger mr-1" onclick="return checkDelete()">Delete Post</a>
-                    </div>
                     <div class="float-right mt-2 mb-4">
+                        <a href="comp-preview.php" class="btn btn-primary mr-1" target="_blank">Preview</a>
                         <button type="submit" name="compEditSubmit" id="compEditSubmit" class="btn btn-primary mr-1" role="button">Publish</button>
                         <a class="btn btn-secondary" href="comp.php" style="padding-left: 15px; padding-right: 15px;">Cancel</a>
-                        
                     </div>
                 </form>
             </div>
@@ -149,13 +146,6 @@
     include 'misc/sub-footer.php';
     include '../footer.php';
 ?>
-
-    <!-- Delete confirmation -->
-    <script language="JavaScript" type="text/javascript">
-    function checkDelete(){
-        return confirm('Are you sure you want to delete this post? Once deleted, it cannot be recovered.');
-    }
-    </script>
 
     <!-- Competition Dates Date Range Picker -->
     <script type="text/javascript">
@@ -222,16 +212,21 @@
 
     </script>
 
+    <!-- Javascript Validation -->
     <script type="text/javascript">
         $().ready(function() {
             $.validator.addMethod('compParticipants', function(value) {
                 return /^[0-9]+$|^[0-9]+-[0-9]+$/.test(value);
+            }, 'Please follow the specified format (e.g. 2-4).');
+            $.validator.addMethod('compTags', function(value) {
+                return /^[a-zA-Z0-9-_,()_+ ]+$/.test(value);
             }, 'Please follow the specified format (e.g. 2-4).');
             
             // Validate signup form on keyup and submit
             $("#compEditForm").validate({
                 rules: {
                     compParticipants: "required compParticipants",
+                    compTags: "required compTags",
                 },
             });
         });
@@ -384,7 +379,7 @@
                     // Inserts details into the Posts table
                     $stmt = $conn->prepare('UPDATE `posts` SET `dates`= ?,`short_desc`= ?,`details`= ?,`type`= ?,`participants`= ?,`venue`= ?,`fee`= ?,`deadline`= ?,`poster`= ?,`url`= ?,`tags`= ? WHERE `id` = ?');
 
-                    $stmt->bind_param('sssississsssi', $dates, $desc, $details, $type, $participants, $venue, $fee, $deadline, $newfilename, $url, $tags, $_GET['id']);
+                    $stmt->bind_param('sssissdsssssi', $dates, $desc, $details, $type, $participants, $venue, $fee, $deadline, $newfilename, $url, $tags, $_GET['id']);
 
                     // execute query
                     $stmt->execute();
@@ -403,7 +398,7 @@
             // Inserts details into the Posts table
             $stmt = $conn->prepare('UPDATE `posts` SET `dates`= ?,`short_desc`= ?,`details`= ?,`type`= ?,`participants`= ?,`venue`= ?,`fee`= ?,`deadline`= ?,`url`= ?,`tags`= ? WHERE `id` = ?');
 
-            $stmt->bind_param('sssississsi', $dates, $desc, $details, $type, $participants, $venue, $fee, $deadline, $url, $tags, $id);
+            $stmt->bind_param('sssissdsssi', $dates, $desc, $details, $type, $participants, $venue, $fee, $deadline, $url, $tags, $id);
 
             // execute query
             $stmt->execute();

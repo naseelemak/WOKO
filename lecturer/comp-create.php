@@ -105,7 +105,7 @@
                     <!-- Tags -->
                     <div class="form-group">
                         <label for="compTags">Tags</label>
-                        <input type="text" name="compTags" id="compTags" class="form-control mb-3" placeholder="E.g. Java, C++, Exhibition" required>
+                        <input type="text" name="compTags" id="compTags" class="form-control mb-3" placeholder="Separate each tag with a comma (e.g. Java, C++, Exhibition)" required>
                     </div>
 
                     <div class="float-right mt-2 mb-4">
@@ -189,16 +189,21 @@
 
     </script>
 
+    <!-- Javascript Validation -->
     <script type="text/javascript">
         $().ready(function() {
             $.validator.addMethod('compParticipants', function(value) {
                 return /^[0-9]+$|^[0-9]+-[0-9]+$/.test(value);
             }, 'Please follow the specified format (e.g. 2-4).');
+            $.validator.addMethod('compTags', function(value) {
+                return /^[a-zA-Z0-9-_,()_+ ]+$/.test(value);
+            }, 'Please follow the specified format (e.g. 2-4).');
             
             // Validate signup form on keyup and submit
-            $("#compCreateForm").validate({
+            $("#compEditForm").validate({
                 rules: {
                     compParticipants: "required compParticipants",
+                    compTags: "required compTags",
                 },
             });
         });
@@ -387,7 +392,7 @@
                 // Inserts details into the Posts table
                 $stmt = $conn->prepare('INSERT INTO `posts`(`title`, `dates`, `short_desc`, `details`, `type`, `participants`, `venue`, `fee`, `deadline`, `poster`, `url`, `tags`, `lecturer`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 
-                $stmt->bind_param('ssssississsss', $title, $dates, $desc, $details, $type, $participants, $venue, $fee, $deadline, $newfilename, $url, $tags, $lecturer);
+                $stmt->bind_param('ssssissdsssss', $title, $dates, $desc, $details, $type, $participants, $venue, $fee, $deadline, $newfilename, $url, $tags, $lecturer);
 
                 // execute query
                 $stmt->execute();

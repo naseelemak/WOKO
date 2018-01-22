@@ -108,7 +108,7 @@
                     <!-- Interests (Tags) -->
                     <div class="form-group">
                         <label for="regInterests">Interests</label>
-                        <input name="regInterests" type="text" class="form-control" placeholder="Java, PHP, Public Speaking" id="regInterests" required>
+                        <input name="regInterests" type="text" class="form-control" placeholder="Separate each interest with a comma (e.g. Java, PHP, Public Speaking)" id="regInterests" required>
                     </div>
 
                     <!-- Self-Introduction -->

@@ -109,11 +109,11 @@
 
                             if ($row['fee'] > 0) 
                             {
-                                echo '<li>Registration Fee: '. $row['fee'] .'</li>';
+                                echo '<li>Registration Fee (MYR): '. $row['fee'] .'</li>';
                             }
                             else
                             {
-                                echo '<li>Registration Fee: FREE</li>';
+                                echo '<li>Registration Fee (MYR): FREE</li>';
                             }
 
 
