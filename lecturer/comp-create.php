@@ -200,7 +200,7 @@
             }, 'Please follow the specified format (e.g. 2-4).');
             
             // Validate signup form on keyup and submit
-            $("#compEditForm").validate({
+            $("#compCreateForm").validate({
                 rules: {
                     compParticipants: "required compParticipants",
                     compTags: "required compTags",

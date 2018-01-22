@@ -1,8 +1,7 @@
 <?php 
-    $currentPage = 'Edit Profile';
-
-    
     require '../restrict/restrict.php';
+
+    $currentPage = 'Edit Profile';    
 
     include '../header.php';
     

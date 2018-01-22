@@ -1,4 +1,5 @@
 <?php
+    require '../restrict/restrict.php';
 
     $currentPage = 'Register';
 
@@ -50,7 +51,7 @@
             <div class="col-md-6">
                 <h2 class="text-center"><strong>Register</strong></h2>
                 <hr>
-                <form id="regForm" method="post" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]);?>">
+                <form id="regForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                     <div class="form-row">
 
                         <!-- TP Number -->
@@ -127,6 +128,7 @@
         </div>
     </div>
 
+     <!-- Javascript Validation -->
     <script type="text/javascript">
         $().ready(function() {
             $.validator.addMethod('regID', function(value) {
@@ -134,7 +136,7 @@
             }, 'Please enter a valid TP number.');
 
             $.validator.addMethod('regName', function(value) {
-                return /^[a-zA-Z\-]+$/.test(value);
+                return /^[a-zA-Z\- ]+$/.test(value);
             }, 'Please enter only letters and hyphens.');
             
             $.validator.addMethod('regPhone', function(value) {
@@ -241,7 +243,7 @@ include '../footer.php';
                 // execute query
                 $stmt->execute();
 
-                echo "<script>alert('Registration successful!'); window.location.replace('student/confirmation.php');</script>";
+                echo "<script>alert('Registration successful!'); window.location.replace('../student/confirmation.php');</script>";
             }
             else 
             {

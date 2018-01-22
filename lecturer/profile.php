@@ -1,12 +1,22 @@
 <?php
+    require '../restrict/restrict.php';
+
     $currentPage = "Profile";
 
-    
-    require '../restrict/restrict.php';
+    $stmt = $conn->prepare('SELECT * FROM `lecturers` WHERE `username` = ?');
+    $stmt->bind_param('s', $_SESSION['user']);
+
+    // execute query
+    $stmt->execute();
+
+    // Get the result
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
 
     include '../header.php';
     include 'misc/sidebar.php';
     include 'misc/navbar.php';
+
 ?>
 
 
@@ -18,27 +28,26 @@
             <form>
                 <!-- Lecturer Code -->
                 <div class="form-group">
-                    <label for="inputTP">Login ID</label>
-                    <input type="id" class="form-control" id="inputID" value="JTM" disabled>
+                    <label for="inputTP">Lecturer Code</label>
+                    <input type="id" class="form-control" name="username" id="username" value="<?php echo $row['username']; ?>" disabled>
                 </div>
-
 
                 <!-- Name -->
                 <div class="form-group">
                     <label for="inputName">Name</label>
-                    <input type="text" class="form-control" id="inputName" value="Jaedon Tan Yung-Ming" disabled>
+                    <input type="text" class="form-control" name="name" id="name" value="<?php echo $row['name']; ?>" disabled>
                 </div>
 
                 <!-- Email -->
                 <div class="form-group">
                     <label for="inputEmail">Email</label>
-                    <input type="email" class="form-control" id="inputEmail" value="me@jaedon.my" disabled>
+                    <input type="email" class="form-control" name="email" id="email" value="<?php echo $row['email']; ?>" disabled>
                 </div>
 
                 <!-- Phone Number -->
-                <div class="form-group">
+                <div class="form-group mb-4">
                     <label for="inputTel">Phone Number</label>
-                    <input class="form-control" type="tel" value="0123456789" id="inputTel" disabled>
+                    <input type="tel" class="form-control" name="phone" id="phone" value="<?php echo $row['phone_no']; ?>" disabled>
                 </div>
             </form>
 
