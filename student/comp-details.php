@@ -22,12 +22,12 @@
 
     include '../header.php';    
     include 'misc/navbar.php';
-    include '../date-calc.php';
+    include '../date-format.php';
 
     list($date1, $date2) = explode(' - ', $row['dates']);
-    list($day, $month, $year) = explode('/', $date1);
-    list($day2,$month2, $year2) = explode('/', $date2);
-    list($dday, $dmonth, $dyear) = explode('/', $row['deadline']);
+    list($year, $month, $day) = explode('/', $date1);
+    list($year2, $month2, $day2) = explode('/', $date2);
+    list($dyear, $dmonth, $dday) = explode('/', $row['deadline']);
 ?>
 
 
@@ -102,7 +102,7 @@
                             }
                             else
                             {
-                                echo '<li>Participants: '. row['participants'] .' per team</li>';
+                                echo '<li>Participants: '. $row['participants'] .' per team</li>';
                             }
 
                             echo '<li>Venue: '. $row['venue'] .'</li>';
@@ -131,7 +131,7 @@
                             
                             foreach($tags as $tag)
                             {
-                                echo '<span class="btn btn-sm btn-outline-dark mr-1">'. $tag .'</span>';
+                                echo '<span class="btn btn-sm btn-tags mr-1">'. $tag .'</span>';
                                 
                             }
 

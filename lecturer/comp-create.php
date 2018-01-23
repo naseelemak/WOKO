@@ -253,7 +253,7 @@
             return false;
         }
             
-        if (empty($_POST['compFee']))
+        if(is_null($_POST['compFee']) || $_POST['compFee'] === '')
         {
             echo "<script>alert('Please specify the registration fee.');";
             echo "document.getElementById('compFee').focus();</script>";
@@ -327,6 +327,19 @@
         $tags = test_input($_POST['compTags']);
         $lecturer = $_SESSION['user'];
         
+        // Date formatting for storage in DB
+        list($date1, $date2) = explode(' - ', $dates);
+        list($day, $month, $year) = explode('/', $date1);
+        list($day2, $month2, $year2) = explode('/', $date2);
+        list($dday, $dmonth, $dyear) = explode('/', $deadline);
+
+        $date1 = $year . '/' . $month . '/' . $day;
+        $date2 = $year2 . '/' . $month2 . '/' . $day2;
+        $dates = $date1 . ' - ' . $date2;
+
+        $deadline = $dyear . '/' . $dmonth . '/' . $dday;
+        // Date formatting ends
+        
         // Check connection
         if (!$conn)
         {
@@ -345,7 +358,7 @@
         // Get the result
         $result = $stmt->get_result();
 
-        // If user already exists in database
+        // If title already exists in database
         if ($result->num_rows > 0)
         {                
             echo "<script>alert('Title already exists! Please enter an another one.');";
@@ -385,10 +398,7 @@
         else
         {
             if (move_uploaded_file($_FILES["compPoster"]["tmp_name"], $newfilename))
-            {
-                
-                
-                
+            {                
                 // Inserts details into the Posts table
                 $stmt = $conn->prepare('INSERT INTO `posts`(`title`, `dates`, `short_desc`, `details`, `type`, `participants`, `venue`, `fee`, `deadline`, `poster`, `url`, `tags`, `lecturer`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 

@@ -1,8 +1,7 @@
 <?php
     $currentPage = "Competitions";
 
-    require '../config.php';
-//    require '../restrict/restrict.php';
+    require '../restrict/restrict.php';
 
     include '../header.php';
     include 'misc/sidebar.php';
@@ -39,13 +38,19 @@
                                 while ($row = $result->fetch_assoc())
                                 {
                                     list($date1, $date2) = explode(' - ', $row['dates']);
-                                    list($day, $month, $year) = explode('/', $date1);
-                                    list($day2,$month2, $year2) = explode('/', $date2);
+                                    list($year, $month, $day) = explode('/', $date1);
+                                    list($year2, $month2, $day2) = explode('/', $date2);
+                                    list($dyear, $dmonth, $dday) = explode('/', $row['deadline']);
+                                    
+                                    $date1 = $day . '/' . $month . '/' . $year;
+                                    $date2 = $day2 . '/' . $month2 . '/' . $year2;
+                                    
+                                    $deadline = $dday . '/' . $dmonth . '/' . $dyear;
                                     
                                     echo '<tr>';
                                         echo '<td>'. $row['id'] .'</td>';
                                         echo '<td>'. $row['title'] .'</td>';
-                                        echo '<td>'. $row['deadline'] .'</td>';
+                                        echo '<td>'. $deadline .'</td>';
                                     
                                         if ($month == $month2 && $day == $day2 && $year == $year2)
                                         {
@@ -53,7 +58,7 @@
                                         }
                                         else
                                         {
-                                            echo '<td>'. $row['dates'] .'</td>';
+                                            echo '<td>'. $date1 . ' - ' . $date2 .'</td>';
                                         }
                                         echo '<td><a rel="tooltip" title="View" class="table-action" href="comp-details.php?id='.$row['id'].'">
                                         <i class="fa fa-eye"></i>

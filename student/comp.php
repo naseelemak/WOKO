@@ -6,7 +6,7 @@
 
     include '../header.php';    
     include 'misc/navbar.php';
-    include '../date-calc.php';
+    include '../date-format.php';
 ?>
 
 <div class="jumbotron jumbotron-fluid mb-4">
@@ -76,7 +76,7 @@
         
         <?php
             
-                $stmt = $conn->prepare('SELECT * FROM `posts` ORDER BY `id` DESC');
+                $stmt = $conn->prepare('SELECT * FROM `posts` ORDER BY `dates`');
 
                 // execute query
                 $stmt->execute();
@@ -99,11 +99,15 @@
 
                     while ($row = $result->fetch_assoc())
                     {      
-                        list($day, $month, $year) = explode('/', $row['dates']);
-                        $year = substr($year, 0, 4);
-
-                        echo'<li class="comp-list-item">';
+                        list($year, $month, $day) = explode('/', $row['dates']);
+                        
+                        $day = substr($day, 0, 2);
+                        
+                        list($dyear, $dmonth, $dday) = explode('/', $row['deadline']);
+                        
+                        echo '<li class="comp-list-item">';
                         echo '<input type="hidden" class="eventDate" value="'.$year. "" .$month. "" .$day. '">';
+                        echo '<input type="hidden" class="deadline" value="'.$dyear. "" .$dmonth. "" .$dday. '">';
                         echo'<a href="comp-details.php?id='.$row['id'].'">';
                             echo'<div class="card mb-3">';
                                 echo'<div class="card-body card-link">';

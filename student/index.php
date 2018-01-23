@@ -5,7 +5,7 @@
 
     include '../header.php';
     include 'misc/navbar.php';
-    include '../date-calc.php';
+    include '../date-format.php';
 ?>
 
 
@@ -90,7 +90,8 @@
                 {
                     while ($row = $result->fetch_assoc())
                     {                    
-                        list($month, $day, $year) = explode('/', $row['dates']);
+                        list($year, $month, $day) = explode('/', $row['dates']);
+                        $day = substr($day, 0, 2);
                         
                         echo'<div class="col-lg-6 mb-4">';
                             echo'<a href="comp-details.php?id='.$row['id'].'">';
@@ -112,9 +113,13 @@
                                                 echo'<hr>';
                                                 echo'<div class="comp-card-footer">';
                                                     echo'<div class="text-muted ml-3">';
-                                                        echo'<i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;'.$row['lecturer'];
+                                                        $tags = explode(',', $row['tags']);
+                            
+                                                        foreach($tags as $tag)
+                                                        {
+                                                            echo '<span class="btn btn-sm btn-tags mr-1">'. $tag .'</span>';
 
-                                                        echo'<i class="fa fa-map-marker ml-3" aria-hidden="true"></i>&nbsp;&nbsp;'.$row['venue'];
+                                                        }
                                                     echo'</div>';
                                                 echo'</div>';
                                             echo'</div>';

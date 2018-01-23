@@ -1,11 +1,10 @@
 <?php 
     $currentPage = 'Change Password';
 
-    
+
     require '../restrict/restrict.php';
 
-    include '../header.php';
-    
+    include '../header.php';    
     include 'misc/navbar.php';
 ?>
 
@@ -20,8 +19,8 @@
 <div class="container mt-5 mb-1">
     <div class="row">
         <div class="col-md-6">
-            <form method="post" id="changePasswordForm" action="change-password.php">
-                <input id="username" name="username" type="hidden" value="<?php echo $_SESSION['user'] ?>">
+            <form method="post" id="changePasswordForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                <input type="hidden" id="username" name="username" value="<?php echo $_SESSION['user'] ?>">
                 <div class="form-group">
                     <!-- Current Password -->
                     <label for="inputPassword">Current Password</label>
@@ -41,9 +40,9 @@
                 </div>
                 
                 <div class="float-right mb-4">
-                <button type="submit" id="changePasswordSubmit" name="changePasswordSubmit" class="btn btn-primary mr-1" role="button">Submit</button>
-                <a class="btn btn-secondary" href="index.php" style="padding-left: 15px; padding-right: 15px;">Cancel</a>
-            </div>
+                    <button type="submit" id="changePasswordSubmit" name="changePasswordSubmit" class="btn btn-primary mr-1" role="button">Submit</button>
+                    <a class="btn btn-secondary" href="index.php" style="padding-left: 15px; padding-right: 15px;">Cancel</a>
+                </div>
 
             </form>
         </div>
@@ -80,27 +79,34 @@
             $newPassword = test_input($_POST['newPassword']);
             $newCPassword = test_input($_POST['newCPassword']);
 
-            // Checks first if user already exists
-            $stmt = $conn->prepare('SELECT `password` FROM `students` WHERE `password` = ?');
+            $stmt = $conn->prepare('SELECT `password` FROM `students` WHERE `username` = ?');
 
-            $stmt->bind_param('s', $oldPassword);
+            $stmt->bind_param('s', $username);
 
             // execute query
             $stmt->execute();
 
             // Get the result
             $result = $stmt->get_result();
+            $row = $result->fetch_assoc();
 
-            // If user already exists in database
-            if ($result->num_rows < 0)
+            if(strcmp($row['password'], $oldPassword) != 0)
             {                
-                echo "<script>alert('Please enter correct existing password!');";
+                echo "<script>alert('Please enter correct existing password.');";
                 echo "document.getElementById('oldPassword').focus();</script>";
                 return false;
             }
 
-            if ($newPassword == $newCPassword)
-            {                
+            if($newPassword == $newCPassword)
+            {   
+                // Check if old and new passwords are the same
+                if ($newPassword == $oldPassword)
+                {
+                    echo "<script>alert('Please enter a new password.');";
+                    echo "document.getElementById('newPassword').focus();</script>";
+                    return false;
+                }
+                
                 // Check connection
                 if (!$conn)
                 {
@@ -127,6 +133,7 @@
         else
         {
             echo "<script>alert('Please fill in all empty fields.');</script>";
+            return false;
         }
         
 

@@ -18,9 +18,15 @@
     include 'misc/navbar.php';
 
     list($date1, $date2) = explode(' - ', $row['dates']);
-    list($day, $month, $year) = explode('/', $date1);
-    list($day2,$month2, $year2) = explode('/', $date2);
-    list($dday, $dmonth, $dyear) = explode('/', $row['deadline']);
+    list($year, $month, $day) = explode('/', $date1);
+    list($year2,$month2, $day2) = explode('/', $date2);
+    list($dyear, $dmonth, $dday) = explode('/', $row['deadline']);
+
+    $date1 = $day . '/' . $month . '/' . $year;
+    $date2 = $day2 . '/' . $month2 . '/' . $year2;
+    $dates = $date1 . ' - '. $date2;
+
+    $deadline = $dday . '/' . $dmonth . '/' . $dyear;
 ?>
 
     <div class="container">
@@ -30,10 +36,12 @@
                     
                     <input type="hidden" name="compId" id="compId" value="<?php echo $row['id']; ?>">
                     
+                    <input type="hidden" name="compTitle" id="compTitle" value="<?php echo $row['title']; ?>">
+                    
                     <!-- Title -->
                     <div class="form-group">
-                        <label for="compTitle">Title</label>
-                        <input type="text" name="compTitle" id="compTitle" class="form-control mb-3" value="<?php echo $row['title']; ?>" required disabled>
+                        <label for="title">Title</label>
+                        <input type="text" name="title" id="title" class="form-control mb-3" value="<?php echo $row['title']; ?>" required disabled>
                     </div>
 
                     <!-- Competition Date(s)-->
@@ -41,7 +49,7 @@
                     <div class="form-group">
                         <label for="compDates">Competition Date(s)</label>
                         <i class="fa fa-question-circle text-muted" data-toggle="tooltip" data-placement="auto" title="For one day events, select the same date twice" aria-hidden="true"></i>
-                        <input class="form-control mb-3" name="compDates" id="compDates" type="text" value="<?php echo $row['dates']; ?>" required>
+                        <input class="form-control mb-3" name="compDates" id="compDates" type="text" value="<?php echo $dates; ?>" required>
                     </div>
 
                     <!-- Short Description -->
@@ -109,7 +117,7 @@
                     <!-- Registration Deadline-->
                     <div class="form-group">
                         <label for="compDeadline">Registration Deadline</label>
-                        <input type="text" name="compDeadline" id="compDeadline" class="form-control mb-3" value="<?php echo $row['deadline']; ?>" required>
+                        <input type="text" name="compDeadline" id="compDeadline" class="form-control mb-3" value="<?php echo $deadline; ?>" required>
                     </div>
                     
                     <!-- Poster -->
@@ -130,6 +138,10 @@
                         <input type="text" name="compTags" id="compTags" class="form-control mb-3" value="<?php echo $row['tags']; ?>" placeholder="Separate each tag with a comma (e.g. Java, C++, Exhibition)" required>
                     </div>
 
+                    <div class="float-left mt-2 mb-4">
+                        <a href="comp-delete.php?id=<?php echo $row['id']; ?>" onclick="return checkDelete()" class="btn btn-danger mr-1">Delete Post</a>
+                    </div>
+                    
                     <div class="float-right mt-2 mb-4">
                         <a href="comp-preview.php" class="btn btn-primary mr-1" target="_blank">Preview</a>
                         <button type="submit" name="compEditSubmit" id="compEditSubmit" class="btn btn-primary mr-1" role="button">Publish</button>
@@ -145,6 +157,13 @@
     include 'misc/sub-footer.php';
     include '../footer.php';
 ?>
+
+    <!-- Delete confirmation -->
+    <script language="JavaScript" type="text/javascript">
+    function checkDelete(){
+        return confirm('Are you sure you want to delete this post? Once deleted, it cannot be recovered.');
+    }
+    </script>
 
     <!-- Competition Dates Date Range Picker -->
     <script type="text/javascript">

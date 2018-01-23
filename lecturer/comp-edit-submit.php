@@ -1,7 +1,6 @@
 <?php
     require '../restrict/restrict.php';
 
-    // Create Post
     // -- Preliminary validation            
     if (empty($_POST['compDates']))
     {
@@ -31,7 +30,7 @@
         return false;
     }
 
-    if (empty($_POST['compFee']))
+    if(is_null($_POST['compFee']) || $_POST['compFee'] === '')
     {
         echo "<script>alert('Please specify the registration fee.');";
         echo "document.getElementById('compFee').focus();</script>";
@@ -92,6 +91,19 @@
     $url = test_input($_POST['compURL']);
     $tags = test_input($_POST['compTags']);
 
+    // Date formatting for storage in DB
+    list($date1, $date2) = explode(' - ', $dates);
+    list($day, $month, $year) = explode('/', $date1);
+    list($day2, $month2, $year2) = explode('/', $date2);
+    list($dday, $dmonth, $dyear) = explode('/', $deadline);
+
+    $date1 = $year . '/' . $month . '/' . $day;
+    $date2 = $year2 . '/' . $month2 . '/' . $day2;
+    $dates = $date1 . ' - ' . $date2;
+
+    $deadline = $dyear . '/' . $dmonth . '/' . $dday;
+    // Date formatting ends
+
     // Check connection
     if (!$conn)
     {
@@ -100,16 +112,28 @@
     }
 
 
+    if(isset($_FILES['compPoster']))
+    {
+        $check = getimagesize($_FILES['compPoster']['tmp_name']);
+    }
+    else
+    {
+        $check = false;
+    }
 
-    $check = getimagesize($_FILES['compPoster']['tmp_name']);
-    if($check !== false) {
+    if($check !== false) 
+    {
         $uploadOk = 1;
 
         $target_dir = "../assets/images/comp/";
         $filename = basename($_FILES["compPoster"]["name"]);
+        echo '<script>alert("'. basename($_FILES["compPoster"]["name"]) .'")</script>';
         $extension = strtolower(pathinfo($filename,PATHINFO_EXTENSION));
+        echo '<script>alert("'. $extension .'")</script>';
 
         $newfilename = $target_dir . $title . "." . $extension;
+        
+        echo '<script>alert("'. $newfilename .'")</script>';
 
         // Allow only certain file formats
         if($extension != "jpg" && $extension != "png" && $extension != "jpeg")
@@ -120,7 +144,7 @@
         }
 
         // Check file size
-        if ($_FILES["compPoster"]["size"] > 500000)
+        if ($_FILES["compPoster"]["size"] > 5000000)
         {
             echo "<script>alert('The picture exceeds the size limit.');</script>";
             $uploadOk = 0;
@@ -134,14 +158,27 @@
         }
         // if everything is ok, try to upload file
         else
-        {
+        {            
+            $stmt = $conn->prepare('SELECT * FROM `posts` WHERE id = ?');
+            $stmt->bind_param('i', $id);
+
+            // Execute query
+            $stmt->execute();
+
+            // Get the result
+            $result = $stmt->get_result();
+            $row = $result->fetch_assoc();
+            echo '<script>alert("'. $row['poster'] .'")</script>';
+            unlink($row['poster']);
+            
             if (move_uploaded_file($_FILES["compPoster"]["tmp_name"], $newfilename))
             {
 
                 // Inserts details into the Posts table
                 $stmt = $conn->prepare('UPDATE `posts` SET `dates`= ?,`short_desc`= ?,`details`= ?,`type`= ?,`participants`= ?,`venue`= ?,`fee`= ?,`deadline`= ?,`poster`= ?,`url`= ?,`tags`= ? WHERE `id` = ?');
 
-                $stmt->bind_param('sssissdsssssi', $dates, $desc, $details, $type, $participants, $venue, $fee, $deadline, $newfilename, $url, $tags, $_GET['id']);
+                echo '<script>alert("'. $newfilename .'")</script>';
+                $stmt->bind_param('sssissdssssi', $dates, $desc, $details, $type, $participants, $venue, $fee, $deadline, $newfilename, $url, $tags, $id);
 
                 // execute query
                 $stmt->execute();
