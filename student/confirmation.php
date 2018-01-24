@@ -1,12 +1,14 @@
 <?php 
     $currentPage = 'Email Verification';
-
     
     require '../restrict/restrict.php';
 
     include '../header.php';
     
     include 'misc/navbar.php';
+    include '../mailer.php';
+
+    sendMail();
 ?>
 
 <div class="container mt-3">
@@ -27,8 +29,6 @@
         </div>
         <div class="col-md-2"></div>
     </div>
-
-
 </div>
 
 

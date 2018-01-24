@@ -44,10 +44,4 @@
         }
     } 
 
-    function formatDate($date)
-    {
-        list($year, $month, $day) = explode('/', $date);
-        $day = substr($day, 0, 2);
-    }
-
 ?>
