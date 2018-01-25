@@ -5,6 +5,7 @@
 
     
     include '../header.php';
+    include '../mailer.php';
 
     if(isset($_SESSION['user'])) 
     {
@@ -179,49 +180,42 @@ include '../footer.php';
 	if(isset($_POST['regSubmit'])) 
     {        
         // -- Preliminary validation  
-        if (empty($_POST['tp']))
+        if (empty($_POST['regID']))
         {
             echo "<script>alert('Please enter a TP number.');";
             echo "document.getElementById('compDates').focus();</script>";
             return false;
         }    
 
-        if (empty($_POST['name']))
+        if (empty($_POST['regName']))
         {
             echo "<script>alert('Please enter a name.');";
             echo "document.getElementById('compDesc').focus();</script>";
             return false;
         }
 
-        if (empty($_POST['course']))
+        if (empty($_POST['regCourse']))
         {
             echo "<script>alert('Please specify your course of study.');";
             echo "document.getElementById('compDetails').focus();</script>";
             return false;
         }
-
-        if (empty($_POST['email']))
-        {
-            echo "<script>alert('Please enter an email address.');";
-            echo "document.getElementById('compType').focus();</script>";
-            return false;
-        }
-
-        if (empty($_POST['phone']))
+        
+        if (empty($_POST['regPhone']))
         {
             echo "<script>alert('Please enter a phone number.');";
             echo "document.getElementById('compFee').focus();</script>";
             return false;
         }
 
-        if (empty($_POST['compType']))
+        if (empty($_POST['regCompType']))
         {
             echo "<script>alert('Please specify your preferred competition type.');";
             echo "document.getElementById('compDeadline').focus();</script>";
             return false;
         }
 
-        if (empty($_POST['interests']))
+        if (empty($_POST['regInterests']))
         {
             echo "<script>alert('Please specify your interests.');";
             echo "document.getElementById('compTitle').focus();</script>";
@@ -265,6 +259,7 @@ include '../footer.php';
 
         $interests = $_POST['regInterests'];
         $intro = $_POST['regIntro'];
+        $regDate = date('mY');
 
 
         // Checks first if user already exists
@@ -295,14 +290,44 @@ include '../footer.php';
             }
 
             // Inserts details into the Student table
-            $stmt = $conn->prepare('INSERT INTO `students`(`username`, `password`, `name`, `course_of_study`, `phone_no`, `preferred_comp_type`, `interests`, `self_intro`, `email`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
+            $stmt = $conn->prepare('INSERT INTO `students`(`username`, `password`, `name`, `course_of_study`, `phone_no`, `preferred_comp_type`, `interests`, `self_intro`, `email`, `reg_date`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 
-            $stmt->bind_param('sssssisss', $username, $password, $name, $course, $phone, $compType, $interests, $intro, $email);
+            $stmt->bind_param('sssssissss', $username, $password, $name, $course, $phone, $compType, $interests, $intro, $email, $regDate);
+
+            // execute query
+            $stmt->execute();
+            
+            
+            //-- set up confirmation --
+
+            //create a random key from user's unique details
+            $key = $name . $email . $regDate;
+            $key = md5($key);
+
+            //add confirm row
+            $stmt = $conn->prepare('INSERT INTO `confirm`(`name`, `email`, `key`) VALUES (?, ?, ?)');
+            
+            $stmt->bind_param('sss', $name, $email, $key);
 
             // execute query
             $stmt->execute();
 
-            echo "<script>alert('Registration successful!'); window.location.replace('../student/confirmation.php');</script>";
+            if($stmt->execute())
+            {
+
+                //let's send the email
+
+            }
+            else
+            {
+                $action['result'] = 'error';
+                array_push($text,'Confirm row was not added to the database. Reason: ' . mysql_error());
+            }
+            //-- set up confirmation --
+            
+            sendConfirmation($name, $email, $key);
+
+            echo "<script>alert('Registration successful!'); window.location.replace('../student/confirmation.php?id=". $username ."');</script>";
         }
         else 
         {

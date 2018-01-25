@@ -6,9 +6,6 @@
     include '../header.php';
     
     include 'misc/navbar.php';
-    include '../mailer.php';
-
-    sendMail();
 ?>
 
 <div class="container mt-3">
