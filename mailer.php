@@ -1,7 +1,7 @@
 <?php
     require 'phpmailer/PHPMailerAutoload.php';
     
-    include 'miscFunctions.php';
+    include 'functions.php';
 
     function sendConfirmation($name, $email, $key)
     {

@@ -3,7 +3,6 @@
 
     $currentPage = 'Register';
 
-    
     include '../header.php';
     include '../mailer.php';
 
@@ -298,33 +297,10 @@ include '../footer.php';
             $stmt->execute();
             
             
-            //-- set up confirmation --
-
             //create a random key from user's unique details
             $key = $name . $email . $regDate;
             $key = md5($key);
 
-            //add confirm row
-            $stmt = $conn->prepare('INSERT INTO `confirm`(`name`, `email`, `key`) VALUES (?, ?, ?)');
-            
-            $stmt->bind_param('sss', $name, $email, $key);
-
-            // execute query
-            $stmt->execute();
-
-            if($stmt->execute())
-            {
-
-                //let's send the email
-
-            }
-            else
-            {
-                $action['result'] = 'error';
-                array_push($text,'Confirm row was not added to the database. Reason: ' . mysql_error());
-            }
-            //-- set up confirmation --
-            
             sendConfirmation($name, $email, $key);
 
             echo "<script>alert('Registration successful!'); window.location.replace('../student/confirmation.php?id=". $username ."');</script>";

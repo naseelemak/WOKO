@@ -161,7 +161,6 @@ include '../footer.php';
 
     <?php
 
-    // Login
 	if(isset($_POST['submit'])) 
     {        
         // -- Preliminary validation        
