@@ -90,7 +90,7 @@
             $result = $stmt->get_result();
             $row = $result->fetch_assoc();
 
-            if(strcmp($row['password'], $oldPassword) != 0)
+            if(!password_verify($oldPassword, $row['password']))
             {                
                 echo "<script>alert('Please enter correct existing password.');";
                 echo "document.getElementById('oldPassword').focus();</script>";
@@ -112,6 +112,9 @@
                 {
                     die("Connection failed: " . mysqli_connect_error());
                 }
+                
+                // hashes the password before saving it in the db
+                $newPassword = password_hash($newPassword, PASSWORD_DEFAULT);
 
                 // Update password of Student table
                 $stmt = $conn->prepare('UPDATE `students` SET `password`= ? WHERE `username` = ?');

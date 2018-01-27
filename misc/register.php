@@ -282,11 +282,14 @@ include '../footer.php';
 
         if ($password == $cpassword)
         {                
-            // Check connection
+            // check connection
             if (!$conn)
             {
                 die("Connection failed: " . mysqli_connect_error());
             }
+            
+            // hashes the password before saving it in the db
+            $password = password_hash($password, PASSWORD_DEFAULT);
 
             // Inserts details into the Student table
             $stmt = $conn->prepare('INSERT INTO `students`(`username`, `password`, `name`, `course_of_study`, `phone_no`, `preferred_comp_type`, `interests`, `self_intro`, `email`, `reg_date`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
