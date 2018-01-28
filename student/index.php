@@ -71,12 +71,12 @@ include '../functions.php';
     </div>
 
     <div class="container homepage-cards">
-        <h5 class="mb-4"><strong>LATEST COMPETITIONS</strong></h5>
+        <h5 class="mb-4"><strong>UPCOMING COMPETITIONS</strong></h5>
         <div class="row mb-4">
 
             <?php
 
-            $stmt = $conn->prepare('SELECT * FROM `posts` ORDER BY `id` DESC LIMIT 4');
+            $stmt = $conn->prepare('SELECT * FROM `posts` ORDER BY `dates` LIMIT 4');
 
             // execute query
             $stmt->execute();
@@ -130,156 +130,66 @@ include '../functions.php';
             ?>
 
         </div>
+        
+        <h5 class="mb-4"><strong>CLOSING REGISTRATIONS</strong></h5>
+        <div class="row mb-4">
 
-        <h5 class="mb-4"><strong>BASED ON YOUR INTERESTS</strong></h5>
-        <div class="row">
+            <?php
 
-            <div class="col-lg-6 mb-4">
-                <a href="comp-details.php">
-                    <div class="card ">
-                        <div class="img-container">
-                            <img class="card-img-top" src="../assets/images/me.JPG" alt="Card image cap">
-                        </div>
-                        <div class="card-body card-link">
+            $stmt = $conn->prepare('SELECT * FROM `posts` ORDER BY `deadline` LIMIT 4');
 
-                            <div class="row">
-                                <div class="col-3 col-sm-2 card-date">
-                                    <p class="card-date-month"><strong>DEC</strong></p>
-                                    <p class="card-date-day"><strong>21</strong></p>
-                                </div>
-                                <div class="col-9 col-sm-10">
-                                    <h4 class="card-title line-clamp line-clamp-1">Jaedonothon 2018</h4>
-                                    <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the
-                                        card title and make up the bulk of the card's content.</p>
-                                </div>
-                                <div class="col-12">
-                                    <hr>
-                                    <div class="comp-card-footer">
-                                        <div class="text-muted ml-3">
-                                            <i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;Lecturer
+            // execute query
+            $stmt->execute();
 
-                                            <i class="fa fa-map-marker ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Location
+            // Get the result
+            $result = $stmt->get_result();
 
-                                            <i class="fa fa-user ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Organiser
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            if ($result->num_rows == 0) {
+                echo '<p class="text-muted ml-3">There are no available competitions at the moment. There will be more real soon so be sure to check this page regularly!</p>';
+            } else {
+                while ($row = $result->fetch_assoc()) {
+                    list($year, $month, $day) = explode('/', $row['dates']);
+                    $day = substr($day, 0, 2);
 
+                    echo '<div class="col-lg-6 mb-4">';
+                    echo '<a href="comp-details.php?id=' . $row['id'] . '">';
+                    echo '<div class="card">';
+                    echo '<div class="img-container">';
+                    echo '<img class="card-img-top" src="' . $row['poster'] . '" alt="Card image cap">';
+                    echo '</div>';
+                    echo '<div class="card-body card-link">';
+                    echo '<div class="row">';
+                    echo '<div class="col-3 col-sm-2 card-date">';
+                    echo '<p class="card-date-month"><strong>' . calcMonth($month) . '</strong></p>';
+                    echo '<p class="card-date-day"><strong>' . $day . '</strong></p>';
+                    echo '</div>';
+                    echo '<div class="col-9 col-sm-10">';
+                    echo '<h4 class="card-title line-clamp line-clamp-1">' . $row['title'] . '</h4>';
+                    echo '<p class="card-text line-clamp line-clamp-2">' . $row['short_desc'] . '</p>';
+                    echo '</div>';
+                    echo '<div class="col-12">';
+                    echo '<hr>';
+                    echo '<div class="comp-card-footer">';
+                    echo '<div class="text-muted ml-3">';
+                    $tags = explode(',', $row['tags']);
 
-            <div class="col-lg-6 mb-4">
-                <a href="comp-details.php">
-                    <div class="card ">
-                        <div class="img-container">
-                            <img class="card-img-top" src="../assets/images/me.JPG" alt="Card image cap">
-                        </div>
-                        <div class="card-body card-link">
+                    foreach ($tags as $tag) {
+                        echo '<span class="btn btn-sm btn-tags mr-1">' . $tag . '</span>';
 
-                            <div class="row">
-                                <div class="col-3 col-sm-2 card-date">
-                                    <p class="card-date-month"><strong>DEC</strong></p>
-                                    <p class="card-date-day"><strong>21</strong></p>
-                                </div>
-                                <div class="col-9 col-sm-10">
-                                    <h4 class="card-title line-clamp line-clamp-1">Jaedonothon 2018</h4>
-                                    <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the
-                                        card title and make up the bulk of the card's content.</p>
-                                </div>
-                                <div class="col-12">
-                                    <hr>
-                                    <div class="comp-card-footer">
-                                        <div class="text-muted ml-3">
-                                            <i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;Lecturer
+                    }
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</a>';
+                    echo '</div>';
+                }
+            }
+            ?>
 
-                                            <i class="fa fa-map-marker ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Location
-
-                                            <i class="fa fa-user ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Organiser
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-lg-6 mb-4">
-                <a href="comp-details.php">
-                    <div class="card ">
-                        <div class="img-container">
-                            <img class="card-img-top" src="../assets/images/me.JPG" alt="Card image cap">
-                        </div>
-                        <div class="card-body card-link">
-
-                            <div class="row">
-                                <div class="col-3 col-sm-2 card-date">
-                                    <p class="card-date-month"><strong>DEC</strong></p>
-                                    <p class="card-date-day"><strong>21</strong></p>
-                                </div>
-                                <div class="col-9 col-sm-10">
-                                    <h4 class="card-title line-clamp line-clamp-1">Jaedonothon 2018</h4>
-                                    <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the
-                                        card title and make up the bulk of the card's content.</p>
-                                </div>
-                                <div class="col-12">
-                                    <hr>
-                                    <div class="comp-card-footer">
-                                        <div class="text-muted ml-3">
-                                            <i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;Lecturer
-
-                                            <i class="fa fa-map-marker ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Location
-
-                                            <i class="fa fa-user ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Organiser
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-lg-6 mb-4">
-                <a href="comp-details.php">
-                    <div class="card ">
-                        <div class="img-container">
-                            <img class="card-img-top" src="../assets/images/me.JPG" alt="Card image cap">
-                        </div>
-                        <div class="card-body card-link">
-
-                            <div class="row">
-                                <div class="col-3 col-sm-2 card-date">
-                                    <p class="card-date-month"><strong>DEC</strong></p>
-                                    <p class="card-date-day"><strong>21</strong></p>
-                                </div>
-                                <div class="col-9 col-sm-10">
-                                    <h4 class="card-title line-clamp line-clamp-1">Jaedonothon 2018</h4>
-                                    <p class="card-text line-clamp line-clamp-2">Some quick example text to build on the
-                                        card title and make up the bulk of the card's content.</p>
-                                </div>
-                                <div class="col-12">
-                                    <hr>
-                                    <div class="comp-card-footer">
-                                        <div class="text-muted ml-3">
-                                            <i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;Lecturer
-
-                                            <i class="fa fa-map-marker ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Location
-
-                                            <i class="fa fa-user ml-3" aria-hidden="true"></i>&nbsp;&nbsp;Organiser
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
         </div>
-
     </div>
 
 

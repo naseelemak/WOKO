@@ -103,7 +103,6 @@
             $username = test_input($_POST['loginID']);
             $username = strtoupper($username);
             $password = test_input($_POST['loginPass']);
-            $remember = $_POST['loginRemember'];
                         
             // Checks student table first
             $stmt = $conn->prepare('SELECT * FROM students WHERE username = ?');
@@ -155,10 +154,14 @@
             $_SESSION['user'] = $username;
             $_SESSION['role'] = $role;
             $_SESSION['status'] = $row["status"]; 
+            
+            if(!empty($_POST['loginRemember'])) {
+                echo "<script>alert('Setting cookies!');</script>";
+				setcookie ('username',$_POST['username'],time()+ (10 * 365 * 24 * 60 * 60));
+				setcookie ('password',$_POST['password'],time()+ (10 * 365 * 24 * 60 * 60));
+			}
 
             echo "<script>alert('Login successful!');";
-            
-            //echo "<script>alert('" . $_SESSION['user'] . "');";
 
             if ($_SESSION['role'] == 'student')
             {

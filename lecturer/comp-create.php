@@ -282,7 +282,6 @@
         {
             echo "<script>alert('Please upload an image file.');";
             echo "document.getElementById('compPoster').focus();</script>";
-            return false;
             $uploadOk = 0;
             return false;
         }

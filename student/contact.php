@@ -16,7 +16,7 @@
 </div>
 
 <div class="container mt-3 mb-5">
-    <h6 class="mb-4">Want to promote a competition to APU? Get in touch with us here.</h6>
+    <h6 class="mb-4">Want to promote a competition to APU or just want to ask a question? Get in touch with us here.</h6>
 
     <form>
         <div class="form-group">
@@ -51,5 +51,10 @@
 <?php
 
 include '../footer.php';
+
+?>
+
+<?php
+
 
 ?>

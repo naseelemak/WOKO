@@ -111,8 +111,10 @@
         return false;
     }
 
+    $test = $_FILES['compPoster']['size'];
+    $test2 = isset($_FILES['compPoster']);
 
-    if(isset($_FILES['compPoster']))
+    if($_FILES['compPoster']['size'] != 0)
     {
         $check = getimagesize($_FILES['compPoster']['tmp_name']);
     }
