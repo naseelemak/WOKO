@@ -1,6 +1,15 @@
 <?php
         
-    function calcMonth($month) 
+    // Cleans input
+    function test_input($data)
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+    function calc_month($month) 
     {
         switch ($month) 
         {
@@ -44,7 +53,7 @@
         }
     } 
 
-    function format_email($name, $email, $key)
+    function format_confirmation($name, $email, $key)
     { 
         //set the root
         $root = $_SERVER['DOCUMENT_ROOT'];
@@ -56,6 +65,25 @@
         $template = preg_replace('{NAME}', $name, $template);
         $template = preg_replace('{EMAIL}', $email, $template);
         $template = preg_replace('{KEY}', $key, $template);
+        $template = preg_replace('{SITEPATH}','localhost', $template);
+
+        //return the html of the template
+        return $template; 
+    }
+
+    function format_contact($name, $email, $category, $message)
+    { 
+        //set the root
+        $root = $_SERVER['DOCUMENT_ROOT'];
+
+        //grab the template content
+        $template = file_get_contents($root.'/student/contactMail.'.'html');
+
+        //replace all the tags
+        $template = preg_replace('{NAME}', $name, $template);
+        $template = preg_replace('{EMAIL}', $email, $template);
+        $template = preg_replace('{CATEGORY}', $category, $template);
+        $template = preg_replace('{MESSAGE}', $message, $template);
         $template = preg_replace('{SITEPATH}','localhost', $template);
 
         //return the html of the template

@@ -7,6 +7,7 @@
     include '../header.php';
     include 'misc/sidebar.php';
     include 'misc/navbar.php';
+    include '../functions.php';
 ?>
 
     <div class="container">
@@ -415,14 +416,4 @@
             } 
         }                    
 	}
-
-    // Cleans input
-    function test_input($data)
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-
 ?>

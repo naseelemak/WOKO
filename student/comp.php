@@ -114,7 +114,7 @@
                                     echo'<div class="row">';
                                         echo'<div class="col-3 col-sm-2 card-date">';
                                             echo'<p class="card-date-month"><strong>';
-                                                echo calcMonth($month);
+                                                echo calc_month($month);
                                             echo'</strong></p>';
                                             echo'<p class="card-date-day"><strong>'.$day.'</strong></p>';
                                         echo'</div>';
