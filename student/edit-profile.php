@@ -240,14 +240,5 @@ include '../footer.php';
         echo "<script>alert('Profile updated successfully!'); window.location.replace('../student/profile.php');</script>";
 
     }
-                          
-    // Cleans input
-    function test_input($data)
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
 
 ?>

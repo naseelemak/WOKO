@@ -22,7 +22,6 @@
 
     include '../header.php';    
     include 'misc/navbar.php';
-    include '../functions.php';
 
     list($date1, $date2) = explode(' - ', $row['dates']);
     list($year, $month, $day) = explode('/', $date1);

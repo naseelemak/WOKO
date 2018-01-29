@@ -73,13 +73,13 @@
                         <input id="loginRemember" name="loginRemember" type="checkbox" class="form-check-input">
                         Remember me
                         </label>
-                        <a href="#" class="float-right password-forgot" href="#">Forgot password?</a>
+                        <a href="password-forgot.php" class="float-right password-forgot" href="#">Forgot password?</a>
                     </p>
                 </div>
 
             </form>
 
-            <!- Create new account ->
+            <!-- Create new account -->
             <a href="register.php" class="register-btn" role="button">Create account</a>
 
         </div>
@@ -105,7 +105,7 @@
             $password = test_input($_POST['loginPass']);
                         
             // Checks student table first
-            $stmt = $conn->prepare('SELECT * FROM students WHERE username = ?');
+            $stmt = $conn->prepare('SELECT * FROM `students` WHERE `email` = ?');
             $role = "student";
             
             $stmt->bind_param('s', $username);
@@ -121,7 +121,7 @@
             // Checks the lecture table if not found in student table
             if ($result->num_rows != 1)
             {
-                $stmt = $conn->prepare('SELECT * FROM lecturers WHERE username = ?');
+                $stmt = $conn->prepare('SELECT * FROM `lecturers` WHERE `username` = ?');
                 $role = "lecturer";
                 
                 $stmt->bind_param('s', $username);
@@ -178,14 +178,5 @@
             echo "window.location.replace('login.php');</script>";
         }
 	}	
- 
-    // Cleans input
-    function test_input($data) 
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
 
 ?>

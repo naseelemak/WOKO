@@ -1,11 +1,12 @@
 <?php
-$currentPage = 'Home';
 
-require '../restrict/restrict.php';
+    $currentPage = 'Home';
 
-include '../header.php';
-include 'misc/navbar.php';
-include '../functions.php';
+    require '../restrict/restrict.php';
+
+    include '../header.php';
+    include 'misc/navbar.php';
+
 ?>
 
 

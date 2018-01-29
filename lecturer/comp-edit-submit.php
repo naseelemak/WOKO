@@ -1,6 +1,8 @@
 <?php
     require '../restrict/restrict.php';
 
+    include '../functions.php';
+
     // -- Preliminary validation            
     if (empty($_POST['compDates']))
     {
@@ -205,15 +207,6 @@
         $stmt->execute();
 
         echo "<script>alert('Post updated successfully!'); window.location.replace('comp.php');</script>";
-    }
-                          
-    // Cleans input
-    function test_input($data)
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
     }
 
 ?>

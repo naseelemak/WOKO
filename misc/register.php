@@ -314,15 +314,6 @@ include '../footer.php';
             echo "document.getElementById('regCPass').val(''); document.getElementById('regCPass').focus();</script>";
         }
 
-	}	
-
-
-    function test_input($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
     }
- 
 
 ?>

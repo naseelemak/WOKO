@@ -6,7 +6,6 @@
 
     include '../header.php';    
     include 'misc/navbar.php';
-    include '../functions.php';
 ?>
 
 <div class="jumbotron jumbotron-fluid mb-4">
