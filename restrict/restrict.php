@@ -29,10 +29,8 @@ if (strpos($url,'lecturer') !== false) {
 // If student keyword exists in the url
 if (strpos($url,'student') !== false) {
     
-    if (isset($_SESSION['user']) && $_SESSION['role'] == 'lecturer') {
-        
-        header("location: ../lecturer/comp.php"); 
-        
+    if (isset($_SESSION['user']) && $_SESSION['role'] == 'lecturer') {        
+        header("location: ../lecturer/comp.php");         
     }
     
 }
@@ -40,13 +38,6 @@ if (strpos($url,'student') !== false) {
 if (!isset($_SESSION['user'])) {
     
     if (strpos($url,'student/comp-details') !== false) {
-        
-        $_SESSION['restrict'] = "notStudent-guest";
-        header("location: ../restrict/access-denied.php"); 
-        
-    }  
-    
-    if (strpos($url,'student/confirmed') !== false) {
         
         $_SESSION['restrict'] = "notStudent-guest";
         header("location: ../restrict/access-denied.php"); 

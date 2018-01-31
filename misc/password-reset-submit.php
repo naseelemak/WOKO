@@ -14,12 +14,13 @@
         
         if(isset($_GET['id']) && isset($_GET['code']))
         {
-            $username = base64_decode($_GET['id']);
+            $id = $_GET['id'];
+            $username = base64_decode($id);
             $token = $_GET['code'];
         }
         else
         {
-            echo '<script>alert("User does not exist. Returning home.");</script>';
+            echo '<script>alert("Password reset link expired. Returning home.");</script>';
             echo '<script>window.location.replace("../student/index.php");</script>';
             return false;
         }
@@ -34,7 +35,7 @@
 
         if($result->num_rows != 1)
         {
-            $stmt = $conn->prepare("SELECT * FROM `lecturer` WHERE `username` = ? AND `token` = ?");
+            $stmt = $conn->prepare("SELECT * FROM `lecturers` WHERE `username` = ? AND `token` = ?");
             $stmt->bind_param('ss', $username, $token);
             $stmt->execute();
             $result = $stmt->get_result();
@@ -57,7 +58,7 @@
         {
             echo "<script>alert('Please enter a different password from your previous one.');";
             echo "document.getElementById('newPassword').focus();</script>";
-            echo "<script>window.location.replace('password-reset.php?id=$username&code=$token');</script>";
+            echo "<script>window.location.replace('password-reset.php?id=$id&code=$token');</script>";
             return false;
         }
 

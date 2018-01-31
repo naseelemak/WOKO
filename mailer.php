@@ -7,7 +7,7 @@
     $msg = '';
 
 
-    function sendConfirmation($name, $email, $key)
+    function sendConfirmation($name, $username, $email, $key)
     {
         $mail = new PHPMailer(); // create a new object
         $mail->IsSMTP(); // enable SMTP
@@ -22,7 +22,7 @@
         $mail->setFrom('wokomailer@gmail.com', 'The WOKO Team');
         $mail->addAddress('taseelemak@gmail.com');
         $mail->Subject = 'Confirm your email address';
-        $mail->Body = format_confirmation($name, $email, $key);
+        $mail->Body = format_confirmation($name, $username, $key);
 
         //Send the message, check for errors
         if (!$mail->send()) {

@@ -136,7 +136,8 @@
         <div class="row mb-4">
 
             <?php
-
+            
+            // This query returns the 4 closest deadlines
             $stmt = $conn->prepare('SELECT * FROM `posts` WHERE `deadline` >= CURDATE() ORDER BY `deadline` LIMIT 4');
 
             // execute query

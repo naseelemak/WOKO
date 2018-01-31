@@ -145,7 +145,9 @@
             // If result found is an unconfirmed user
             if ($row["status"] != 1)
             {
-                echo "<script>window.location.replace('../student/unconfirmed.php?id=". $username ."');</script>";
+                $id = base64_encode($username);
+                
+                echo "<script>window.location.replace('../student/unconfirmed.php?id=". $id ."');</script>";
                 return false;
             }
             

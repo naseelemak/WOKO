@@ -10,16 +10,17 @@
 
 <?php
 
-    $email = $_GET['email'];
+    $id = $_GET['id'];
     $key = $_GET['key'];
+    $username = base64_decode($id);
 
     if (!$conn)
     {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $stmt = $conn->prepare('SELECT * FROM `students` WHERE `email` = ?');
-    $stmt->bind_param('s', $email);
+    $stmt = $conn->prepare('SELECT * FROM `students` WHERE `username` = ?');
+    $stmt->bind_param('s', $username);
 
     $stmt->execute();
 
@@ -28,6 +29,7 @@
 
     // Assigning these values to variables for more convenient use
     $name = $row['name'];
+    $email = $row['email'];
     $regDate = $row['reg_date'];
 
     $ckey = $name . $email . $regDate;
@@ -35,9 +37,9 @@
 
     if(strcmp($key, $ckey) == 0)
     {
-        $stmt = $conn->prepare('UPDATE `students` SET `status` = 1 WHERE `email` = ?');
+        $stmt = $conn->prepare('UPDATE `students` SET `status` = 1 WHERE `username` = ?');
         
-        $stmt->bind_param('s', $email);
+        $stmt->bind_param('s', $username);
         
         $stmt->execute();
         

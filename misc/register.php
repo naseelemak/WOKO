@@ -299,14 +299,16 @@ include '../footer.php';
             // execute query
             $stmt->execute();
             
+            // encode username and create a random key
+            $id = base64_encode($username);
             
             //create a random key from user's unique details
             $key = $name . $email . $regDate;
             $key = md5($key);
+            
+            sendConfirmation($name, $id, $email, $key);
 
-            sendConfirmation($name, $email, $key);
-
-            echo "<script>alert('Registration successful!'); window.location.replace('../student/confirmation.php?id=". $username ."');</script>";
+            echo "<script>alert('Registration successful!'); window.location.replace('../student/confirmation.php?id=". $id ."');</script>";
         }
         else 
         {
