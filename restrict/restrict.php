@@ -46,6 +46,13 @@ if (!isset($_SESSION['user'])) {
         
     }  
     
+    if (strpos($url,'student/confirmed') !== false) {
+        
+        $_SESSION['restrict'] = "notStudent-guest";
+        header("location: ../restrict/access-denied.php"); 
+        
+    }  
+    
     if (strpos($url,'student/profile') !== false ||       
         strpos($url,'student/edit-profile') !== false ||
         strpos($url,'student/change-password') !== false

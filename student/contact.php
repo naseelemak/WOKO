@@ -106,7 +106,7 @@ include '../footer.php';
         $category = test_input($_POST['category']); 
         $message = test_input($_POST['message']);
         
-        $msg = sendContactTest($name, $email, $category, $message);
+        $msg = sendContact($name, $email, $category, $message);
             
         echo '<script>alert("'. $msg .'");</script>';
     }

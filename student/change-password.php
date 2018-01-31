@@ -19,28 +19,28 @@
 <div class="container mt-5 mb-1">
     <div class="row">
         <div class="col-md-6">
-            <form method="post" id="changePasswordForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+            <form id="changePasswordForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                 <input type="hidden" id="username" name="username" value="<?php echo $_SESSION['user'] ?>">
                 <div class="form-group">
                     <!-- Current Password -->
-                    <label for="inputPassword">Current Password</label>
+                    <label for="oldPassword">Current Password</label>
                     <input type="password" class="form-control mb-4" id="oldPassword" name="oldPassword" required>
                 </div>
 
                 <div class="form-group">
                     <!-- New Password -->
-                    <label for="inputPassword">New Password</label>
+                    <label for="newPassword">New Password</label>
                     <input type="password" class="form-control mb-4" id="newPassword" name="newPassword" minlength="6" required>
                 </div>
 
                 <div class="form-group">
                     <!-- New Password Confirmation -->
-                    <label for="inputPassword">Confirm Password</label>
+                    <label for="newCPassword">Confirm Password</label>
                     <input type="password" class="form-control mb-4" id="newCPassword" name="newCPassword" equalto="#newPassword" minlength="6" required>
                 </div>
                 
                 <div class="float-right mb-4">
-                    <button type="submit" id="changePasswordSubmit" name="changePasswordSubmit" class="btn btn-primary mr-1" role="button">Submit</button>
+                    <button id="changePasswordSubmit" name="changePasswordSubmit" type="submit" class="btn btn-primary mr-1" role="button">Submit</button>
                     <a class="btn btn-secondary" href="index.php" style="padding-left: 15px; padding-right: 15px;">Cancel</a>
                 </div>
 
@@ -54,8 +54,7 @@
 <script type="text/javascript">
         $().ready(function() {
             // Validate signup form on keyup and submit
-            $("#changePasswordForm").validate({
-            });
+            $("#changePasswordForm").validate();
         });
 
 </script>
@@ -102,7 +101,7 @@
                 // Check if old and new passwords are the same
                 if ($newPassword == $oldPassword)
                 {
-                    echo "<script>alert('Please enter a new password.');";
+                    echo "<script>alert('Please enter a different password from your previous one.');";
                     echo "document.getElementById('newPassword').focus();</script>";
                     return false;
                 }

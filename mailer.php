@@ -36,33 +36,6 @@
     
     function sendContact($name, $email, $category, $message)
     {
-        $mail = new PHPMailer(); // create a new object
-        $mail->IsSMTP(); // enable SMTP
-        $mail->SMTPAuth = true; // authentication enabled
-        $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
-        $mail->Host = "smtp.gmail.com";
-        $mail->Port = 465; // or 587
-        $mail->IsHTML(true);
-        $mail->Username = 'wokomailer@gmail.com';
-        $mail->Password = 'Wokofyp121';
-
-        $mail->setFrom('wokomailer@gmail.com', 'The WOKO Team');
-        $mail->addAddress('taseelemak@gmail.com');
-        $mail->Subject = 'Confirm your email address';
-        $mail->Body = format_confirmation($name, $email, $key);
-
-        //Send the message, check for errors
-        if (!$mail->send()) {
-            //The reason for failing to send will be in $mail->ErrorInfo
-            //but you shouldn't display errors to users - process the error, log it on your server.
-            $msg = 'Sorry, something went wrong. Please try again later.';
-        } else {
-            $msg = 'Message sent! Thanks for contacting us.';
-        }
-    }
-
-    function sendContactTest($name, $email, $category, $message)
-    {
         /**
          * This example shows how to handle a simple contact form.
          */        
@@ -118,6 +91,33 @@ EOT;
         }
         
         return $msg;
+    }
+
+    function sendPasswordReset($name, $email, $id, $code)
+    {
+        $mail = new PHPMailer(); // create a new object
+        $mail->IsSMTP(); // enable SMTP
+        $mail->SMTPAuth = true; // authentication enabled
+        $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
+        $mail->Host = "smtp.gmail.com";
+        $mail->Port = 465; // or 587
+        $mail->IsHTML(true);
+        $mail->Username = 'wokomailer@gmail.com';
+        $mail->Password = 'Wokofyp121';
+
+        $mail->setFrom('wokomailer@gmail.com', 'The WOKO Team');
+        $mail->addAddress('taseelemak@gmail.com');
+        $mail->Subject = 'Password reset';
+        $mail->Body = format_reset($name, $id, $code);
+
+        //Send the message, check for errors
+        if (!$mail->send()) {
+            //The reason for failing to send will be in $mail->ErrorInfo
+            //but you shouldn't display errors to users - process the error, log it on your server.
+            $msg = 'Sorry, something went wrong. Please try again later.';
+        } else {
+            $msg = 'Password reset email sent! Please check your inbox.';
+        }
     }
 
 ?>

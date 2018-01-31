@@ -105,7 +105,7 @@
             $password = test_input($_POST['loginPass']);
                         
             // Checks student table first
-            $stmt = $conn->prepare('SELECT * FROM `students` WHERE `email` = ?');
+            $stmt = $conn->prepare('SELECT * FROM `students` WHERE `username` = ?');
             $role = "student";
             
             $stmt->bind_param('s', $username);
@@ -149,7 +149,6 @@
                 return false;
             }
             
-            //-- Removed the while loop
             // Sets the role and status to session - this is needed to restrict access to certain pages
             $_SESSION['user'] = $username;
             $_SESSION['role'] = $role;

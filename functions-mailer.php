@@ -37,4 +37,22 @@
         return $template; 
     }
 
+    function format_reset($name, $id, $code)
+    { 
+        //set the root
+        $root = $_SERVER['DOCUMENT_ROOT'];
+
+        //grab the template content
+        $template = file_get_contents($root.'/misc/password-reset-mail.'.'html');
+
+        //replace all the tags
+        $template = preg_replace('{NAME}', $name, $template);
+        $template = preg_replace('{ID}', $id, $template);
+        $template = preg_replace('{CODE}', $code, $template);
+        $template = preg_replace('{SITEPATH}','localhost', $template);
+
+        //return the html of the template
+        return $template; 
+    }
+
 ?>

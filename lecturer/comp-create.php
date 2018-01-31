@@ -381,7 +381,7 @@
         }
 
         // Check file size
-        if ($_FILES["compPoster"]["size"] > 500000)
+        if ($_FILES["compPoster"]["size"] > 5000000)
         {
             echo "<script>alert('The picture exceeds the size limit.');</script>";
             $uploadOk = 0;
