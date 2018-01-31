@@ -137,7 +137,7 @@
 
             <?php
 
-            $stmt = $conn->prepare('SELECT * FROM `posts` ORDER BY `deadline` LIMIT 4');
+            $stmt = $conn->prepare('SELECT * FROM `posts` WHERE `deadline` >= CURDATE() ORDER BY `deadline` LIMIT 4');
 
             // execute query
             $stmt->execute();

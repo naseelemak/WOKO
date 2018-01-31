@@ -1,6 +1,6 @@
 <?php
 
-    if(password_verify('123123', '$2y$10$DWZ5cWGr//5POm2Pg1moJumhmllW1/Ry94E/MZ41T6eZADrer8LYC'))
+    if(password_verify('123123', '$2y$10$9gp/c4CWWnN5BbsemAyFi.4m9AJYma3/Zcr8vZWLR9bf6dSXQ/F6K'))
     {
         echo 'Passwords tally';
     } 

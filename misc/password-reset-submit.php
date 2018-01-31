@@ -11,7 +11,6 @@
 
     if(isset($_POST['submit']))
     {
-        echo "<script>alert('So far so good');</script>";
         
         if(isset($_GET['id']) && isset($_GET['code']))
         {
@@ -69,9 +68,6 @@
         {
             // Update password of Student table
             $stmt = $conn->prepare('UPDATE `students` SET `password`= ?, `token` = ? WHERE `username` = ?');
-
-            echo '<script>alert("So far so good =3.");</script>';
-
         }
         else
         {
@@ -86,7 +82,7 @@
         // execute query
         $stmt->execute();
 
-        echo "<script>alert('Password changed successfully. Please login with new credentials!'); window.location.replace('../logout.php');</script>";
+        echo "<script>alert('Password changed successfully. Please login with new credentials!'); window.location.replace('login.php');</script>";
     }	
 
 
