@@ -1,7 +1,7 @@
 <?php 
 
     $currentPage = 'Login';
-    require '../config.php';
+    require '../restrict/restrict.php';
     
     include '../header.php';
     include '../mailer.php';

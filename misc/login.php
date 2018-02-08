@@ -66,13 +66,15 @@
                 <!-- Login Button -->
                 <input name="loginSubmit" type="submit" class="btn btn-primary btn-block mb-2 btnPointer" value="Login">
 
-                <!-- Remember Me Checkbox -->
+                <!-- Remember Me Checkbox and Forgot Password -->
                 <div class="form-check">
                     <p>
+<!--
                         <label class="form-check-label">
                         <input id="loginRemember" name="loginRemember" type="checkbox" class="form-check-input">
                         Remember me
                         </label>
+-->
                         <a href="password-forgot.php" class="float-right password-forgot" href="#">Forgot password?</a>
                     </p>
                 </div>

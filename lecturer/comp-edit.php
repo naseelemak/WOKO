@@ -143,7 +143,6 @@
                     </div>
                     
                     <div class="float-right mt-2 mb-4">
-                        <a href="comp-preview.php" class="btn btn-primary mr-1" target="_blank">Preview</a>
                         <button type="submit" name="compEditSubmit" id="compEditSubmit" class="btn btn-primary mr-1" role="button">Publish</button>
                         <a class="btn btn-secondary" href="comp.php" style="padding-left: 15px; padding-right: 15px;">Cancel</a>
                     </div>

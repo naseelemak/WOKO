@@ -12,8 +12,8 @@
             <li>
                 <a href="#competitionsSubmenu" data-toggle="collapse" aria-expanded="false">Competitions<i class="fa fa-caret-down"></i></a>
                 <ul class="collapse list-unstyled" id="competitionsSubmenu">
-                    <li><a href="comp.php">Manage</a></li>
-                    <li><a href="comp-create.php">Create New</a></li>
+                    <li><a href="comp-create.php">Create New</a>
+                    <li><a href="comp.php">Manage</a></li></li>
                 </ul>
             </li>
             <li>

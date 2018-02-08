@@ -3,11 +3,11 @@
 
     include '../functions.php';
     
-//    if(empty($_GET['id']) && empty($_GET['code']))
-//    {
-//        echo "<script>window.location.href='../student/index.php'</script>";
-//        die;
-//    }
+    if(empty($_GET['id']) && empty($_GET['code']))
+    {
+        echo "<script>window.location.href='../student/index.php'</script>";
+        die;
+    }
 
     if(isset($_POST['submit']))
     {
