@@ -139,6 +139,10 @@
         $.validator.addMethod('phone', function(value) {
             return /^[0-9]{10,12}$/.test(value);
         }, 'Please enter a valid phone number.');
+        
+        $.validator.addMethod('compTags', function(value) {
+            return /^[a-zA-Z0-9-_,()_+#. ]+$/.test(value);
+        }, 'Please only enter valid characters.');
 
         // Validate signup form on keyup and submit
         $("#profileEditForm").validate({
@@ -146,6 +150,7 @@
                 tp: "required tp",
                 studentName: "required studentName",
                 phone: "required phone",
+                interests: "required compTags",
             },
         });
     });

@@ -55,7 +55,7 @@
 
                 <!-- TP Number -->
                 <div class="form-group">
-                    <input id="loginID" name="loginID" type="text" class="form-control" placeholder="TP number">
+                    <input id="loginID" name="loginID" type="text" class="form-control" placeholder="TP Number / Lecturer Code">
                 </div>
 
                 <!-- Password -->

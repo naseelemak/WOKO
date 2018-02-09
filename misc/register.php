@@ -153,6 +153,11 @@
             $.validator.addMethod('regPhone', function(value) {
                 return /^[0-9]{10,12}$/.test(value);
             }, 'Please enter a valid phone number.');
+            
+            $.validator.addMethod('compTags', function(value) {
+                return /^[a-zA-Z0-9-_,()_+#. ]+$/.test(value);
+            }, 'Please only enter valid characters.');
+            
 
             // Validate signup form on keyup and submit
             $("#regForm").validate({
@@ -160,11 +165,12 @@
                     regID: "required regID",
                     regName: "required regName",
                     regPhone: "required regPhone",
+                    regInterests: "required compTags",
                 },
             });
         });
 
-    </script>
+    –⌂–</script>
 
 <?php 
 

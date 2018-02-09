@@ -47,21 +47,21 @@
                 {
                     if ($cday > $dday)
                     {
-                        echo '<span class="btn btn-danger mb-1">REGISTRATION CLOSED</span>';
+                        echo '<span class="btn btn-danger no-hover-danger mb-1">REGISTRATION CLOSED</span>';
                     }
                     else
                     {
-                        echo '<span class="btn btn-success mb-1">REGISTRATION OPEN</span>';
+                        echo '<span class="btn btn-success no-hover-success mb-1">REGISTRATION OPEN</span>';
                     }
                 }
                 else
                 {
-                    echo '<span class="btn btn-success mb-1">REGISTRATION OPEN</span>';
+                    echo '<span class="btn btn-success no-hover-success mb-1">REGISTRATION OPEN</span>';
                 }
             }
             else
             {
-                echo '<span class="btn btn-success mb-1">REGISTRATION OPEN</span>';
+                echo '<span class="btn btn-success no-hover-success mb-1">REGISTRATION OPEN</span>';
             }
         ?>
     </div>

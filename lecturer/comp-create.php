@@ -99,7 +99,7 @@
                     <!-- URL -->
                     <div class="form-group">
                         <label for="compURL">Competition URL (Optional)</label>
-                        <input type="url" name="compURL" id="compURL" class="form-control mb-3" placeholder="As per APU registration">
+                        <input type="url" name="compURL" id="compURL" class="form-control mb-3" placeholder="E.g. https://www.google.com">
                     </div>
 
                     <!-- Tags -->
@@ -195,8 +195,8 @@
                 return /^[0-9]+$|^[0-9]+-[0-9]+$/.test(value);
             }, 'Please follow the specified format (e.g. 2-4).');
             $.validator.addMethod('compTags', function(value) {
-                return /^[a-zA-Z0-9-_,()_+ ]+$/.test(value);
-            }, 'Please follow the specified format (e.g. 2-4).');
+                return /^[a-zA-Z0-9-_,()_+#. ]+$/.test(value);
+            }, 'Please only enter valid characters.');
             
             // Validate signup form on keyup and submit
             $("#compCreateForm").validate({

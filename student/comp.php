@@ -69,8 +69,6 @@
 
         <!-- Competition Cards -->
         
-        
-    
         <div class="col-md-12 col-lg-9 mb-2">
         
         <?php
@@ -118,7 +116,14 @@
                                             echo'<p class="card-date-day"><strong>'.$day.'</strong></p>';
                                         echo'</div>';
                                         echo'<div class="col-9 col-sm-10">';
-                                            echo'<h4 class="card-title">'.$row['title'].'</h4>';
+                                            echo '<div class="row">';
+                                                echo '<div class="col-8">';
+                                                    echo'<h4 class="card-title">'.$row['title'].'</h4>';
+                                                echo '</div>';
+                                                echo '<div class="col-4">';
+                                                    echo '<span class="my-btn btn-deadline-danger mr-2" style="float: right;">REGISTRATION CLOSED</span>';
+                                                echo '</div>';
+                                            echo '</div>';
                                             echo'<p class="card-text">'.$row['short_desc'].'</p>';
                                             echo'<hr>';
                                             echo'<div class="comp-card-footer">';

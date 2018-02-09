@@ -119,6 +119,9 @@
             <div class="my-2 my-lg-0">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item mr-4">
+                        <a class="nav-link" href="login.php">Login</a>
+                    </li>
+                    <li class="nav-item mr-4">
                         <a class="nav-link" href="register.php">Register</a>
                     </li>
 
@@ -146,7 +149,7 @@
 
                 <!-- Email Address -->
                 <div class="form-group">
-                    <input id="email" name="email" type="email" class="form-control" placeholder="Email Address">
+                    <input id="email" name="email" type="email" class="form-control" placeholder="Student Email / Lecturer Email">
                 </div>
 
                 <!-- Reset Button -->
@@ -169,4 +172,10 @@
     });
 
 </script>
+
+<?php
+
+    include '../footer.php';
+
+?>
 

@@ -51,7 +51,7 @@
         <div class="col-lg-4 col-md-6 mb-2">
             <img src="http://placehold.it/300x300/eb3472/ffffff?text=6" class="guide-steps">
             <h4>Step 6</h4>
-            <p class="text-muted">Find and j    oin a competition!</p>
+            <p class="text-muted">Find and join a competition!</p>
         </div>
     </div>
 
