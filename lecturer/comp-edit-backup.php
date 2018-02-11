@@ -36,14 +36,12 @@
                     
                     <input type="hidden" name="compId" id="compId" value="<?php echo $row['id']; ?>">
                     
-                    <input type="hidden" name="oldTitle" id="oldTitle" value="<?php echo $row['title']; ?>">
-                    
-                    <input type="hidden" name="oldPoster" id="oldPoster" value="<?php echo $row['poster']; ?>">
+                    <input type="hidden" name="compTitle" id="compTitle" value="<?php echo $row['title']; ?>">
                     
                     <!-- Title -->
                     <div class="form-group">
                         <label for="title">Title</label>
-                        <input type="text" name="compTitle" id="compTitle" class="form-control mb-3" value="<?php echo $row['title']; ?>" required>
+                        <input type="text" name="title" id="title" class="form-control mb-3" value="<?php echo $row['title']; ?>" required disabled>
                     </div>
 
                     <!-- Competition Date(s)-->

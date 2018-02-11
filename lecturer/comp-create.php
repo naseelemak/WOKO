@@ -345,7 +345,7 @@
             return false;
         }
         
-        // -- Checks first if user already exists
+        // -- Checks first if title already exists
         $stmt = $conn->prepare('SELECT `title` FROM `posts` WHERE `title` = ?');
 
         $stmt->bind_param('s', $title);
@@ -359,7 +359,7 @@
         // If title already exists in database
         if ($result->num_rows > 0)
         {                
-            echo "<script>alert('Title already exists! Please enter an another one.');";
+            echo "<script>alert('Title already exists! Please enter another one.');";
             echo "document.getElementById('compTitle').focus();</script>";
             return false;
         }

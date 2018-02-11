@@ -8,7 +8,6 @@
     {
         echo "<script>alert('Please specify a title.');";
         echo "document.getElementById('compTitle').focus();</script>";
-        echo "<script>window.location.replace('comp-edit.php?id=". $_POST['compId'] ."');</script>";
         return false;
     }
     
@@ -16,7 +15,6 @@
     {
         echo "<script>alert('Please specify the competition dates.');";
         echo "document.getElementById('compDates').focus();</script>";
-        echo "<script>window.location.replace('comp-edit.php?id=". $_POST['compId'] ."');</script>";
         return false;
     }    
 
@@ -24,7 +22,6 @@
     {
         echo "<script>alert('Please give the competition a brief description.');";
         echo "document.getElementById('compDesc').focus();</script>";
-        echo "<script>window.location.replace('comp-edit.php?id=". $_POST['compId'] ."');</script>";
         return false;
     }
 
@@ -32,7 +29,6 @@
     {
         echo "<script>alert('Please specify the competition details (e.g. prize, time).');";
         echo "document.getElementById('compDetails').focus();</script>";
-        echo "<script>window.location.replace('comp-edit.php?id=". $_POST['compId'] ."');</script>";
         return false;
     }
 
@@ -40,7 +36,6 @@
     {
         echo "<script>alert('Please specify the type of competition.');";
         echo "document.getElementById('compType').focus();</script>";
-        echo "<script>window.location.replace('comp-edit.php?id=". $_POST['compId'] ."');</script>";
         return false;
     }
 
@@ -48,7 +43,6 @@
     {
         echo "<script>alert('Please specify the registration fee.');";
         echo "document.getElementById('compFee').focus();</script>";
-        echo "<script>window.location.replace('comp-edit.php?id=". $_POST['compId'] ."');</script>";
         return false;
     }
 
@@ -56,7 +50,6 @@
     {
         echo "<script>alert('Please specify the registration deadline.');";
         echo "document.getElementById('compDeadline').focus();</script>";
-        echo "<script>window.location.replace('comp-edit.php?id=". $_POST['compId'] ."');</script>";
         return false;
     }
 
@@ -64,14 +57,11 @@
     {
         echo "<script>alert('Please specify at least one competition tag.');";
         echo "document.getElementById('compTitle').focus();</script>";
-        echo "<script>window.location.replace('comp-edit.php?id=". $_POST['compId'] ."');</script>";
         return false;
     }
     // -- Preliminary validation ends
 
     $id = test_input($_POST['compId']);
-    $oldTitle = test_input($_POST['oldTitle']);
-    $oldPoster = test_input($_POST['oldPoster']);
     $title = test_input($_POST['compTitle']);
     $dates = test_input($_POST['compDates']); 
     $desc = test_input($_POST['compDesc']); 
@@ -128,31 +118,6 @@
     {
         die("Connection failed: " . mysqli_connect_error());
         return false;
-    }
-
-    // -- Checks first if title already exists
-    if(strcmp($oldTitle, $title) != 0)
-    {
-        // -- Checks first if title already exists
-        $stmt = $conn->prepare('SELECT `title` FROM `posts` WHERE `title` = ?');
-
-        $stmt->bind_param('s', $title);
-
-        // execute query
-        $stmt->execute();
-
-        // Get the result
-        $result = $stmt->get_result();
-
-        // If title already exists in database
-        if ($result->num_rows > 0)
-        {                
-            echo "<script>alert('Title already exists! Please enter another one.');";
-            echo "document.getElementById('compTitle').focus();</script>";
-            echo "<script>window.location.replace('comp-edit.php?id=$id');</script>";
-            return false;
-        }
-        // -- Database check ends
     }
 
     $test = $_FILES['compPoster']['size'];
@@ -232,25 +197,6 @@
             } 
         }  
     } 
-    elseif(strcmp($oldTitle, $title) != 0)
-    {
-        $target_dir = "../assets/images/comp/";
-        $extension = basename($oldPoster);    
-        $extension = substr($extension, strpos($extension, ".") + 1);    
-        
-        $newfilename = $target_dir . $title . "." . $extension;
-        rename($oldPoster, $newfilename);
-        
-        // Inserts details into the Posts table
-        $stmt = $conn->prepare('UPDATE `posts` SET `title`= ?, `dates`= ?,`short_desc`= ?,`details`= ?,`type`= ?,`participants`= ?,`venue`= ?,`fee`= ?,`deadline`= ?,`poster`= ?,`url`= ?,`tags`= ? WHERE `id` = ?');
-
-        $stmt->bind_param('ssssissdssssi', $title, $dates, $desc, $details, $type, $participants, $venue, $fee, $deadline, $newfilename, $url, $tags, $id);
-
-        // execute query
-        $stmt->execute();
-
-        echo "<script>alert('Post updated successfully!'); window.location.replace('comp.php');</script>";
-    }
     else
     {
         // Updates details in the Posts table
