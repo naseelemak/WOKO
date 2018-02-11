@@ -72,6 +72,10 @@
         <div class="col-md-12 col-lg-9 mb-2">
         
         <?php
+                $currentDate = date("d.m.Y");
+                list($cday, $cmonth, $cyear) = explode('.', $currentDate);
+
+                $currentDate = $cyear . $cmonth . $cyear;
             
                 $stmt = $conn->prepare('SELECT * FROM `posts` ORDER BY `dates`');
 
@@ -121,7 +125,17 @@
                                                     echo'<h4 class="card-title">'.$row['title'].'</h4>';
                                                 echo '</div>';
                                                 echo '<div class="col-4">';
+                                                
+                                                // Registration Deadline Tags
+                                                list($dyear, $dmonth, $dday) = explode('/', $row['deadline']);
+                                                $deadline = $dyear . $dmonth . $dyear;
+                                                if($deadline < $currentDate)
+                                                {
+                                                    
                                                     echo '<span class="my-btn btn-deadline-danger mr-2" style="float: right;">REGISTRATION CLOSED</span>';
+                                                
+                                                }
+                                                
                                                 echo '</div>';
                                             echo '</div>';
                                             echo'<p class="card-text">'.$row['short_desc'].'</p>';

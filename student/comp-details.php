@@ -27,6 +27,7 @@
     list($year, $month, $day) = explode('/', $date1);
     list($year2, $month2, $day2) = explode('/', $date2);
     list($dyear, $dmonth, $dday) = explode('/', $row['deadline']);
+    $deadline = $dyear . $dmonth . $dyear;
 ?>
 
 
@@ -40,29 +41,17 @@
         
             $currentDate = date("d.m.Y");
             list($cday, $cmonth, $cyear) = explode('.', $currentDate);
+            $currentDate = $cyear . $cmonth . $cyear;
         
-            if ($cyear >= $dyear)
+            if ($currentDate >= $deadline)
             {
-                if ($cmonth >= $dmonth)
-                {
-                    if ($cday > $dday)
-                    {
-                        echo '<span class="btn btn-danger no-hover-danger mb-1">REGISTRATION CLOSED</span>';
-                    }
-                    else
-                    {
-                        echo '<span class="btn btn-success no-hover-success mb-1">REGISTRATION OPEN</span>';
-                    }
-                }
-                else
-                {
-                    echo '<span class="btn btn-success no-hover-success mb-1">REGISTRATION OPEN</span>';
-                }
+                echo '<span class="btn btn-danger no-hover-danger mb-1">REGISTRATION CLOSED</span>';
             }
             else
             {
                 echo '<span class="btn btn-success no-hover-success mb-1">REGISTRATION OPEN</span>';
             }
+        
         ?>
     </div>
 </div>

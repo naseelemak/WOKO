@@ -77,6 +77,10 @@
 
             <?php
 
+            $currentDate = date("d.m.Y");
+            list($cday, $cmonth, $cyear) = explode('.', $currentDate);
+            $currentDate = $cyear . $cmonth . $cyear;
+            
             $stmt = $conn->prepare('SELECT * FROM `posts` ORDER BY `dates` LIMIT 4');
 
             // execute query
@@ -111,13 +115,29 @@
                     echo '<div class="col-12">';
                     echo '<hr>';
                     echo '<div class="comp-card-footer">';
-                    echo '<div class="text-muted ml-3">';
-                    $tags = explode(',', $row['tags']);
+                    echo '<div class="row">';
+                        echo '<div class="col-8">';
+                            echo '<div class="text-muted ml-3">';
+                            $tags = explode(',', $row['tags']);
 
-                    foreach ($tags as $tag) {
-                        echo '<span class="btn btn-sm btn-tags mr-1">' . $tag . '</span>';
+                            foreach ($tags as $tag) {
+                                echo '<span class="btn btn-sm btn-tags mr-1">' . $tag . '</span>';
 
-                    }
+                            }
+                            echo '</div>';
+                        echo '</div>';
+                        echo '<div class="col-4">';
+
+                        // Registration Deadline Tags
+                        list($dyear, $dmonth, $dday) = explode('/', $row['deadline']);
+                        $deadline = $dyear . $dmonth . $dyear;
+                        if($deadline < $currentDate)
+                        {
+
+                            echo '<span class="my-btn btn-deadline-danger mr-3" style="float: right;">REGISTRATION CLOSED</span>';
+
+                        }
+                        echo '</div>';
                     echo '</div>';
                     echo '</div>';
                     echo '</div>';
