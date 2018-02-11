@@ -37,7 +37,7 @@
                 
                 <div class="float-right mb-4">
                     <button type="submit" id="changePasswordSubmit" name="changePasswordSubmit" class="btn btn-primary mr-1" role="button">Submit</button>
-                    <a class="btn btn-secondary" href="index.php" style="padding-left: 15px; padding-right: 15px;">Cancel</a>
+                    <a class="btn btn-secondary" href="comp.php" style="padding-left: 15px; padding-right: 15px;">Cancel</a>
                 </div>
 
             </form>

@@ -251,7 +251,8 @@ include '../footer.php';
         }
 
         $intro = test_input($_POST['regIntro']);
-        $email = test_input($_POST['regID'] . "@mail.apu.edu.my");
+        $email = strtolower($username);
+        $email = test_input($username . "@mail.apu.edu.my");
 
         if ($_POST['regCompType'] == "Individual")
         {

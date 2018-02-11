@@ -80,9 +80,11 @@
             $currentDate = date("d.m.Y");
             list($cday, $cmonth, $cyear) = explode('.', $currentDate);
             $currentDate = $cyear . $cmonth . $cyear;
+                        
+            // This query returns the 4 closest upcoming events
+            $stmt = $conn->prepare('SELECT * FROM `posts` WHERE `start_date` >= CURDATE() ORDER BY `start_date` LIMIT 4');
             
-            $stmt = $conn->prepare('SELECT * FROM `posts` ORDER BY `dates` LIMIT 4');
-
+            
             // execute query
             $stmt->execute();
 
