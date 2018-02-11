@@ -121,10 +121,10 @@
                                         echo'</div>';
                                         echo'<div class="col-9 col-sm-10">';
                                             echo '<div class="row">';
-                                                echo '<div class="col-8">';
+                                                echo '<div class="col-md-8 col-sm-12">';
                                                     echo'<h4 class="card-title">'.$row['title'].'</h4>';
                                                 echo '</div>';
-                                                echo '<div class="col-4">';
+                                                echo '<div class="col-md-4 col-sm-12">';
                                                 
                                                 // Registration Deadline Tags
                                                 list($dyear, $dmonth, $dday) = explode('/', $row['deadline']);

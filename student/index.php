@@ -118,7 +118,7 @@
                     echo '<hr>';
                     echo '<div class="comp-card-footer">';
                     echo '<div class="row">';
-                        echo '<div class="col-8">';
+                        echo '<div class="col-md-8 col-md-12">';
                             echo '<div class="text-muted ml-3">';
                             $tags = explode(',', $row['tags']);
 
@@ -128,7 +128,7 @@
                             }
                             echo '</div>';
                         echo '</div>';
-                        echo '<div class="col-4">';
+                        echo '<div class="col-md-4 col-md-12">';
 
                         // Registration Deadline Tags
                         list($dyear, $dmonth, $dday) = explode('/', $row['deadline']);
