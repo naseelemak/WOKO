@@ -31,7 +31,7 @@
             //but you shouldn't display errors to users - process the error, log it on your server.
             $msg = 'Sorry, something went wrong. Please try again later.';
         } else {
-            $msg = 'Message sent! Thanks for contacting us.';
+            $msg = 'Confirmation email sent! Please check your inbox.';
         }
     }
     
@@ -107,7 +107,7 @@ EOT;
         $mail->Password = 'Wokofyp121';
 
         $mail->setFrom('wokomailer@gmail.com', 'The WOKO Team');
-        $mail->addAddress('taseelemak@gmail.com');
+        $mail->addAddress("taseelemak@gmail.com");
         $mail->Subject = 'Password reset';
         $mail->Body = format_reset($name, $id, $code);
 

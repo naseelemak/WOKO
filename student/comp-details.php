@@ -27,7 +27,7 @@
     list($year, $month, $day) = explode('/', $date1);
     list($year2, $month2, $day2) = explode('/', $date2);
     list($dyear, $dmonth, $dday) = explode('/', $row['deadline']);
-    $deadline = $dyear . $dmonth . $dyear;
+    $deadline = $dyear . $dmonth . $dday;
 ?>
 
 
@@ -41,7 +41,7 @@
         
             $currentDate = date("d.m.Y");
             list($cday, $cmonth, $cyear) = explode('.', $currentDate);
-            $currentDate = $cyear . $cmonth . $cyear;
+            $currentDate = $cyear . $cmonth . $cday;
         
             if ($currentDate >= $deadline)
             {
