@@ -18,9 +18,13 @@
 <div class="container mt-3">
     <div class="row">
         <div class="col-md-12">
-            <p class="text-justify">WOKO aims to promote lecturer-student collaboration on competitions by connecting lecturers to students and students to lecturers. </p>
+            <p class="text-justify">WOKO aims to promote lecturer-student collaboration on competitions by connecting lecturers to students and students to lecturers.</p>
 
-            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi etiam. Vitae nunc sed velit dignissim sodales ut eu sem integer. Faucibus interdum posuere lorem ipsum dolor. Curabitur gravida arcu ac tortor dignissim convallis aenean. Pulvinar pellentesque habitant morbi tristique senectus. Tellus in metus vulputate eu scelerisque felis imperdiet proin. Tincidunt dui ut ornare lectus sit amet est. In hendrerit gravida rutrum quisque non tellus. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut. Dui sapien eget mi proin. Purus viverra accumsan in nisl. Enim neque volutpat ac tincidunt vitae semper. Suspendisse potenti nullam ac tortor. Dolor morbi non arcu risus quis varius. Eget nullam non nisi est sit amet facilisis magna etiam. Sed velit dignissim sodales ut eu.</p>
+            <p class="text-justify">In 2018, a student noticed how troublesome it was for lecturers to promote competitions to students. Channels used for promotion included Webspace, lab computer wallpapers, and class-to-class pitches. A lot of time was wasted on students who didn't even care about what was being said.</p>
+            
+            <p class="text-justify">The observation drove the student to develop a website that would make it much easier for lecturers to push competitions to students who are interested in competing – students passionate about learning and testing what they've learnt beyond classrooms walls.</p>
+            
+            <p class="text-justify">That website is WOKO.</p>
         </div>
     </div>
 </div>
