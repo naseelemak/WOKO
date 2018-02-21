@@ -34,14 +34,16 @@
 
             ?>
 
+            
+            
             <ul class="homepage-tips-area">
-                <a href="contact.php" class="homepage-tips-item">
+                <a href="about.php" class="homepage-tips-item">
                     <li>
                         <hr class="homepage-line">
                         <div>
-                            <h3 class="homepage-tips-title">Contact Us</h3>
-                            <p class="homepage-tips-description">Want your competition featured on WOKO? Have questions
-                                to ask? Message us.</p>
+                            <h3 class="homepage-tips-title">About Us</h3>
+                            <p class="homepage-tips-description">What is WOKO? Does it even stand for anything? Read
+                                more about the platform over here.</p>
                         </div>
                     </li>
                 </a>
@@ -57,13 +59,13 @@
                     </li>
                 </a>
 
-                <a href="about.php" class="homepage-tips-item">
+                <a href="contact.php" class="homepage-tips-item">
                     <li>
                         <hr class="homepage-line">
                         <div>
-                            <h3 class="homepage-tips-title">About Us</h3>
-                            <p class="homepage-tips-description">What is WOKO? Does it even stand for anything? Read
-                                more about the platform over here.</p>
+                            <h3 class="homepage-tips-title">Contact Us</h3>
+                            <p class="homepage-tips-description">Want your competition featured on WOKO? Have questions
+                                to ask? Message us.</p>
                         </div>
                     </li>
                 </a>
