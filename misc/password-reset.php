@@ -1,6 +1,6 @@
 <?php 
 
-    $currentPage = 'Login';
+    $currentPage = 'Reset Password';
     require '../restrict/restrict.php';
     
     include '../header.php';

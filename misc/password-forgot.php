@@ -1,6 +1,6 @@
 <?php 
 
-    $currentPage = 'Login';
+    $currentPage = 'Forgot Password';
     require '../config.php';
     
     include '../header.php';
