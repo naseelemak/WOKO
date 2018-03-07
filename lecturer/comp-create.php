@@ -16,7 +16,7 @@
                     <!-- Title -->
                     <div class="form-group">
                         <label for="compTitle">Title</label>
-                        <i class="fa fa-question-circle text-muted" data-toggle="tooltip" data-placement="auto" title="Title cannot be changed once event is created" aria-hidden="true"></i>
+                        <i class="fa fa-question-circle text-muted" data-toggle="tooltip" data-placement="auto" title="Title has to be unique" aria-hidden="true"></i>
                         <input type="text" name="compTitle" id="compTitle" class="form-control mb-3" required>
                     </div>
 
@@ -398,9 +398,9 @@
             if (move_uploaded_file($_FILES["compPoster"]["tmp_name"], $newfilename))
             {                
                 // Inserts details into the Posts table
-                $stmt = $conn->prepare('INSERT INTO `posts`(`title`, `dates`, `short_desc`, `details`, `type`, `participants`, `venue`, `fee`, `deadline`, `poster`, `url`, `tags`, `lecturer`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+                $stmt = $conn->prepare('INSERT INTO `posts`(`title`, `dates`, `start_date`, `short_desc`, `details`, `type`, `participants`, `venue`, `fee`, `deadline`, `poster`, `url`, `tags`, `lecturer`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 
-                $stmt->bind_param('ssssissdsssss', $title, $dates, $desc, $details, $type, $participants, $venue, $fee, $deadline, $newfilename, $url, $tags, $lecturer);
+                $stmt->bind_param('sssssissdsssss', $title, $dates, $date1, $desc, $details, $type, $participants, $venue, $fee, $deadline, $newfilename, $url, $tags, $lecturer);
 
                 // execute query
                 $stmt->execute();

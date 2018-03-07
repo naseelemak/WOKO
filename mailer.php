@@ -12,7 +12,6 @@
         $mail = new PHPMailer(); // create a new object
         $mail->IsSMTP(); // enable SMTP
         $mail->SMTPAuth = true; // authentication enabled
-        $mail->SMTPDebug = 4; // authentication enabled
         $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
         $mail->Host = "smtp.gmail.com";
         $mail->Port = 465; // or 587
@@ -21,9 +20,27 @@
         $mail->Password = 'Wokofyp121';
 
         $mail->setFrom('wokomailer@gmail.com', 'The WOKO Team');
-        $mail->addAddress('taseelemak@gmail.com');
+        $mail->addAddress($email);
         $mail->Subject = 'Confirm your email address';
-        $mail->Body = format_confirmation($name, $username, $key);
+        $mail->Body = "<html>
+<body>
+    <h1>WOKO: User Confirmation</h1>
+    <h3>Hello $name!</h3>
+    Thank you for signing up at WOKO. To confirm your identity as an APU student please follow the link:
+    
+    <br><br>
+    
+    <a href='http://localhost/student/confirmed.php?id=$username&key=$key' style='color: #03110A;'>Confirm Identity</a>
+
+    <br><br><br>
+
+    <strong>Yours sincerely,<br>The WOKO Team</strong>
+
+</body>
+
+</html>
+
+";
 
         //Send the message, check for errors
         if (!$mail->send()) {
@@ -31,7 +48,7 @@
             //but you shouldn't display errors to users - process the error, log it on your server.
             $msg = 'Sorry, something went wrong. Please try again later.';
         } else {
-            $msg = 'Message sent! Thanks for contacting us.';
+            $msg = 'Confirmation email sent! Please check your inbox.';
         }
     }
     
@@ -107,9 +124,27 @@ EOT;
         $mail->Password = 'Wokofyp121';
 
         $mail->setFrom('wokomailer@gmail.com', 'The WOKO Team');
-        $mail->addAddress('taseelemak@gmail.com');
+        $mail->addAddress("$email");
         $mail->Subject = 'Password reset';
-        $mail->Body = format_reset($name, $id, $code);
+        $mail->Body = "<html>
+<body>
+    <h1>WOKO: Password Reset</h1>
+    <h3>Hello $name!</h3>
+    We received a request to reset your password. If it wasn't you, just ignore this email. 
+    <br><br>
+    Click the following link to reset your password:
+    <br><br>
+    <a href='http://localhost/misc/password-reset.php?id=$id&code=$code'>Reset Password</a>
+
+    <br><br><br>
+
+    <strong>Yours sincerely,<br>The WOKO Team</strong>
+
+</body>
+
+</html>
+
+";
 
         //Send the message, check for errors
         if (!$mail->send()) {

@@ -1,0 +1,1 @@
+[12-Feb-2018 05:30:52 Etc/UTC] PHP Warning:  file_get_contents(/home/jaedonmy/public_html/student/confirm-mail.html): failed to open stream: No such file or directory in /home/jaedonmy/public_html/woko/functions-mailer.php on line 9

@@ -164,15 +164,15 @@
 				setcookie ('password',$_POST['password'],time()+ (10 * 365 * 24 * 60 * 60));
 			}
 
-            echo "<script>alert('Login successful!');";
+            // echo "<script>alert('Login successful!');";
 
             if ($_SESSION['role'] == 'student')
             {
-                echo "window.location.replace('../student/index.php');</script>";
+                echo "<script>window.location.replace('../student/index.php');</script>";
             }
             else
             {
-                echo "window.location.replace('../lecturer/comp.php');</script>";
+                echo "<script>window.location.replace('../lecturer/comp.php');</script>";
             }
         }
         else

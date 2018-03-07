@@ -120,24 +120,7 @@
                                             echo'<p class="card-date-day"><strong>'.$day.'</strong></p>';
                                         echo'</div>';
                                         echo'<div class="col-9 col-sm-10">';
-                                            echo '<div class="row">';
-                                                echo '<div class="col-md-8 col-sm-12">';
                                                     echo'<h4 class="card-title">'.$row['title'].'</h4>';
-                                                echo '</div>';
-                                                echo '<div class="col-md-4 col-sm-12">';
-                                                
-                                                // Registration Deadline Tags
-                                                list($dyear, $dmonth, $dday) = explode('/', $row['deadline']);
-                                                $deadline = $dyear . $dmonth . $dyear;
-                                                if($deadline < $currentDate)
-                                                {
-                                                    
-                                                    echo '<span class="my-btn btn-deadline-danger mr-2" style="float: right;">REGISTRATION CLOSED</span>';
-                                                
-                                                }
-                                                
-                                                echo '</div>';
-                                            echo '</div>';
                                             echo'<p class="card-text">'.$row['short_desc'].'</p>';
                                             echo'<hr>';
                                             echo'<div class="comp-card-footer">';

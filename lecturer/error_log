@@ -1,0 +1,14 @@
+[12-Feb-2018 08:50:18 UTC] PHP Warning:  getimagesize(): Filename cannot be empty in /home/jaedonmy/public_html/woko/lecturer/comp-create.php on line 276
+[12-Feb-2018 08:51:26 UTC] PHP Warning:  getimagesize(): Filename cannot be empty in /home/jaedonmy/public_html/woko/lecturer/comp-create.php on line 276
+[12-Feb-2018 08:57:01 UTC] PHP Warning:  getimagesize(): Filename cannot be empty in /home/jaedonmy/public_html/woko/lecturer/comp-create.php on line 276
+[21-Feb-2018 10:01:27 UTC] PHP Parse error:  syntax error, unexpected '$desc' (T_VARIABLE), expecting ',' or ')' in /home/jaedonmy/public_html/woko/lecturer/comp-create.php on line 403
+[21-Feb-2018 10:01:32 UTC] PHP Parse error:  syntax error, unexpected '$desc' (T_VARIABLE), expecting ',' or ')' in /home/jaedonmy/public_html/woko/lecturer/comp-create.php on line 403
+[21-Feb-2018 10:01:35 UTC] PHP Parse error:  syntax error, unexpected '$desc' (T_VARIABLE), expecting ',' or ')' in /home/jaedonmy/public_html/woko/lecturer/comp-create.php on line 403
+[21-Feb-2018 10:02:05 UTC] PHP Parse error:  syntax error, unexpected '$desc' (T_VARIABLE), expecting ',' or ')' in /home/jaedonmy/public_html/woko/lecturer/comp-create.php on line 403
+[21-Feb-2018 10:02:10 UTC] PHP Parse error:  syntax error, unexpected '$desc' (T_VARIABLE), expecting ',' or ')' in /home/jaedonmy/public_html/woko/lecturer/comp-create.php on line 403
+[21-Feb-2018 10:02:11 UTC] PHP Parse error:  syntax error, unexpected '$desc' (T_VARIABLE), expecting ',' or ')' in /home/jaedonmy/public_html/woko/lecturer/comp-create.php on line 403
+[21-Feb-2018 10:02:52 UTC] PHP Parse error:  syntax error, unexpected '$desc' (T_VARIABLE), expecting ',' or ')' in /home/jaedonmy/public_html/woko/lecturer/comp-create.php on line 403
+[21-Feb-2018 10:02:53 UTC] PHP Parse error:  syntax error, unexpected '$desc' (T_VARIABLE), expecting ',' or ')' in /home/jaedonmy/public_html/woko/lecturer/comp-create.php on line 403
+[21-Feb-2018 10:02:56 UTC] PHP Parse error:  syntax error, unexpected '$desc' (T_VARIABLE), expecting ',' or ')' in /home/jaedonmy/public_html/woko/lecturer/comp-create.php on line 403
+[21-Feb-2018 10:02:56 UTC] PHP Parse error:  syntax error, unexpected '$desc' (T_VARIABLE), expecting ',' or ')' in /home/jaedonmy/public_html/woko/lecturer/comp-create.php on line 403
+[21-Feb-2018 10:03:53 UTC] PHP Parse error:  syntax error, unexpected '$desc' (T_VARIABLE), expecting ',' or ')' in /home/jaedonmy/public_html/woko/lecturer/comp-create.php on line 403

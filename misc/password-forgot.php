@@ -1,6 +1,6 @@
 <?php 
 
-    $currentPage = 'Login';
+    $currentPage = 'Forgot Password';
     require '../config.php';
     
     include '../header.php';
@@ -87,7 +87,7 @@
             
             $stmt->bind_param('ss', $code, $email);
             $stmt->execute();
-
+            
             sendPasswordReset($row['name'], $email, $id, $code);
 
             $msg = "<div class='alert alert-success'>

@@ -35,13 +35,13 @@
             ?>
 
             <ul class="homepage-tips-area">
-                <a href="contact.php" class="homepage-tips-item">
+                <a href="about.php" class="homepage-tips-item">
                     <li>
                         <hr class="homepage-line">
                         <div>
-                            <h3 class="homepage-tips-title">Contact Us</h3>
-                            <p class="homepage-tips-description">Want your competition featured on WOKO? Have questions
-                                to ask? Message us.</p>
+                            <h3 class="homepage-tips-title">About Us</h3>
+                            <p class="homepage-tips-description">What is WOKO? Does it even stand for anything? Read
+                                more about the platform over here.</p>
                         </div>
                     </li>
                 </a>
@@ -57,13 +57,13 @@
                     </li>
                 </a>
 
-                <a href="about.php" class="homepage-tips-item">
+                <a href="contact.php" class="homepage-tips-item">
                     <li>
                         <hr class="homepage-line">
                         <div>
-                            <h3 class="homepage-tips-title">About Us</h3>
-                            <p class="homepage-tips-description">What is WOKO? Does it even stand for anything? Read
-                                more about the platform over here.</p>
+                            <h3 class="homepage-tips-title">Contact Us</h3>
+                            <p class="homepage-tips-description">Want your competition featured on WOKO? Have questions
+                                to ask? Message us.</p>
                         </div>
                     </li>
                 </a>
@@ -80,11 +80,10 @@
             $currentDate = date("d.m.Y");
             list($cday, $cmonth, $cyear) = explode('.', $currentDate);
             $currentDate = $cyear . $cmonth . $cyear;
-                        
+            
             // This query returns the 4 closest upcoming events
             $stmt = $conn->prepare('SELECT * FROM `posts` WHERE `start_date` >= CURDATE() ORDER BY `start_date` LIMIT 4');
-            
-            
+
             // execute query
             $stmt->execute();
 
@@ -117,8 +116,6 @@
                     echo '<div class="col-12">';
                     echo '<hr>';
                     echo '<div class="comp-card-footer">';
-                    echo '<div class="row">';
-                        echo '<div class="col-md-8 col-md-12">';
                             echo '<div class="text-muted ml-3">';
                             $tags = explode(',', $row['tags']);
 
@@ -127,20 +124,6 @@
 
                             }
                             echo '</div>';
-                        echo '</div>';
-                        echo '<div class="col-md-4 col-md-12">';
-
-                        // Registration Deadline Tags
-                        list($dyear, $dmonth, $dday) = explode('/', $row['deadline']);
-                        $deadline = $dyear . $dmonth . $dyear;
-                        if($deadline < $currentDate)
-                        {
-
-                            echo '<span class="my-btn btn-deadline-danger mr-3" style="float: right;">REGISTRATION CLOSED</span>';
-
-                        }
-                        echo '</div>';
-                    echo '</div>';
                     echo '</div>';
                     echo '</div>';
                     echo '</div>';
