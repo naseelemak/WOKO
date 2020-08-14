@@ -18,7 +18,7 @@
         $mail->Port = 465; // or 587
         $mail->IsHTML(true);
         $mail->Username = 'wokomailer@gmail.com';
-        $mail->Password = 'Wokofyp121';
+        $mail->Password = 'hidden';
 
         $mail->setFrom('wokomailer@gmail.com', 'The WOKO Team');
         $mail->addAddress('taseelemak@gmail.com');
